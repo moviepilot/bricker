@@ -50,7 +50,7 @@
 
       // Display this endpoint
       } else {
-        container.append($('<div class="endpoint">'+data.endpoint+'</div>'));
+        container.append($('<pre class="endpoint">'+data.endpoint+'</pre>'));
       }
     }
 

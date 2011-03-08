@@ -1,1 +1,1 @@
-{ "endpoint" : "hello endpoint" }
+{"endpoint": "Response: 200 OK\n{ content_url: \"http://host/content/video/87654.js\"\n, exits : [ { id: \"ac87bc2143a\"\n            , label: \"Watch Emma Watson Gallery\"\n            , target_url: \"/user/ab3b54/container/23536\"\n            },\n{ id: \"ac87bc2143b\"\n            , label: \"Rate all HP Movies\"\n            , target_url: \"/user/ab3b54/container/23537\"\n            } ]\n} "}
