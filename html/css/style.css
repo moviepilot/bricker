@@ -259,3 +259,13 @@ a:hover { color: #036; }
   h2, h3{ page-break-after: avoid; }
 }
 
+.bricker {
+  border: 1px solid red;
+  width: 100%;
+}
+
+.bricker ul {
+  width: 100px;
+  border: 1px solid blue;
+}
+
