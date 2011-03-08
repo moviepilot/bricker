@@ -266,7 +266,6 @@ a:hover { color: #036; }
 }
 
 .bricker ul {
-  width: 150px;
   display: block;
   float:left;
   padding:0;
@@ -275,5 +274,9 @@ a:hover { color: #036; }
 
 .bricker ul li {
   list-style:none; 
+}
+
+.active {
+  text-decoration: underline;
 }
 

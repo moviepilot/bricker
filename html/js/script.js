@@ -15,8 +15,9 @@
                 callback(data); 
                }
              , error: function(jqXHR, textStatus, errorThrown) {
-               console.log("ERRORS");
+               console.log("ERRORS "+url);
                console.log(errorThrown);
+               callback('err');
              }
       });
 
@@ -76,7 +77,10 @@ $(document).ready(function(){
   $('#main').bricker('');
   $('ul.fragments li').live('click', function() {
     var element = $(this);
-    element.parent().parent().contents('div').bricker(element.data('prefix'));
+    var parent  = element.parent().parent();
+    element.parent().children().removeClass('active');
+    element.addClass('active');
+    parent.contents('div').bricker(element.data('prefix'));
   });
 
 });
