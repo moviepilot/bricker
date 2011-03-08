@@ -9,7 +9,6 @@
       var url = '../api/'+(prefix||'index')+'.json' 
       console.log(url);
       $.ajax({ url: url
-             , dataType: 'json'
              , data: {}
              , success: function(data, textStatus, jqXHR){
                 callback(data); 
@@ -20,11 +19,6 @@
                callback('err');
              }
       });
-
-      // if (prefix == '') return callback(['container', 'content/_id_', 'transition']);
-      // if (prefix == '/content/_id_') return callback(['eins', 'zwo']);
-      // if (prefix == '/content/_id_/zwo') return callback(['foo']);
-      // callback( { foo: 1} ); 
     }, 
 
     buildFragmentLi: function (prefix, fragment) {
@@ -56,7 +50,7 @@
 
       // Display this endpoint
       } else {
-        container.append($('<div>endpoint</div>'));
+        container.append($('<div class="endpoint">'+data.endpoint+'</div>'));
       }
     }
 
