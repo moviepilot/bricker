@@ -5,11 +5,11 @@
 (function( $ ){
 
   var Bricker = {
-    fetchFragments: function(prefix) {
+    fetchFragments: function(prefix, callback) {
 
-      if (prefix == '') return ['container', 'content/_id_', 'transition'];
-      if (prefix == '/content/_id_') return ['eins', 'zwo'];
-      if (prefix == '/content/_id_/zwo') return ['foo'];
+      if (prefix == '') return callback(['container', 'content/_id_', 'transition']);
+      if (prefix == '/content/_id_') return callback(['eins', 'zwo']);
+      if (prefix == '/content/_id_/zwo') return callback(['foo']);
       return { foo: 1}; 
     }, 
 
@@ -20,41 +20,39 @@
     },
 
     buildFragmentList: function(prefix, fragments) {
-      // Create list 
       var ul = $('<ul class="fragments" />');
-
-      // Fill fragment list
       $.each(fragments,function(i,f){
         var li = Bricker.buildFragmentLi(prefix, f);
         ul.append(li); 
       });
-      
       return ul;
+    },
+
+    displayFragments: function(container, prefix, fragments) {
+
+      // Empty out
+      container.children().remove();
+
+      // Build another list or display documentation
+      if (fragments instanceof Array) {
+
+        var ul = Bricker.buildFragmentList(prefix, fragments);
+        container.append(ul); 
+        container.append($('<div class="bricker"></div>'));
+
+      // Display this endpoint
+      } else {
+        container.append($('<div>'+fragments+'</div>'));
+      }
     }
 
   };
 
   $.fn.bricker = function( prefix ) {  
-
-    // Prepare shit
-    var fragments = Bricker.fetchFragments(prefix),
-        container = $(this),
-          content = null;
-
-    // Empty out
-    container.children().remove();
-
-    // Build another list or display documentation
-    if (fragments instanceof Array) {
-
-      var ul = Bricker.buildFragmentList(prefix, fragments);
-      container.append(ul); 
-      container.append($('<div class="bricker"></div>'));
-
-    // Display this endpoint
-    } else {
-      container.append($('<div>'+fragments+'</div>'));
-    }
+    var container = $(this);
+    Bricker.fetchFragments(prefix, function(f) {
+      Bricker.displayFragments(container, prefix, f); 
+    } );
   }
 
 })(jQuery);
