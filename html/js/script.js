@@ -6,6 +6,7 @@
 
   var Bricker = {
     fetchFragments: function(prefix) {
+
       if (prefix == '') return ['container', 'content/_id_', 'transition'];
       if (prefix == '/content/_id_') return ['eins', 'zwo'];
       if (prefix == '/content/_id_/zwo') return ['foo'];

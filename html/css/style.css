@@ -260,12 +260,20 @@ a:hover { color: #036; }
 }
 
 .bricker {
-  border: 1px solid red;
   width: 100%;
+  padding:0;
+  margin:10px;
 }
 
 .bricker ul {
-  width: 100px;
-  border: 1px solid blue;
+  width: 150px;
+  display: block;
+  float:left;
+  padding:0;
+  margin:0;
+}
+
+.bricker ul li {
+  list-style:none; 
 }
 
