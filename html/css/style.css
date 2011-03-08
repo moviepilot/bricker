@@ -259,6 +259,11 @@ a:hover { color: #036; }
   h2, h3{ page-break-after: avoid; }
 }
 
+
+body {
+  font-family: Monaco, Courier New;
+}
+
 .bricker {
   width: 100%;
   padding:0;
@@ -284,7 +289,6 @@ a:hover { color: #036; }
 }
 
 .endpoint {
-  font-family: Monaco, Courier New;
   padding: 10px;
   margin-left: 10px;
   border: 1px solid #cdcdcd;
