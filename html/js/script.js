@@ -47,9 +47,10 @@ var Bricker = {
   buildEndpoints: function(prefix, endpoints) {
    var containers = [];
    $.each(endpoints, function(i, text) {
+     var url = prefix.replace(/_id_$/, i+1).replace(/_id_/g, 123);
      var endpoint = Bricker.parseEndpoint(text);
      var container = $('<div class="endpoint"/>');
-     container.append($('<h1>'+endpoint.method+' '+prefix+'</h1>'));
+     container.append($('<h1>'+endpoint.method+' '+url+'</h1>'));
      container.append ($('<pre>'+endpoint.example+'</pre>')); 
      containers.push(container);
    });

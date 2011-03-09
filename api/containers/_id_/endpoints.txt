@@ -1,0 +1,18 @@
+GET
+Response 200 OK
+{   type: "trailer"
+,   title: "Happy Rotter final theatrical trailer "
+,   payload: { url: "http://host/video/7456345474.mp4"
+             , autoplay: true
+             }
+}
+
+---
+GET
+Response 200 OK
+{   type: "gallery"
+,   title: "Emma Watson Picture Gallery"
+,   payload: { url: "http://foo"
+             , fullscreen: true
+             }
+}
