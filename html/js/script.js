@@ -46,13 +46,25 @@ var Bricker = {
 
   buildEndpoints: function(prefix, endpoints) {
    var containers = [];
-   $.each(endpoints, function(i, endpoint) {
+   $.each(endpoints, function(i, text) {
+     var endpoint = Bricker.parseEndpoint(text);
      var container = $('<div class="endpoint"/>');
-     container.append($('<h1>'+prefix+'</h1>'));
-     container.append ($('<pre>'+endpoint+'</pre>')); 
+     container.append($('<h1>'+endpoint.method+' '+prefix+'</h1>'));
+     container.append ($('<pre>'+endpoint.example+'</pre>')); 
      containers.push(container);
    });
    return containers;
+  },
+
+  parseEndpoint: function(text) {
+    var endpoint = {};                
+    var lines = text.split("\n");
+    
+    endpoint.method = lines.splice(0,1);
+    endpoint.example = lines.join('\n');
+
+
+    return endpoint;
   },
 
   displayFragments: function(container, prefix, data) {
