@@ -42,18 +42,17 @@
       container.children().remove();
 
       // Build another list or display documentation
-      if (data.fragments instanceof Array) {
-
+      if(data.fragments instanceof Array) {
         var ul = Bricker.buildFragmentList(prefix, data.fragments);
         container.append(ul); 
         container.append($('<div class="bricker"></div>'));
+      }
 
       // Display this endpoint
-      } else {
+      if (data.endpoint) {
         container.append($('<pre class="endpoint">'+data.endpoint+'</pre>'));
       }
     }
-
   };
 
   $.fn.bricker = function( prefix ) {  
