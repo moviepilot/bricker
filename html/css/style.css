@@ -281,6 +281,7 @@ body {
   list-style:none; 
   padding: 5px 10px;
   color: gray;
+  cursor: pointer;
 }
 
 .bricker ul li.active {
