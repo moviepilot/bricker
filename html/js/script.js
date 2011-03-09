@@ -14,15 +14,20 @@ var Bricker = {
   }, 
 
   fetchEndpoints: function(prefix, callback) {
-    var url = '../api'+prefix+'/endpoints.txt'; 
+    var url = '../api'+prefix+'/endpoints.txt?'+Math.random(); 
     $.ajax({ url: url
            , data: {}
            , success: function(data, textStatus, jqXHR){
-              callback(data); 
+              callback(Bricker.parseEndpoints(data)); 
              }
            , error: function(jqXHR, textStatus, errorThrown) {}
     });
   }, 
+
+  parseEndpoints: function(data) {
+    var endpoints = data.split("---\n")
+    return endpoints;
+  },
   
   buildFragmentLi: function (prefix, fragment) {
     var li = $('<li>'+fragment.prefix+'</li>'); 
@@ -39,12 +44,15 @@ var Bricker = {
     return ul;
   },
 
-  buildEndpoint: function(prefix, data) {
-   var container = $('<div class="endpoint"/>');
-   container.append($('<h1>'+prefix+'</h1>'));
-   container.append ($('<pre>'+data+'</pre>')); 
-
-   return container;
+  buildEndpoints: function(prefix, endpoints) {
+   var containers = [];
+   $.each(endpoints, function(i, endpoint) {
+     var container = $('<div class="endpoint"/>');
+     container.append($('<h1>'+prefix+'</h1>'));
+     container.append ($('<pre>'+endpoint+'</pre>')); 
+     containers.push(container);
+   });
+   return containers;
   },
 
   displayFragments: function(container, prefix, data) {
@@ -60,9 +68,9 @@ var Bricker = {
   },
 
   displayEndpoints: function(container, prefix, endpoints) {
-   var endpoint = Bricker.buildEndpoint(prefix, endpoints);
-   container.parent().children('.endpoint').remove();
-   container.append(endpoint);
+    var endpoints = Bricker.buildEndpoints(prefix, endpoints);
+    container.parent().children('.endpoint').remove();
+    $.each(endpoints, function(i,e){container.append(e)});
   },
 
   handleFragmentClick: function() {
