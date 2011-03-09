@@ -5,8 +5,18 @@ Response: 200 OK
             , label: "Watch Emma Watson Gallery"
             , target_url: "/user/ab3b54/container/23536"
             },
-{ id: "ac87bc2143b"
+            { id: "ac87bc2143b"
             , label: "Rate all HP Movies"
             , target_url: "/user/ab3b54/container/23537"
             } ]
 }
+
+---
+GET
+{ "exit_url": "/containers/1c033/exits"
+, "exits":[ {"label":"Button - Transformers 3 Trailer"
+            ,"target_url":"/containers/1c031/users/1"
+            ,"id":"1c033e01"}
+          ]
+,"content_type":"trailer"
+,"content_url":"/contents/1c033"}

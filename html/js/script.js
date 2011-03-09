@@ -9,7 +9,9 @@ var Bricker = {
            , success: function(data, textStatus, jqXHR){
               callback(data); 
              }
-           , error: function(jqXHR, textStatus, errorThrown) {}
+           , error: function(jqXHR, textStatus, errorThrown) {
+              callback(null); 
+           }
     });
   }, 
 
@@ -20,11 +22,14 @@ var Bricker = {
            , success: function(data, textStatus, jqXHR){
               callback(Bricker.parseEndpoints(data)); 
              }
-           , error: function(jqXHR, textStatus, errorThrown) {}
+           , error: function(jqXHR, textStatus, errorThrown) {
+              callback([]);       
+           }
     });
   }, 
 
   parseEndpoints: function(data) {
+    if(data.length<1) return;
     var endpoints = data.split("---\n")
     return endpoints;
   },
@@ -60,11 +65,8 @@ var Bricker = {
   parseEndpoint: function(text) {
     var endpoint = {};                
     var lines = text.split("\n");
-    
     endpoint.method = lines.splice(0,1);
     endpoint.example = lines.join('\n');
-
-
     return endpoint;
   },
 
@@ -81,6 +83,7 @@ var Bricker = {
   },
 
   displayEndpoints: function(container, prefix, endpoints) {
+    console.log(endpoints)    
     var endpoints = Bricker.buildEndpoints(prefix, endpoints);
     container.parent().children('.endpoint').remove();
     $.each(endpoints, function(i,e){container.append(e)});
