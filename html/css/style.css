@@ -284,14 +284,14 @@ body {
 }
 
 .active {
-  background-color: #FF5B00;
-  color: white; 
+  border-bottom: 1px solid #FF5B00;
 }
 
 .endpoint {
   padding: 10px;
   margin-left: 10px;
   border: 1px solid #cdcdcd;
-  float: left;
+  clear:both;
+  float:left;
 }
 

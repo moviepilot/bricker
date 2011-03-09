@@ -2,11 +2,10 @@
 
 */
 
-(function( $ ){
-
   var Bricker = {
     fetchFragments: function(prefix, callback) {
-      var url = '../api/'+(prefix||'index')+'.json' 
+      prefix  = prefix=='/' ? '/index' : prefix;
+      var url = '../api'+prefix+'.json' 
       console.log(url);
       $.ajax({ url: url
              , data: {}
@@ -14,16 +13,14 @@
                 callback(data); 
                }
              , error: function(jqXHR, textStatus, errorThrown) {
-               console.log("ERRORS "+url);
-               console.log(errorThrown);
-               callback('err');
+               callback({'endpoint': [textStatus, url].join(' ')});
              }
       });
     }, 
 
     buildFragmentLi: function (prefix, fragment) {
       var li = $('<li>'+fragment.prefix+'</li>'); 
-      li.data('prefix', [prefix, fragment.prefix].join('/'));
+      li.data('prefix', [prefix, fragment.prefix].join(''));
       return li;
     },
 
@@ -40,6 +37,7 @@
 
       // Empty out
       container.children().remove();
+      container.parent().children('.endpoint').remove();
 
       // Build another list or display documentation
       if(data.fragments instanceof Array) {
@@ -52,9 +50,20 @@
       if (data.endpoint) {
         container.append($('<pre class="endpoint">'+data.endpoint+'</pre>'));
       }
+    },
+
+    handleFragmentClick: function() {
+      var element = $(this);
+      var parent  = element.parent().parent();
+      element.parent().children().removeClass('active');
+      element.addClass('active');
+      parent.contents('div').bricker(element.data('prefix'));
+                         
     }
   };
 
+
+(function( $ ){
   $.fn.bricker = function( prefix ) {  
     var container = $(this);
     Bricker.fetchFragments(prefix, function(f) {
@@ -67,14 +76,8 @@
 
 $(document).ready(function(){
 
-  $('#main').bricker('');
-  $('ul.fragments li').live('click', function() {
-    var element = $(this);
-    var parent  = element.parent().parent();
-    element.parent().children().removeClass('active');
-    element.addClass('active');
-    parent.contents('div').bricker(element.data('prefix'));
-  });
+  $('#main').bricker('/');
+  $('ul.fragments li').live('click', Bricker.handleFragmentClick);
 
 });
 
