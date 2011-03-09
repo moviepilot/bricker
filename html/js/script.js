@@ -1,66 +1,71 @@
-/* Author: 
 
-*/
+var Bricker = {
 
-  var Bricker = {
-    fetchFragments: function(prefix, callback) {
-      prefix  = prefix=='/' ? '/index' : prefix;
-      var url = '../api'+prefix+'.json' 
-      console.log(url);
-      $.ajax({ url: url
-             , data: {}
-             , success: function(data, textStatus, jqXHR){
-                callback(data); 
-               }
-             , error: function(jqXHR, textStatus, errorThrown) {
-               callback({'endpoint': [textStatus, url].join(' ')});
+  fetchFragments: function(prefix, callback) {
+    prefix  = prefix == '' ? '/index' : prefix;
+    var url = '../api'+prefix+'.json' 
+    console.log(url);
+    $.ajax({ url: url
+           , data: {}
+           , success: function(data, textStatus, jqXHR){
+              callback(data); 
              }
-      });
-    }, 
+           , error: function(jqXHR, textStatus, errorThrown) {
+             callback({'endpoint': [textStatus, url].join(' ')});
+           }
+    });
+  }, 
 
-    buildFragmentLi: function (prefix, fragment) {
-      var li = $('<li>'+fragment.prefix+'</li>'); 
-      li.data('prefix', [prefix, fragment.prefix].join(''));
-      return li;
-    },
+  buildFragmentLi: function (prefix, fragment) {
+    var li = $('<li>'+fragment.prefix+'</li>'); 
+    li.data('prefix', [prefix, fragment.prefix].join(''));
+    return li;
+  },
 
-    buildFragmentList: function(prefix, fragments) {
-      var ul = $('<ul class="fragments" />');
-      $.each(fragments,function(i,f){
-        var li = Bricker.buildFragmentLi(prefix, f);
-        ul.append(li); 
-      });
-      return ul;
-    },
+  buildFragmentList: function(prefix, fragments) {
+    var ul = $('<ul class="fragments" />');
+    $.each(fragments,function(i,f){
+      var li = Bricker.buildFragmentLi(prefix, f);
+      ul.append(li); 
+    });
+    return ul;
+  },
 
-    displayFragments: function(container, prefix, data) {
+  buildEndpoint: function(prefix, data) {
+   var container = $('<div class="endpoint"/>');
+   container.append($('<h1>'+prefix+'</h1>'));
+   container.append ($('<pre>'+data.endpoint+'</pre>')); 
+  
+   return container;
+  },
 
-      // Empty out
-      container.children().remove();
-      container.parent().children('.endpoint').remove();
+  displayFragments: function(container, prefix, data) {
 
-      // Build another list or display documentation
-      if(data.fragments instanceof Array) {
-        var ul = Bricker.buildFragmentList(prefix, data.fragments);
-        container.append(ul); 
-        container.append($('<div class="bricker"></div>'));
-      }
+    // Empty out
+    container.children().remove();
+    container.parent().children('.endpoint').remove();
 
-      // Display this endpoint
-      if (data.endpoint) {
-        container.append($('<pre class="endpoint">'+data.endpoint+'</pre>'));
-      }
-    },
-
-    handleFragmentClick: function() {
-      var element = $(this);
-      var parent  = element.parent().parent();
-      element.parent().children().removeClass('active');
-      element.addClass('active');
-      parent.contents('div').bricker(element.data('prefix'));
-                         
+    // Build another list or display documentation
+    if(data.fragments instanceof Array) {
+      var ul = Bricker.buildFragmentList(prefix, data.fragments);
+      container.append(ul); 
+      container.append($('<div class="bricker"></div>'));
     }
-  };
+
+    // Display this endpoint
+    if (data.endpoint) {
+      container.append(Bricker.buildEndpoint(prefix, data));
+    }
+  },
+
+  handleFragmentClick: function() {
+    var element = $(this);
+    var parent  = element.parent().parent();
+    element.parent().children().removeClass('active');
+    element.addClass('active');
+    parent.contents('div').bricker(element.data('prefix'));
+  }
+};
 
 
 (function( $ ){
@@ -75,27 +80,6 @@
 
 
 $(document).ready(function(){
-
-  $('#main').bricker('/');
+  $('#main').bricker('');
   $('ul.fragments li').live('click', Bricker.handleFragmentClick);
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
