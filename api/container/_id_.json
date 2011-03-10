@@ -1,6 +1,0 @@
-{
-  "fragments": [ {"prefix": "/users/_id_"  } 
-               , {"prefix": "/exits/_id_"  } 
-               , {"prefix": "/fooz"        }
-               ]
-}
