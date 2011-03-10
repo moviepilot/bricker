@@ -264,6 +264,10 @@ body {
   font-family: Monaco, Courier New;
 }
 
+#main {
+  width:100%;
+}
+
 .bricker {
   width: 100%;
   padding:0;
@@ -295,9 +299,26 @@ body {
 
 .endpoint {
   padding: 10px;
-  margin-top: 20px;
+  margin: 10px;
   border: 1px solid #cdcdcd;
-  clear:both;
   float:left;
+  width:400px;
 }
 
+.example {
+  line-height: 1.5em;
+}
+
+em {
+  color:black;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+header {
+  background-color: gray;
+  color: white;
+  padding: 10px;
+}

@@ -1,0 +1,7 @@
+POST
+{
+	"user": 123,
+	"exit": "/exits/ac87bc2143a"
+	"some": "value"
+}
+Response: 201 Created

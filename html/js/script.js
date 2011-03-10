@@ -28,14 +28,19 @@ var Bricker = {
     });
   }, 
 
+  prefixToId: function(prefix) {
+    return prefix.replace("/", "-");
+  },
+
   parseEndpoints: function(data) {
-    if(data.length<1) return;
+    if(!data) return;
     var endpoints = data.split("---\n")
     return endpoints;
   },
   
   buildFragmentLi: function (prefix, fragment) {
-    var li = $('<li>'+fragment.prefix+'</li>'); 
+    var id = Bricker.prefixToId(prefix); 
+    var li = $('<li id="'+id+'">'+fragment.prefix+'</li>');
     li.data('prefix', [prefix, fragment.prefix].join(''));
     return li;
   },
@@ -52,11 +57,12 @@ var Bricker = {
   buildEndpoints: function(prefix, endpoints) {
    var containers = [];
    $.each(endpoints, function(i, text) {
-     var url = prefix.replace(/_id_$/, i+1).replace(/_id_/g, 123);
+     var id = "<span class='highlight'>"+(i+1)+"</span>";
+     var url = prefix.replace(/_id_$/, id).replace(/_id_/g, 123);
      var endpoint = Bricker.parseEndpoint(text);
      var container = $('<div class="endpoint"/>');
-     container.append($('<h1>'+endpoint.method+' '+url+'</h1>'));
-     container.append ($('<pre>'+endpoint.example+'</pre>')); 
+     container.append($('<h1><span class="highlight">'+endpoint.method+'</span> '+url+'</h1>'));
+     container.append ($('<div class="example">'+endpoint.example+'</div>')); 
      containers.push(container);
    });
    return containers;
@@ -66,7 +72,9 @@ var Bricker = {
     var endpoint = {};                
     var lines = text.split("\n");
     endpoint.method = lines.splice(0,1);
-    endpoint.example = lines.join('\n');
+    endpoint.example = lines.join('<br/>');
+    endpoint.example = endpoint.example.replace(/[\s]+/, '&nbsp;').replace(/([\w"]+)[ ]*:/g, "<em>$1</em>");
+    console.log(endpoint.example);
     return endpoint;
   },
 
@@ -83,9 +91,11 @@ var Bricker = {
   },
 
   displayEndpoints: function(container, prefix, endpoints) {
-    console.log(endpoints)    
     var endpoints = Bricker.buildEndpoints(prefix, endpoints);
-    container.parent().children('.endpoint').remove();
+    var checked = $('#stack-cards');
+    if (!checked || checked.attr('checked')) {
+      container.parent().children('.endpoint').remove();
+    }
     $.each(endpoints, function(i,e){container.append(e)});
   },
 
