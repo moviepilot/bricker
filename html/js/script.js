@@ -59,10 +59,10 @@ var Bricker = {
    $.each(endpoints, function(i, text) {
      var id = "<span class='highlight'>"+(i+1)+"</span>";
      var url = prefix.replace(/_id_$/, id).replace(/_id_/g, 123);
-     var endpoint = Bricker.parseEndpoint(text);
+     var endpoint = Endpoint.parse(text);
      var container = $('<div class="endpoint"/>');
      container.append($('<h1><span class="highlight">'+endpoint.method+'</span> '+url+'</h1>'));
-     container.append ($('<div class="example">'+endpoint.example+'</div>')); 
+     container.append (endpoint.example); 
      containers.push(container);
    });
    return containers;
@@ -72,10 +72,7 @@ var Bricker = {
     var endpoint = {};                
     var lines = text.split("\n");
     endpoint.method = lines.splice(0,1);
-    endpoint.example = lines.join("<br/>\n")
-                            .replace(/[^\w^"]*([\w"]+)[ ]*:[ ]+/g, function(match, first) {
-                              return match.replace(first, "<em>"+first+"</em>" ) })
-                            .replace(/ /g, "&nbsp;");
+    endpoint.example = lines.join("\n");
     return endpoint;
   },
 
@@ -123,6 +120,50 @@ var Bricker = {
 
 })(jQuery);
 
+var Endpoint = {
+
+  emphasizeRegExp: /[^\w^"]*([\w"]+)[ ]*:[ ]+/g,
+
+  parse: function(text) {
+    var self = this,
+        endpoint    = {},            
+        lines       = [],
+        annotations = []
+        input       = text.split("\n");
+    var method = input.splice(0,1);
+
+    $.each(input, function(index, line){
+      var parts = self.parseLine(line);
+      lines.push(parts[0]);
+      annotations.push(parts[1]);
+    });
+
+    var res = { method:  method,
+                example: self.toHtml(lines, annotations)};
+    return res;
+  },
+
+  parseLine: function(line) {
+    var components = line.split("#");
+    components[0] = components[0].replace(this.emphasizeRegExp, this.emphasize)
+                                 .replace(/ /g, "&nbsp;");
+    return components;    
+  },
+
+  emphasize: function(match, first) {
+    return match.replace(first, "<em>"+first+"</em>" );
+  },
+
+  toHtml: function(lines, annotations) {
+    var container = $("<table class='example'/>");
+    $.each(lines, function(i, l) {
+      container.append($("<tr><th>"+l+"</th><td>"+(annotations[i]||'')+"</td>")); 
+    });
+    console.log(container);
+    return container;
+  }
+
+};
 
 $(document).ready(function(){
   $('#main').bricker('');

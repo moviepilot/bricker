@@ -302,11 +302,27 @@ body {
   margin: 10px;
   border: 1px solid #cdcdcd;
   float:left;
-  width:400px;
 }
 
 .example {
   line-height: 1.5em;
+}
+
+table.example th {
+  font-weight:normal;
+  text-align:left;
+}
+
+
+table.example tr td {
+  visibility: visible;
+  font-style: italic;
+  color:#CCD6EB;
+  font-family: Georgia;
+}
+
+table.example tr:hover td {
+  color: #778DBD;
 }
 
 em {
