@@ -269,7 +269,6 @@ body {
 }
 
 .bricker {
-  width: 100%;
   padding:0;
   margin:10px;
 }
@@ -301,11 +300,16 @@ body {
   padding: 10px;
   margin: 10px;
   border: 1px solid #cdcdcd;
-  float:left;
+  clear:both;
+  display:block;
 }
 
 .example {
   line-height: 1.5em;
+}
+
+table.example tr {
+  height: 1em;
 }
 
 table.example th {
@@ -319,10 +323,13 @@ table.example tr td {
   font-style: italic;
   color:#CCD6EB;
   font-family: Georgia;
+  width: 25%;
+  overflow:hidden;
 }
 
 table.example tr:hover td {
   color: #778DBD;
+  overflow: visible;
 }
 
 em {
