@@ -72,9 +72,10 @@ var Bricker = {
     var endpoint = {};                
     var lines = text.split("\n");
     endpoint.method = lines.splice(0,1);
-    endpoint.example = lines.join('<br/>');
-    endpoint.example = endpoint.example.replace(/[\s]+/, '&nbsp;').replace(/([\w"]+)[ ]*:/g, "<em>$1</em>");
-    console.log(endpoint.example);
+    endpoint.example = lines.join("<br/>\n")
+                            .replace(/[^\w^"]*([\w"]+)[ ]*:[ ]+/g, function(match, first) {
+                              return match.replace(first, "<em>"+first+"</em>" ) })
+                            .replace(/ /g, "&nbsp;");
     return endpoint;
   },
 
