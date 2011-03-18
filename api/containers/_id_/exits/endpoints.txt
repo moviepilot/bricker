@@ -1,7 +1,11 @@
 POST
-{
-	"user": 123,
-	"exit": "/exits/ac87bc2143a"
-	"some": "value"
+{ "user": 123
+,	"exit": "/exits/ac87bc2143a"         # Post endpoint for tracking
+,	"some": "value"
 }
+
 Response: 201 Created
+
+---
+GET
+{ foo }

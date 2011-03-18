@@ -4,7 +4,7 @@ Response 200 OK
 {   type: "trailer"
 ,   title: "Happy Rotter final theatrical trailer "
 ,   payload: { url: "http://host/video/7456345474.mp4"
-             , autoplay: true
+             , autoplay: true                           # foo bar
              }
 }
 
