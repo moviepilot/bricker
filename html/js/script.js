@@ -29,7 +29,7 @@ var Bricker = {
   }, 
 
   prefixToId: function(prefix) {
-    return prefix.replace("/", "-");
+    return prefix.replace(/\//g, "-");
   },
 
   parseEndpoints: function(data) {
@@ -60,8 +60,8 @@ var Bricker = {
      var id = "<span class='highlight'>"+(i+1)+"</span>";
      var url = prefix.replace(/_id_$/, id).replace(/_id_/g, 123);
      var endpoint = Endpoint.parse(text);
-     var container = $('<div class="endpoint"/>');
-     container.append($('<h1><span class="highlight">'+endpoint.method+'</span> '+url+'</h1>'));
+     var container = $('<div class="endpoint" id="endpoint'+Bricker.prefixToId(prefix)+'"/>');
+     container.append($('<h1><span class="highlight">&nbsp;'+endpoint.method+'&nbsp;</span> '+url+'</h1>'));
      container.append (endpoint.example); 
      containers.push(container);
    });
@@ -90,14 +90,16 @@ var Bricker = {
 
   displayEndpoints: function(container, prefix, endpoints) {
     var endpoints = Bricker.buildEndpoints(prefix, endpoints);
-    var checked = $('#stack-cards');
-    if (!checked || !checked.attr('checked')) {
-      console.log("unstacked");
+    var checked  = $('#stack-cards');
+    if (!checked.attr('checked')) {
       container.children('.endpoint').remove();
-    } else {
-      console.log("stacked");
     }
-    $.each(endpoints, function(i,e){container.append(e)});
+
+    // only append if it does not exist already
+    var existing = $('#endpoint'+Bricker.prefixToId(prefix));
+    if (existing.length == 0) {
+      $.each(endpoints, function(i,e){container.append(e)});
+    }
   },
 
   handleFragmentClick: function() {
