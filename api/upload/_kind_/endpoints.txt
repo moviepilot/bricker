@@ -1,0 +1,19 @@
+POST
+
+{ "schema": {"type":"Movie"
+            ,"columns": [{"label":"id","datatype":"integer"}
+                        ,{"label":"title","datatype":"string"}
+                        ,{"label":"original_title","datatype":"string"}]
+            ,"start_at":0}
+,"content":[["3000001","Shadow und der Fluch des Khan","The Shadow"]
+           ,["3000002","Speed","Speed"]
+           ,["3000003","Naked in New York","Naked in New York"]
+           ,["3000004","The End of Eternity","The End of Eternity"]]
+}
+
+RESPONSE
+
+---
+POST /upload/edges
+
+

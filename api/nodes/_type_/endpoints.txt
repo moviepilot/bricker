@@ -1,0 +1,13 @@
+POST
+
+{ title: "Matrix"
+, production_year: 1999 
+}
+
+Response: 201 Created
+
+{ id: "a3efdd48c8329"
+, type: "Movie"                       # What you used as type in the url
+, payload: { title: "Matrix"
+           , production_year: 1999 }
+}

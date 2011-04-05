@@ -1,0 +1,14 @@
+GET
+
+Response: 200 OK
+
+[ { "id": 2
+  , "type": "Movie"
+  , "payload": { "title": "Matrix"
+               , "production_year": 1999 }
+]
+
+---
+GET
+
+Response: 204 No Content

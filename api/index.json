@@ -1,6 +1,7 @@
 {
-  "fragments": [ {"prefix": "/containers/_id_"  } 
-               , {"prefix": "/contents/_id_"} 
-               , {"prefix": "/something" } 
+  "fragments": [ {"prefix": "/node/_id_"     } 
+               , {"prefix": "/nodes/_type_"  }
+               , {"prefix": "/search"        } 
+               , {"prefix": "/upload/_kind_" }
                ]
 }
