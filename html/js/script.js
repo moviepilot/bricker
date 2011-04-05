@@ -91,8 +91,11 @@ var Bricker = {
   displayEndpoints: function(container, prefix, endpoints) {
     var endpoints = Bricker.buildEndpoints(prefix, endpoints);
     var checked = $('#stack-cards');
-    if (!checked || checked.attr('checked')) {
-      container.parent().children('.endpoint').remove();
+    if (!checked || !checked.attr('checked')) {
+      console.log("unstacked");
+      container.children('.endpoint').remove();
+    } else {
+      console.log("stacked");
     }
     $.each(endpoints, function(i,e){container.append(e)});
   },
@@ -113,7 +116,7 @@ var Bricker = {
     Bricker.fetchFragments(prefix, function(f) {
       Bricker.displayFragments(container, prefix, f); 
       Bricker.fetchEndpoints(prefix, function(e) {
-        Bricker.displayEndpoints(container, prefix, e);
+        Bricker.displayEndpoints($('#fragments'), prefix, e);
       });
     });
   }
@@ -159,7 +162,6 @@ var Endpoint = {
     $.each(lines, function(i, l) {
       container.append($("<tr><th>"+l+"</th><td>"+(annotations[i]||'')+"</td>")); 
     });
-    console.log(container);
     return container;
   }
 
