@@ -262,11 +262,20 @@ a:hover { color: #036; }
 
 body {
   font-family: Monaco, Courier New;
+  background-color: #eeeeee;
 }
 
 #main {
   width:100%;
+  margin-bottom:40px;
 }
+
+#navi {
+  margin:10px 10px;
+  width: 100%;
+  display:block;
+  clear:both;
+}  
 
 .bricker {
   padding:0;
@@ -293,23 +302,31 @@ body {
 
 .endpoint h1 {
   margin: 0;
-  border-bottom: 1px solid gray;
+  padding: 10px;
+  border: 1px dotted gray;
+  background-color: white;
+
 }
 
 .endpoint {
   padding: 10px;
-  margin: 10px;
-  border: 1px solid #cdcdcd;
+  margin: 30px 5px;
   clear:both;
   display:block;
 }
 
 .example {
   line-height: 1.5em;
+  margin: 20px;
+  color: #444444;
+  border: 1px solid #dddddd;
+  background-color: white;
+  padding:20px;
 }
 
 table.example tr {
   height: 1em;
+  padding:5px;
 }
 
 table.example th {

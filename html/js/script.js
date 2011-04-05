@@ -115,7 +115,7 @@ var Bricker = {
 (function( $ ){
   $.fn.bricker = function( prefix ) {  
     var container = $(this);
-    Bricker.fetchFragments(prefix, function(f) {
+    Bricker.fetchFragments(prefix,function(f) {
       Bricker.displayFragments(container, prefix, f); 
       Bricker.fetchEndpoints(prefix, function(e) {
         Bricker.displayEndpoints($('#fragments'), prefix, e);
@@ -170,6 +170,7 @@ var Endpoint = {
 };
 
 $(document).ready(function(){
-  $('#main').bricker('');
+  Bricker['apiBase'] = 'http://sheldon.labs.mvp.to:2311';
+  $('#navi').bricker('');
   $('ul.fragments li').live('click', Bricker.handleFragmentClick);
 });
