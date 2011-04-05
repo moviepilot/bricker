@@ -324,19 +324,8 @@ body {
   padding:20px;
 }
 
-table.example tr {
-  height: 1em;
-  padding:5px;
-}
-
-table.example th {
-  font-weight:normal;
-  text-align:left;
-}
-
-
-table.example tr td {
-  visibility: visible;
+div.annotation {
+  visibility: hidden;
   font-style: italic;
   color:#CCD6EB;
   font-family: Georgia;

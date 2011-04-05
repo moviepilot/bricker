@@ -160,9 +160,9 @@ var Endpoint = {
   },
 
   toHtml: function(lines, annotations) {
-    var container = $("<table class='example'/>");
+    var container = $("<div class='example'/>");
     $.each(lines, function(i, l) {
-      container.append($("<tr><th>"+l+"</th><td>"+(annotations[i]||'')+"</td>")); 
+      container.append($("<div class='line'>"+l+"<div class='annotation'>"+(annotations[i]||'')+"</div>"));
     });
     return container;
   }
