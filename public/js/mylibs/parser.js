@@ -40,22 +40,28 @@ var exParser = {
   parse: function(lines) {
     this.lines = lines;
     this.i     = 0;
-    this.data  = {};
+    this.data  = { request: {}, response: {}, description: ''};
+    this.current = null;
 
-    // varParser.parse(this.lines, this.i, 'RESPONSE');
     return this.parseLine();
   },
 
   parseLine: function() {
-    if(match = this.lines[this.i].match(/^#[ ]*(.*)/)) {
-      this.data.description += match[2];
+    if(match = this.lines[this.i].match(/^##?[ ]*(.*)/)) {
+      this.data.description += match[1]+" ";
     } else if (match = this.lines[this.i].match(/^([A-Z]{3,6})([:]?[ ]+)(.*)$/)) {
      this.data.method = match[1]; 
      this.data.uri    = match[3];
-    } else {
-      var vars = varParser.parse(this.lines, this.i, 'Response'); 
+    } else if () {
+
+    } else if (this.current) {
+      var stop = this.current == 'Request' ? null : 'Response'
+      var vars = varParser.parse(this.lines, this.i, stop); 
+      sys.debug("jumping from "+this.i+" to "+(vars[0]+1));
       this.i = vars[0]++;
-      this.data.foo = vars[1];
+      sys.debug("setting "+this.current+" to");
+      this.data[this.current] = vars[1];
+      sys.debug(sys.inspect(vars));
     }
     return this.advance();
   },
@@ -83,8 +89,9 @@ var varParser = {
       this.i       = start;
       this.stop    = stopword;
       res = this.parseLine();
-      sys.debug("varParser extracted:");
-      sys.debug(sys.inspect(res));
+      // sys.debug("varParser extracted:");
+      // sys.debug(sys.inspect(res));
+      sys.debug("varparsing");
       return res;
     },
 
