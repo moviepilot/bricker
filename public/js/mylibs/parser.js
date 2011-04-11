@@ -1,10 +1,15 @@
 var sys = require('sys');
 
-var lines = ['POST /nodes/movies'
+var lines = ['##'
+,'# Creating a new movie node, all request '
+,'# params are good, it will succeeed!'
+,'# Watch out to not forget foo bar blah'
+,''
+,'POST /nodes/movies'
 ,''
 ,'Params:'
 ,'  unsafe:   true'
-,'  some_tag: 18'
+,'  some_tag: 15'
 ,''
 ,'Headers:'
 ,'  Content-type: application/json'
@@ -15,28 +20,76 @@ var lines = ['POST /nodes/movies'
 ,'    , production_year: 1999         # Contains a NUMBA '
 ,'    }'
 ,''
-,'RESPONSE:'
+,'Response: 201 Created'
+,''
+,'Headers:'
+,'  Content-type: application/json'
+,''
 ,'Body:'
+,'    { id: "a3efdd48c8329"'
+,'    , type: "Movie"  '
+,'    , payload: { title: "Matrix"'
+,'               , production_year: 1999 }'
+,'    }'
 ,''
-,'    { title: "NONONONONONO"               # We only store original ones'
-,'    , production_year: 1999         # Contains a NUMBA '
-,''
-,''];
+];
 
 
+var exParser = {
+
+  parse: function(lines) {
+    this.lines = lines;
+    this.i     = 0;
+    this.data  = {};
+
+    // varParser.parse(this.lines, this.i, 'RESPONSE');
+    return this.parseLine();
+  },
+
+  parseLine: function() {
+    if(match = this.lines[this.i].match(/^#[ ]*(.*)/)) {
+      this.data.description += match[2];
+    } else if (match = this.lines[this.i].match(/^([A-Z]{3,6})([:]?[ ]+)(.*)$/)) {
+     this.data.method = match[1]; 
+     this.data.uri    = match[3];
+    } else {
+      var vars = varParser.parse(this.lines, this.i, 'Response'); 
+      this.i = vars[0]++;
+      this.data.foo = vars[1];
+    }
+    return this.advance();
+  },
+
+  advance: function() {
+    this.i++;
+    if(this.lines.length > this.i) {
+      return this.parseLine();
+    } else {
+      return this.result();
+    }
+  },
+
+  result: function() {
+    return this.data;
+  }
+  
+};
 
 var varParser = {
-    parse: function(lines, stop) {
+    parse: function(lines, start, stopword) {
       this.lines   = lines;
       this.current = null;
       this.data    = {};
-      this.i       = 0;
-      this.stop    = stop;
-      return this.parseLine();
+      this.i       = start;
+      this.stop    = stopword;
+      res = this.parseLine();
+      sys.debug("varParser extracted:");
+      sys.debug(sys.inspect(res));
+      return res;
     },
 
     parseLine: function() {
-      if (this.stop && this.lines[this.i].substr(0, this.stop.length) == this.stop) {
+      if (this.stop && this.lines[this.i].substr(0, this.stop.length).toLowerCase() == this.stop.toLowerCase()) {
         return this.result();  
       } else if( match = this.lines[this.i].match(/^([\w]+)\: *([^ ]?.*)$/) ) {
         this.parseSectionHeader(match);
@@ -74,5 +127,5 @@ var varParser = {
 };
         
     
-sys.debug(sys.inspect(varParser.parse(lines, 'RESPONSE')));
+sys.debug(sys.inspect(exParser.parse(lines)));
 
