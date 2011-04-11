@@ -51,7 +51,7 @@ var exParser = {
 
   parseLine: function() {
     if(match = this.lines[this.i].match(/^##?[ ]*(.*)/)) {
-      this.data.description += match[1]+" ";
+      this.data.description += match[1]+"\n";
     } else if (match = this.lines[this.i].match(/^([A-Z]{3,6})([:]?[ ]+)(.*)$/)) {
       this.data.method = match[1]; 
       this.data.uri    = match[3];
