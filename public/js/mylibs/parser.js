@@ -100,6 +100,8 @@ var varParser = {
         return [this.i-1, this.data];
       } else if( match = this.lines[this.i].match(/^([\w]+)\: *(.*)$/) ) {
         this.parseSectionHeader(match);
+      } else if(match = this.lines[this.i].match(/^    (.*)$/)) { 
+        this.parseSample(match);
       } else if( match = this.lines[this.i].match(/^[ ]+([\w-]+)\: *([^ ]?.*)$/)  ) {
         this.parseValue(match);
       } else {
@@ -114,6 +116,11 @@ var varParser = {
     parseValue: function(match) {
       this.data[this.current] =  this.data[this.current] || {};
       this.data[this.current][match[1]] = match[2]
+    },
+
+    parseSample: function(match){
+      this.data[this.current] = this.data[this.current] || "";
+      this.data[this.current] += match[1] + "\n";
     },
         
     advance: function() {
