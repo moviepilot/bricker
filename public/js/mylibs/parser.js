@@ -1,5 +1,4 @@
 var sys = require('sys');
-
 var lines = ['##'
 ,'# Creating a new movie node, all request '
 ,'# params are good, it will succeeed!'
@@ -7,14 +6,14 @@ var lines = ['##'
 ,''
 ,'POST /nodes/movies'
 ,''
-,'Params:'
+,'Requestparams:'
 ,'  unsafe:   true'
 ,'  some_tag: 15'
 ,''
-,'Headers:'
+,'Requestheaders:'
 ,'  Content-type: application/json'
 ,''
-,'Body:'
+,'Requestbody:'
 ,''
 ,'    { title: "Matrix"               # We only store original ones'
 ,'    , production_year: 1999         # Contains a NUMBA '
@@ -22,10 +21,10 @@ var lines = ['##'
 ,''
 ,'Response: 201 Created'
 ,''
-,'Headers:'
+,'Responseheaders:'
 ,'  Content-type: application/json'
 ,''
-,'Body:'
+,'Responsebody:'
 ,'    { id: "a3efdd48c8329"'
 ,'    , type: "Movie"  '
 ,'    , payload: { title: "Matrix"'
@@ -50,18 +49,20 @@ var exParser = {
     if(match = this.lines[this.i].match(/^##?[ ]*(.*)/)) {
       this.data.description += match[1]+" ";
     } else if (match = this.lines[this.i].match(/^([A-Z]{3,6})([:]?[ ]+)(.*)$/)) {
-     this.data.method = match[1]; 
-     this.data.uri    = match[3];
-     this.current = "request"
+      sys.log("METHOD "+this.lines[this.i]);
+      this.data.method = match[1]; 
+      this.data.uri    = match[3];
+      this.current = "request";
     } else if (this.lines[this.i].substr(0,8).toLowerCase() == "response") {
       this.current = "response"
+      // TODO parse response code
+      this.i++;
     } else if (this.current) {
-      var stop = this.current == 'request' ? null : 'Response'
+      var stop = this.current == 'request' ? 'Response' : null;
       var vars = varParser.parse(this.lines, this.i, stop); 
       this.i = vars[0]++;
       this.data[this.current] = vars[1];
     }
-    sys.log("line "+this.i+" in "+this.current);
     return this.advance();
   },
 
@@ -87,21 +88,24 @@ var varParser = {
       this.data    = {};
       this.i       = start;
       this.stop    = stopword;
-      res = this.parseLine();
-      // sys.debug("varParser extracted:");
-      // sys.debug(sys.inspect(res));
-      sys.debug("varparsing");
-      return res;
+      ret = this.parseLine();
+      sys.log("from "+start+" until "+this.i+" stopping at "+stopword);
+      sys.log(sys.inspect(ret));
+      return ret;
     },
 
     parseLine: function() {
       if (this.stop && this.lines[this.i].substr(0, this.stop.length).toLowerCase() == this.stop.toLowerCase()) {
-        return this.result();  
-      } else if( match = this.lines[this.i].match(/^([\w]+)\: *([^ ]?.*)$/) ) {
+        return [this.i-1, this.data];
+      } else if( match = this.lines[this.i].match(/^([\w]+)\: *(.*)$/) ) {
+        sys.log("header" +this.lines[this.i]);
         this.parseSectionHeader(match);
-      } else if( match = this.lines[this.i].match(/^[ ]+([\w]+)\: *([^ ]?.*)$/)  ) {
+      } else if( match = this.lines[this.i].match(/^[ ]+([\w-]+)\: *([^ ]?.*)$/)  ) {
+        sys.log("val" +this.lines[this.i]);
         this.parseValue(match);
-      } 
+      } else {
+        sys.log("ignoring "+this.lines[this.i]+" (stopword "+this.stop+")");
+      }
       return this.advance();
      },
 
