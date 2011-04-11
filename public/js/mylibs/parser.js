@@ -4,7 +4,7 @@ var lines = ['POST /nodes/movies'
 ,''
 ,'Params:'
 ,'  unsafe:   true'
-,'  some_tag: 15'
+,'  some_tag: 18'
 ,''
 ,'Headers:'
 ,'  Content-type: application/json'
@@ -15,29 +15,35 @@ var lines = ['POST /nodes/movies'
 ,'    , production_year: 1999         # Contains a NUMBA '
 ,'    }'
 ,''
+,'RESPONSE:'
+,'Body:'
 ,''
+,'    { title: "NONONONONONO"               # We only store original ones'
+,'    , production_year: 1999         # Contains a NUMBA '
 ,''
 ,''];
 
 
 
 var varParser = {
-    parse: function(lines) {
-        this.lines = lines;
-        this.current = null;
-        this.data = {};
-        this.i = 0;
-        this.parseLine();
+    parse: function(lines, stop) {
+      this.lines   = lines;
+      this.current = null;
+      this.data    = {};
+      this.i       = 0;
+      this.stop    = stop;
+      return this.parseLine();
     },
 
     parseLine: function() {
-      if( match = this.lines[this.i].match(/^([\w]+)\: *([^ ]?.*)$/) ) {
+      if (this.stop && this.lines[this.i].substr(0, this.stop.length) == this.stop) {
+        return this.result();  
+      } else if( match = this.lines[this.i].match(/^([\w]+)\: *([^ ]?.*)$/) ) {
         this.parseSectionHeader(match);
       } else if( match = this.lines[this.i].match(/^[ ]+([\w]+)\: *([^ ]?.*)$/)  ) {
         this.parseValue(match);
-      } else {
-      }
-      this.advance();
+      } 
+      return this.advance();
      },
 
     parseSectionHeader: function(match) {
@@ -52,17 +58,21 @@ var varParser = {
         this.data[this.current][match[1]] = match[2]
     },
         
-    advance: function(from) {
+    advance: function() {
         this.i++;
         if(this.lines.length > this.i) {
-          this.parseLine();
+          return this.parseLine();
         } else {
-          sys.debug("done from "+from+", "+this.i+">="+this.lines.length);
-          sys.debug(sys.inspect(this.data));
+          return this.result();
         }
+    },
+
+    result: function() {
+      return [this.i, this.data];
     }
+
 };
         
     
-varParser.parse(lines);
+sys.debug(sys.inspect(varParser.parse(lines, 'RESPONSE')));
 
