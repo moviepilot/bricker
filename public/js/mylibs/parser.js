@@ -1,53 +1,68 @@
-var code = $("#example").html()
-var template = $("#template").html()
-    
-var view = {
-    request: { params: [ {"key": "foo", "value": "bar"},
-                          {"key": "bar", "value": "false"} ] },
-    response: { body: "{title: 'Matrix'}"}
-};
+var sys = require('sys');
 
-var REP = {
+var lines = ['POST /nodes/movies'
+,''
+,'Params:'
+,'  unsafe:   true'
+,'  some_tag: 15'
+,''
+,'Headers:'
+,'  Content-type: application/json'
+,''
+,'Body:'
+,''
+,'    { title: "Matrix"               # We only store original ones'
+,'    , production_year: 1999         # Contains a NUMBA '
+,'    }'
+,''
+,''
+,''
+,''];
 
-    
-}
-    
+
+
 var varParser = {
     parse: function(lines) {
-        self.lines = lines;
-        self.current = null;
-        self.data = {};
-        self.i = 0;
-        self.parseLine();
+        this.lines = lines;
+        this.current = null;
+        this.data = {};
+        this.i = 0;
+        this.parseLine();
     },
 
     parseLine: function() {
-        if( p = self.lines[self.i].match(/^([\w]+)\: *([^ ]?.*)$/) ) {
-            self.parseSectionHeader(p);
-            self.parseLine(lines, i++);
-        } elseif( self.lines[self.i].match(/^[ ]+([\w]+)\: *([^ ]?.*)$/)  ) {
-            self.data[current][match[1]] = match[2]
+      if( match = this.lines[this.i].match(/^([\w]+)\: *([^ ]?.*)$/) ) {
+        this.parseSectionHeader(match);
+      } else if( match = this.lines[this.i].match(/^[ ]+([\w]+)\: *([^ ]?.*)$/)  ) {
+        this.parseValue(match);
+      } else {
+      }
+      this.advance();
+     },
+
+    parseSectionHeader: function(match) {
+        this.current = match[1].toLowerCase();
+        if(match[1] == 'Response') {
+            this.data.response = match[2];
         }
     },
 
-    parseSectionHeader: function(match) {
-        self.current = match[1].toLowerCase();
-        if(match[1] == 'Response') {
-            self.data.response = match[2];
-        }
+    parseValue: function(match) {
+        this.data[this.current] =  this.data[this.current] || {};
+        this.data[this.current][match[1]] = match[2]
     },
         
-    advance: function() {
-        self.i++;
-        if(self.lines.length > self.i) {
-            self.parseLine;
+    advance: function(from) {
+        this.i++;
+        if(this.lines.length > this.i) {
+          this.parseLine();
+        } else {
+          sys.debug("done from "+from+", "+this.i+">="+this.lines.length);
+          sys.debug(sys.inspect(this.data));
         }
     }
 };
         
     
-   
-var html = Mustache.to_html(template, view);
-$("#fancy").append(html);
-
+varParser.parse(lines);
 
