@@ -52,17 +52,16 @@ var exParser = {
     } else if (match = this.lines[this.i].match(/^([A-Z]{3,6})([:]?[ ]+)(.*)$/)) {
      this.data.method = match[1]; 
      this.data.uri    = match[3];
-    } else if () {
-
+     this.current = "request"
+    } else if (this.lines[this.i].substr(0,8).toLowerCase() == "response") {
+      this.current = "response"
     } else if (this.current) {
-      var stop = this.current == 'Request' ? null : 'Response'
+      var stop = this.current == 'request' ? null : 'Response'
       var vars = varParser.parse(this.lines, this.i, stop); 
-      sys.debug("jumping from "+this.i+" to "+(vars[0]+1));
       this.i = vars[0]++;
-      sys.debug("setting "+this.current+" to");
       this.data[this.current] = vars[1];
-      sys.debug(sys.inspect(vars));
     }
+    sys.log("line "+this.i+" in "+this.current);
     return this.advance();
   },
 
