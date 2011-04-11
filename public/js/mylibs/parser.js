@@ -6,14 +6,14 @@ var lines = ['##'
 ,''
 ,'POST /nodes/movies'
 ,''
-,'Requestparams:'
+,'Params:'
 ,'  unsafe:   true'
 ,'  some_tag: 15'
 ,''
-,'Requestheaders:'
+,'Headers:'
 ,'  Content-type: application/json'
 ,''
-,'Requestbody:'
+,'Body:'
 ,''
 ,'    { title: "Matrix"               # We only store original ones'
 ,'    , production_year: 1999         # Contains a NUMBA '
@@ -21,14 +21,14 @@ var lines = ['##'
 ,''
 ,'Response: 201 Created'
 ,''
-,'Responsheaders:'
+,'Headers:'
 ,'  Content-type: application/json'
 ,''
-,'Responsparams:'
+,'Params:'
 ,'  unsafe:   true'
 ,'  some_tag: 15'
 ,''
-,'Responsbody:'
+,'Body:'
 ,'    { id: "a3efdd48c8329"'
 ,'    , type: "Movie"  '
 ,'    , payload: { title: "Matrix"'
@@ -56,9 +56,9 @@ var exParser = {
       this.data.method = match[1]; 
       this.data.uri    = match[3];
       this.current = "request";
-    } else if (this.lines[this.i].substr(0,8).toLowerCase() == "response") {
-      this.current = "response"
-      // TODO parse response code
+    } else if (match = this.lines[this.i].match(/^Response:[ ]?(.*)$/)) {
+      this.current = "response";
+      this.data['response_code'] = match[1];
       this.i++;
     } else if (this.current) {
       var stop = this.current == 'request' ? 'Response' : null;
