@@ -1,13 +1,33 @@
-POST
+##
+# Creating a new movie node, all request 
+# params are good, it will succeeed!
+# Watch out to not forget foo bar blah
 
-{ title: "Matrix"
-, production_year: 1999 
-}
+POST /nodes/movies
+
+Params:
+  unsafe:   true
+  some_tag: 15
+
+Headers:
+  Content-type: application/json
+
+Body:
+
+    { title: "Matrix"               # We only store original ones
+    , production_year: 1999         # Contains a NUMBA 
+    }
 
 Response: 201 Created
 
-{ id: "a3efdd48c8329"
-, type: "Movie"                       # What you used as type in the url
-, payload: { title: "Matrix"
-           , production_year: 1999 }
-}
+Headers:
+  Content-type: application/json
+
+Body:
+    { id: "a3efdd48c8329"
+    , type: "Movie"  
+    , payload: { title: "Matrix"
+               , production_year: 1999 }
+    }
+
+
