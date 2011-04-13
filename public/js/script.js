@@ -34,7 +34,7 @@ var Bricker = {
 
   parseEndpoints: function(data) {
     if(!data) return;
-    var endpoints = data.split("---\n")
+    var endpoints = data.split("\n##")
     return endpoints;
   },
   
@@ -61,8 +61,7 @@ var Bricker = {
      var url = prefix.replace(/_id_$/, id).replace(/_id_/g, 123);
      var endpoint = Endpoint.parse(text);
      var container = $('<div class="endpoint" id="endpoint'+Bricker.prefixToId(prefix)+'"/>');
-     container.append($('<h1><span class="highlight">&nbsp;'+endpoint.method+'&nbsp;</span> '+url+'</h1>'));
-     container.append (endpoint.example); 
+     container.append (endpoint); 
      containers.push(container);
    });
    return containers;
@@ -143,9 +142,10 @@ var Endpoint = {
       annotations.push(parts[1]);
     });
 
-    var res = { method:  method,
-                example: self.toHtml(lines, annotations)};
-    return res;
+    var parsed = ExampleParser.parse(input);
+
+
+    return this.toHtml(parsed);
   },
 
   parseLine: function(line) {
@@ -159,7 +159,27 @@ var Endpoint = {
     return match.replace(first, "<em>"+first+"</em>" );
   },
 
-  toHtml: function(lines, annotations) {
+  toHtml: function(example) {
+    var container = $("<div/>"); 
+     container.append($('<h1><span class="highlight">&nbsp;'+example.method+'&nbsp;</span> '+example.uri+'</h1>'));
+
+
+     var exampleDiv = $("<div class='example' />"),
+            request = $("<div class='request'><h2>Request</h2></div>"),
+           response = $("<div class='response'><h2>Response</h2></div>"),
+                url = $("<div class='url' />");
+               
+
+    request.append($("<pre class='body'>"+example.request.body+"</pre>"));
+    response.append($("<pre class='body'>"+example.response.body+"</pre>"));
+    url.append("⬇  <a>" +  example.method +example.uri + "</a>");
+
+    exampleDiv.append(request).append(url).append(response);
+    container.append(exampleDiv);
+    return container;
+  },
+
+  exampleToHtml: function(example) {
     var container = $("<div class='example'/>");
     $.each(lines, function(i, l) {
       container.append($("<div class='line'>"+l+"<div class='annotation'>"+(annotations[i]||'')+"</div>"));

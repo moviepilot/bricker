@@ -1,4 +1,4 @@
-var sys = require('sys');
+//var sys = require('sys');
 var lines = ['##'
 ,'# Creating a new movie node, all request '
 ,'# params are good, it will succeeed!'
@@ -38,7 +38,7 @@ var lines = ['##'
 ];
 
 
-var exParser = {
+var ExampleParser = {
 
   parse: function(lines) {
     this.lines = lines;
@@ -151,5 +151,5 @@ var varParser = {
 };
         
     
-sys.log(sys.inspect(exParser.parse(lines)));
+console.log(ExampleParser.parse(lines));
 

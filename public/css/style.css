@@ -324,19 +324,6 @@ body {
   padding:20px;
 }
 
-div.annotation {
-  visibility: hidden;
-  font-style: italic;
-  color:#CCD6EB;
-  font-family: Georgia;
-  width: 25%;
-  overflow:hidden;
-}
-
-table.example tr:hover td {
-  color: #778DBD;
-  overflow: visible;
-}
 
 em {
   color:black;
@@ -351,3 +338,21 @@ header {
   color: white;
   padding: 10px;
 }
+
+.request, .response {
+  border: 1px solid #cdcdcd;
+  background-color: #eeeeee;
+  padding: 10px;
+  margin: 10px;
+}
+
+.url {
+  font-size:3em;  
+  padding:10px;
+  margin:auto;
+}
+
+.url a {
+  font-size: 12pt;
+}
+
