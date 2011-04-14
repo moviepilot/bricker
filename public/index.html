@@ -58,22 +58,20 @@
     <div class="request">
       {{#request}}
         <h2>Request</h2>
-        <h3>Body</h3>
-        <div class="body json">{{body}}</div>
         <h3>Headers</h3>
         {{#headers}}
         <table class="headers">
           <tr><th>{{key}}</th><td>{{value}}</td></tr>
         </table>
         {{/headers}}
+        <h3>Body</h3>
+        <div class="body json">{{body}}</div>
       {{/request}}
     </div>
     <div class="url">➡</div>
     <div class="response">
       <h2>{{response_code}}</h2>
       {{#response}}
-        <h3>Body</h3>
-        <div class="body json">{{body}}</div>
         <h3>Headers</h3>
         {{#headers}}
         <table class="headers">
@@ -82,6 +80,8 @@
           </tr>
         </table>
        {{/headers}}
+        <h3>Body</h3>
+        <div class="body json">{{body}}</div>
       {{/response}}
     </div>
   </div>

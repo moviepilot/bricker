@@ -362,8 +362,8 @@ header {
 
 .example h2 {
   color: white;
-  font-size: 2.8em;
-  letter-spacing: -0.04em;
+  font-size: 3.2em;
+  letter-spacing: -0.08em;
   font-weight:bolder;
   font-family: Georgia;
   color:#cccccc;
@@ -376,10 +376,15 @@ header {
 
 .example h3 {
   padding-top: 13px; 
+  padding-bottom: 5px;
 }
 
 .example th {
   color: grey;
+}
+
+.example th:after {
+  content: ":";
 }
 
 .example td {
