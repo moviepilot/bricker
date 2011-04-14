@@ -59,13 +59,13 @@
       {{#request}}
         <h2>Request</h2>
         <h3>Body</h3>
-        <div class="body">{{body}}</div>
+        <div class="body json">{{body}}</div>
       {{/request}}
     </div>
     <div class="url">➡</div>
     <div class="response">
+      <h2>{{response_code}}</h2>
       {{#response}}
-        <h2>Response</h2>
         <h3>Body</h3>
         <div class="body json">{{body}}</div>
       {{/response}}

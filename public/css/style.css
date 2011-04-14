@@ -346,20 +346,24 @@ header {
   float: left;
 }
 
-.request .body, .response .body {
+.body, .parsedBody {
   border: 1px solid #cdcdcd;
   background-color: #fefefe;
 }
 
+.annotation {
+  display:none;
+}
+
 .example h2 {
   color: white;
-  font-size: 3em;
+  font-size: 2.8em;
   letter-spacing: -0.04em;
   font-weight:bolder;
   font-family: Georgia;
   color:#cccccc;
   text-shadow: -1px -1px 0px #dddddd, 1px 1px 0px #ffffff;
-  
+  padding-bottom:10px;  
 }
 
 

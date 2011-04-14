@@ -166,12 +166,12 @@ var Endpoint = {
 
   bodyToHtml: function(body) {
     var self = this;
-    var container = $("<div class='example'/>");
+    var container = $("<div class='parsedBody'/>");
     $.each(body.split("\n"), function(i, l) {
       var parts = self.parseLine(l); 
       container.append($("<div class='line'>"+parts[0]+"<div class='annotation'>"+(parts[1]||'')+"</div>"));
     });
-    return container.html();
+    return container;
   }
 
 };
@@ -181,3 +181,10 @@ $(document).ready(function(){
   $('#navi').bricker('');
   $('ul.fragments li').live('click', Bricker.handleFragmentClick);
 });
+
+$('.example .body').live('mouseover', function(){
+  var el     = $(this);
+  var parsed = Endpoint.bodyToHtml(el.html());
+  el.replaceWith(parsed);
+});
+

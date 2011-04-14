@@ -18,7 +18,7 @@ Body:
     , production_year: 1999         # Contains a NUMBA 
     }
 
-Response: 201
+Response: 201 Created
 
 Headers:
   Content-type: application/json
@@ -49,7 +49,7 @@ Body:
     , production_year: 1999         # Contains a NUMBA 
     }
 
-Response: 201
+Response: 400 Bad Request
 
 Headers:
   Content-type: application/json
