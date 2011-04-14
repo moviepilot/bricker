@@ -161,7 +161,18 @@ var Endpoint = {
 
   toHtml: function(example) {
     var template = $("#exampleTemplate").html();
+    example.request.headers = this.unkey(example.request.headers);
+    example.response.headers = this.unkey(example.response.headers);
+    console.log(example);
     return Mustache.to_html(template, example);
+  },
+
+  unkey: function(hash){
+    var vals = []; 
+    $.each(hash, function(k,v){
+      vals.push({key: k, value: v}); 
+    }); 
+    return vals;
   },
 
   bodyToHtml: function(body) {

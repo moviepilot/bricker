@@ -349,6 +349,11 @@ header {
 .body, .parsedBody {
   border: 1px solid #cdcdcd;
   background-color: #fefefe;
+  padding: 10px;
+}
+
+.parsedBody em {
+  color: navy;
 }
 
 .annotation {
@@ -363,7 +368,22 @@ header {
   font-family: Georgia;
   color:#cccccc;
   text-shadow: -1px -1px 0px #dddddd, 1px 1px 0px #ffffff;
-  padding-bottom:10px;  
+}
+
+.example h3:after {
+  content: ":";
+}
+
+.example h3 {
+  padding-top: 13px; 
+}
+
+.example th {
+  color: grey;
+}
+
+.example td {
+  padding-left: 10px;
 }
 
 

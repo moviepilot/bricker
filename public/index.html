@@ -60,6 +60,12 @@
         <h2>Request</h2>
         <h3>Body</h3>
         <div class="body json">{{body}}</div>
+        <h3>Headers</h3>
+        {{#headers}}
+        <table class="headers">
+          <tr><th>{{key}}</th><td>{{value}}</td></tr>
+        </table>
+        {{/headers}}
       {{/request}}
     </div>
     <div class="url">➡</div>
@@ -68,6 +74,14 @@
       {{#response}}
         <h3>Body</h3>
         <div class="body json">{{body}}</div>
+        <h3>Headers</h3>
+        {{#headers}}
+        <table class="headers">
+          <tr>
+            <th>{{key}}</th><td>{{value}}</td>
+          </tr>
+        </table>
+       {{/headers}}
       {{/response}}
     </div>
   </div>
