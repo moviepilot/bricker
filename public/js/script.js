@@ -167,12 +167,12 @@ var Endpoint = {
      var exampleDiv = $("<div class='example' />"),
             request = $("<div class='request'><h2>Request</h2></div>"),
            response = $("<div class='response'><h2>Response</h2></div>"),
-                url = $("<div class='url' />");
+                url = $("<div class='url'/>");
                
 
-    request.append($("<pre class='body'>"+example.request.body+"</pre>"));
-    response.append($("<pre class='body'>"+example.response.body+"</pre>"));
-    url.append("⬇  <a>" +  example.method +example.uri + "</a>");
+    request.append($("<h3>Body</h3><pre class='body'>"+example.request.body+"</pre>"));
+    response.append($("<h3>Body</h3><pre class='body'>"+example.response.body+"</pre>"));
+    url.append("<a>" +  example.method +example.uri + "</a>➡");
 
     exampleDiv.append(request).append(url).append(response);
     container.append(exampleDiv);

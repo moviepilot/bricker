@@ -315,7 +315,7 @@ body {
   display:block;
 }
 
-.example {
+.disabledexample {
   line-height: 1.5em;
   margin: 20px;
   color: #444444;
@@ -340,19 +340,27 @@ header {
 }
 
 .request, .response {
-  border: 1px solid #cdcdcd;
-  background-color: #eeeeee;
   padding: 10px;
   margin: 10px;
+  width: 250px;
+  float: left;
 }
+
+.request .body, .response .body {
+  border: 1px solid #cdcdcd;
+  background-color: #fefefe;
+}
+
+
 
 .url {
   font-size:3em;  
   padding:10px;
   margin:auto;
+  float:left;
 }
 
 .url a {
-  font-size: 12pt;
+  display:none;
 }
 
