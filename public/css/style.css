@@ -372,6 +372,8 @@ header {
   padding:10px;
   margin:auto;
   float:left;
+  color:#cccccc;
+  text-shadow: -1px -1px 0px #dddddd, 1px 1px 0px #ffffff;
 }
 
 .url a {
