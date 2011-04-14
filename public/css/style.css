@@ -342,7 +342,7 @@ header {
 .request, .response {
   padding: 10px;
   margin: 10px;
-  width: 250px;
+  width: 300px;
   float: left;
 }
 
@@ -351,10 +351,20 @@ header {
   background-color: #fefefe;
 }
 
+.example h2 {
+  color: white;
+  font-size: 3em;
+  letter-spacing: -0.04em;
+  font-weight:bolder;
+  font-family: Georgia;
+  color:#cccccc;
+  text-shadow: -1px -1px 0px #dddddd, 1px 1px 0px #ffffff;
+  
+}
 
 
 .url {
-  font-size:3em;  
+  font-size:12em;  
   padding:10px;
   margin:auto;
   float:left;

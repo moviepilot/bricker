@@ -166,7 +166,7 @@ var Endpoint = {
 
      var exampleDiv = $("<div class='example' />"),
             request = $("<div class='request'><h2>Request</h2></div>"),
-           response = $("<div class='response'><h2>Response</h2></div>"),
+           response = $("<div class='response'><h2>Response "+example.response_code+"</h2></div>"),
                 url = $("<div class='url'/>");
                
 
