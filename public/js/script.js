@@ -160,31 +160,18 @@ var Endpoint = {
   },
 
   toHtml: function(example) {
-    var container = $("<div/>"); 
-     container.append($('<h1><span class="highlight">&nbsp;'+example.method+'&nbsp;</span> '+example.uri+'</h1>'));
-
-
-     var exampleDiv = $("<div class='example' />"),
-            request = $("<div class='request'><h2>Request</h2></div>"),
-           response = $("<div class='response'><h2>Response "+example.response_code+"</h2></div>"),
-                url = $("<div class='url'/>");
-               
-
-    request.append($("<h3>Body</h3><pre class='body'>"+example.request.body+"</pre>"));
-    response.append($("<h3>Body</h3><pre class='body'>"+example.response.body+"</pre>"));
-    url.append("<a>" +  example.method +example.uri + "</a>➡");
-
-    exampleDiv.append(request).append(url).append(response);
-    container.append(exampleDiv);
-    return container;
+    var template = $("#exampleTemplate").html();
+    return Mustache.to_html(template, example);
   },
 
-  exampleToHtml: function(example) {
+  bodyToHtml: function(body) {
+    var self = this;
     var container = $("<div class='example'/>");
-    $.each(lines, function(i, l) {
-      container.append($("<div class='line'>"+l+"<div class='annotation'>"+(annotations[i]||'')+"</div>"));
+    $.each(body.split("\n"), function(i, l) {
+      var parts = self.parseLine(l); 
+      container.append($("<div class='line'>"+parts[0]+"<div class='annotation'>"+(parts[1]||'')+"</div>"));
     });
-    return container;
+    return container.html();
   }
 
 };
