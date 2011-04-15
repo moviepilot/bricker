@@ -405,6 +405,12 @@ header {
   display:none;
 }
 
+.description {
+  padding-top:20px;
+  font-family: Georgia;
+  font-size: 1.5em;
+}
+
 #exampleTemplate {
   visibility:hidden;
 }

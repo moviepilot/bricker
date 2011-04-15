@@ -1,0 +1,39 @@
+##
+# Lists all connections a node has to other nodes,
+# in this node 15 is a person, and we know in which
+# movies he's acting.
+
+GET /node/15/connections/acting
+
+Response: 200 OK
+
+Body:
+    [
+      { "id"   :  23
+      , "from" : "15"
+      , "to"   : "12"
+      , "payload" : { 
+            "weight" : "1.0"}
+      }
+    ]
+
+##
+# Node 13 is a person and node 12 is a person, so
+# let's connect these two with an acting relationship. 
+# Notice that all data is contained in the `payload`
+# key.
+
+PUT /node/13/connections/acting/12
+
+Body:
+    { "weight": 1.0 }
+
+Response: 200 OK
+
+Body:
+    { "from" : "13"
+    , "to"   : "12"
+    , "payload" : { 
+        "weight" : "1.0"}
+    }
+
