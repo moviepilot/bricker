@@ -62,7 +62,7 @@ var Bricker = {
      var endpoint = Endpoint.parse(text);
      var container = $('<div class="endpoint" id="endpoint'+Bricker.prefixToId(prefix)+'"/>');
      container.append (endpoint); 
-     containers.push(container);
+      containers.push(container);
    });
    return containers;
   },
@@ -144,7 +144,6 @@ var Endpoint = {
 
     var parsed = ExampleParser.parse(input);
 
-
     return this.toHtml(parsed);
   },
 
@@ -163,11 +162,11 @@ var Endpoint = {
     var template = $("#exampleTemplate").html();
     example.request.headers = this.unkey(example.request.headers);
     example.response.headers = this.unkey(example.response.headers);
-    console.log(example);
     return Mustache.to_html(template, example);
   },
 
   unkey: function(hash){
+    if(!hash) return hash;
     var vals = []; 
     $.each(hash, function(k,v){
       vals.push({key: k, value: v}); 

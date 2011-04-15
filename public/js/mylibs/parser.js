@@ -46,7 +46,9 @@ var ExampleParser = {
     this.data  = { request: {}, response: {}, description: ''};
     this.current = null;
 
-    return this.parseLine();
+    var parsed= this.parseLine();
+    console.log(parsed);
+    return parsed;
   },
 
   parseLine: function() {
