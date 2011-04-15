@@ -1,20 +1,28 @@
-GET
+##
+# Just a plain old show on a node. Does not return any edges
+# but just properties.
+
+GET /node/15
 
 Response: 200 OK
 
-{ id: "a3efdd48c8329"
-, type: "Movie"                       # Contains the node type
-, payload: { title: "Matrix"
-           , production_year: 1999 }
-}
+Body:
+    { id: "a3efdd48c8329"
+    , type: "Movie"                       # Contains the node type
+    , payload: { title: "Matrix"
+               , production_year: 1999 }
+    }
 
----
-GET
+##
+# Same thing, but note the different node type
 
-Response: 200OK
+GET /node/16
 
-{ id: "a93f8d83c02b38"
-, type: "Person"
-, payload: { name: "Johnny Depp"
-           , sex: "Male" }
-}
+Response: 200 OK
+
+Body:
+    { id: "a93f8d83c02b38"
+    , type: "Person"
+    , payload: { name: "Johnny Depp"
+               , sex: "Male" }
+    }
