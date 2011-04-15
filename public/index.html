@@ -52,17 +52,54 @@
   </div> <!--! end of #container -->
 
 
+  <div id="exampleTemplate">
+  <div class='example'>
+    <h1><span class="highlight">{{method}}</span> {{uri}}</h1>
+    <div class="request">
+      {{#request}}
+        <h2>Request</h2>
+        <h3>Headers</h3>
+        {{#headers}}
+        <table class="headers">
+          <tr><th>{{key}}</th><td>{{value}}</td></tr>
+        </table>
+        {{/headers}}
+        <h3>Body</h3>
+        <div class="body json">{{body}}</div>
+      {{/request}}
+    </div>
+    <div class="url">➡</div>
+    <div class="response">
+      <h2>{{response_code}}</h2>
+      {{#response}}
+        <h3>Headers</h3>
+        {{#headers}}
+        <table class="headers">
+          <tr>
+            <th>{{key}}</th><td>{{value}}</td>
+          </tr>
+        </table>
+       {{/headers}}
+        <h3>Body</h3>
+        <div class="body json">{{body}}</div>
+      {{/response}}
+    </div>
+  </div>
+  </div>
+
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.5.1.min.js">\x3C/script>')</script>
   <srcipt src="js/libs/jquery.address-1.3.2.min.js"></script>
+  <script type='text/javascript' src="http://github.com/janl/mustache.js/raw/master/mustache.js"></script>
 
 
   <!-- scripts concatenated and minified via ant build script-->
   <script src="js/plugins.js"></script>
   <script src="js/script.js?<?php echo rand(0,393939); ?>"></script>
+  <script src="js/mylibs/parser.js?<?php echo rand(0,393939); ?>"></script>
   <!-- end scripts-->
 
 
@@ -79,6 +116,5 @@
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
-
 </body>
 </html>

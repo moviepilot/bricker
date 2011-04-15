@@ -315,7 +315,7 @@ body {
   display:block;
 }
 
-.example {
+.disabledexample {
   line-height: 1.5em;
   margin: 20px;
   color: #444444;
@@ -324,19 +324,6 @@ body {
   padding:20px;
 }
 
-div.annotation {
-  visibility: hidden;
-  font-style: italic;
-  color:#CCD6EB;
-  font-family: Georgia;
-  width: 25%;
-  overflow:hidden;
-}
-
-table.example tr:hover td {
-  color: #778DBD;
-  overflow: visible;
-}
 
 em {
   color:black;
@@ -350,4 +337,74 @@ header {
   background-color: gray;
   color: white;
   padding: 10px;
+}
+
+.request, .response {
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  float: left;
+}
+
+.body, .parsedBody {
+  border: 1px solid #cdcdcd;
+  background-color: #fefefe;
+  padding: 10px;
+}
+
+.parsedBody em {
+  color: navy;
+}
+
+.annotation {
+  display:none;
+}
+
+.example h2 {
+  color: white;
+  font-size: 3.2em;
+  letter-spacing: -0.08em;
+  font-weight:bolder;
+  font-family: Georgia;
+  color:#cccccc;
+  text-shadow: -1px -1px 0px #dddddd, 1px 1px 0px #ffffff;
+}
+
+.example h3:after {
+  content: ":";
+}
+
+.example h3 {
+  padding-top: 13px; 
+  padding-bottom: 5px;
+}
+
+.example th {
+  color: grey;
+}
+
+.example th:after {
+  content: ":";
+}
+
+.example td {
+  padding-left: 10px;
+}
+
+
+.url {
+  font-size:12em;  
+  padding:10px;
+  margin:auto;
+  float:left;
+  color:#cccccc;
+  text-shadow: -1px -1px 0px #dddddd, 1px 1px 0px #ffffff;
+}
+
+.url a {
+  display:none;
+}
+
+#exampleTemplate {
+  visibility:hidden;
 }

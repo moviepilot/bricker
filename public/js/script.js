@@ -34,7 +34,7 @@ var Bricker = {
 
   parseEndpoints: function(data) {
     if(!data) return;
-    var endpoints = data.split("---\n")
+    var endpoints = data.split("\n##")
     return endpoints;
   },
   
@@ -61,8 +61,7 @@ var Bricker = {
      var url = prefix.replace(/_id_$/, id).replace(/_id_/g, 123);
      var endpoint = Endpoint.parse(text);
      var container = $('<div class="endpoint" id="endpoint'+Bricker.prefixToId(prefix)+'"/>');
-     container.append($('<h1><span class="highlight">&nbsp;'+endpoint.method+'&nbsp;</span> '+url+'</h1>'));
-     container.append (endpoint.example); 
+     container.append (endpoint); 
      containers.push(container);
    });
    return containers;
@@ -143,9 +142,10 @@ var Endpoint = {
       annotations.push(parts[1]);
     });
 
-    var res = { method:  method,
-                example: self.toHtml(lines, annotations)};
-    return res;
+    var parsed = ExampleParser.parse(input);
+
+
+    return this.toHtml(parsed);
   },
 
   parseLine: function(line) {
@@ -159,10 +159,28 @@ var Endpoint = {
     return match.replace(first, "<em>"+first+"</em>" );
   },
 
-  toHtml: function(lines, annotations) {
-    var container = $("<div class='example'/>");
-    $.each(lines, function(i, l) {
-      container.append($("<div class='line'>"+l+"<div class='annotation'>"+(annotations[i]||'')+"</div>"));
+  toHtml: function(example) {
+    var template = $("#exampleTemplate").html();
+    example.request.headers = this.unkey(example.request.headers);
+    example.response.headers = this.unkey(example.response.headers);
+    console.log(example);
+    return Mustache.to_html(template, example);
+  },
+
+  unkey: function(hash){
+    var vals = []; 
+    $.each(hash, function(k,v){
+      vals.push({key: k, value: v}); 
+    }); 
+    return vals;
+  },
+
+  bodyToHtml: function(body) {
+    var self = this;
+    var container = $("<div class='parsedBody'/>");
+    $.each(body.split("\n"), function(i, l) {
+      var parts = self.parseLine(l); 
+      container.append($("<div class='line'>"+parts[0]+"<div class='annotation'>"+(parts[1]||'')+"</div>"));
     });
     return container;
   }
@@ -174,3 +192,10 @@ $(document).ready(function(){
   $('#navi').bricker('');
   $('ul.fragments li').live('click', Bricker.handleFragmentClick);
 });
+
+$('.example .body').live('mouseover', function(){
+  var el     = $(this);
+  var parsed = Endpoint.bodyToHtml(el.html());
+  el.replaceWith(parsed);
+});
+

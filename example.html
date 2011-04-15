@@ -1,0 +1,76 @@
+<div id="fancy">
+
+</div>
+<div id="template">
+   <div class="request">
+      {{#request}}
+      Request body:
+      <div class="body">
+          {{body}}
+      </div> 
+      Request params:       
+      <div class="params">
+          <ul>
+          {{#params}}
+              <li>{{key}}: {{value}}</li>
+          {{/params}}
+          </ul>
+      </div>
+      <div class="method">
+          {{method}}
+      </div>
+       {{/request}}
+    </div>
+    <div class="response">
+        {{#response}}
+        Response body:
+        <div class="body">
+            {{body}}
+        </div>
+        {{/response}}
+    </div>
+</div>
+
+<pre id="example">
+##
+# Creating a new movie node, all request 
+# params are good, it will succeeed!
+# Watch out to not forget foo bar blah
+
+POST /nodes/movies
+
+Params:
+  unsafe:   true
+  some_tag: 15
+
+Headers:
+  Content-type: application/json
+
+Body:
+
+    { title: "Matrix"               # We only store original ones
+    , production_year: 1999         # Contains a NUMBA 
+    }
+
+Response: 201 Created
+
+Headers:
+  Content-type: application/json
+
+Body:
+    { id: "a3efdd48c8329"
+    , type: "Movie"  
+    , payload: { title: "Matrix"
+               , production_year: 1999 }
+    }
+
+
+
+###########################################
+# Creating a new node, but with some
+# invalid parameters that don't really work
+
+POST /nodes/schnitzel
+
+</pre>
+
