@@ -2,7 +2,7 @@
 # Just a plain old show on a node. Does not return any edges
 # but just properties.
 
-GET /node/15
+GET /nodes/15
 
 Response: 200 OK
 
@@ -16,7 +16,7 @@ Body:
 ##
 # Same thing, but note the different node type
 
-GET /node/16
+GET /nodes/16
 
 Response: 200 OK
 
@@ -34,4 +34,24 @@ GET /node/99999
 
 Response: 404 Not Found
 
+##
+# A node's properties can be udpated using its URI with the
+# PUT method. Please note that all previously existing
+# properties are deleted, so the node only keeps what you
+# PUT here.
 
+PUT /nodes/16
+
+Headers:
+  Content-Type: application/json
+
+Body: 
+    { "new_and_only_key" : "value" }
+
+Response: 200 OK
+
+Header:
+  Content-type: application/json
+
+Body: 
+    { "new_and_only_key" : "value" }
