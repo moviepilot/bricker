@@ -12,6 +12,7 @@ Body:
       { "id"   :  23
       , "from" : "15"
       , "to"   : "12"
+      , "type" : "Acting"
       , "payload" : { 
             "weight" : "1.0"}
       }
@@ -33,6 +34,7 @@ Response: 200 OK
 Body:
     { "from" : "13"
     , "to"   : "12"
+    , "type" : "acting"
     , "payload" : { 
         "weight" : "1.0"}
     }
