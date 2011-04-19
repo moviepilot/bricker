@@ -14,7 +14,7 @@ Body:
     }
 
 ##
-# Same thing, but note the different node type
+# Getting a node of the type "Person" 
 
 GET /node/16
 
@@ -28,10 +28,25 @@ Body:
     }
 
 ##
-# If the node could not be found, you will get an error
+# Getting a non-existant node will result in this error
 
 GET /node/99999
 
 Response: 404 Not Found
 
+##
+# Node properties can be updated by issuing a PUT request
+# to its url. Note that all properties will be deleted
+# and replaced with the ones you supplied. That means you 
+# always overwrite everything.
+
+PUT /nodes/15
+
+Body:
+    { "somekey": "someval" }
+
+Response: 200 OK
+
+Body:
+    { "somekey": "someval" }
 
