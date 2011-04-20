@@ -1,19 +1,32 @@
-POST
+##
+# Batch upload of a bunch of movie nodes
 
-{ "schema": {"type":"Movie"
-            ,"columns": [{"label":"id","datatype":"integer"}
-                        ,{"label":"title","datatype":"string"}
-                        ,{"label":"original_title","datatype":"string"}]
-            ,"start_at":0}
-,"content":[["3000001","Shadow und der Fluch des Khan","The Shadow"]
-           ,["3000002","Speed","Speed"]
-           ,["3000003","Naked in New York","Naked in New York"]
-           ,["3000004","The End of Eternity","The End of Eternity"]]
-}
+POST /upload/nodes
 
-RESPONSE
+Headers:
+  Content-type: application/json
 
----
-POST /upload/edges
+Body:
+    { "schema": {"type":"Movie"
+      ,"columns": [
+         {"label":"id","datatype":"integer"}
+        ,{"label":"title","datatype":"string"}
+        ,{"label":"original_title","datatype":"string"}]
+      ,"start_at":0}
+    ,"content":[
+       ["3000001","Shadow und der Fluch des Khan","The Shadow"]
+      ,["3000002","Speed","Speed"]
+      ,["3000003","Naked in New York","Naked in New York"]
+      ,["3000004","The End of Eternity","The End of Eternity"]]
+    }
+
+Response: 201 Created
+
+Headers:
+  Content-type: application/json
+
+Body:
+    { "processed": 4
+    , "error": 0 }
 
 
