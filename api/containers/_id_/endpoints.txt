@@ -1,0 +1,57 @@
+##
+# Just a plain old show on a node. Does not return any edges
+# but just properties.
+
+GET /containers/15
+
+Response: 200 OK
+
+Body:
+    { id: "15"
+    , content_type: "trailer" # type of content, one of trailer, news, gallery, trailerpark
+    , title: "Hobbit Trailer" #
+    , sheldon_node_id: "33"   # id of the corresponding node in sheldon
+    , content:  { brightcove_id: "442344232344"
+                }
+    }
+
+##
+# Same thing, but note the different content type
+
+GET /containers/16
+
+Response: 200 OK
+
+Body:
+    { id: "16"
+    , content_type: "news"
+    , title: "Hobbit News"
+    , sheldon_node_id: "33" # id of the corresponding node in sheldon
+    , content:  { image: "http://some.server.de:5552/images/hobbit.png"
+                , text: "Somehow formatted text, not decided yet"
+                }
+
+##
+# Same thing, but note the different content type
+
+GET /containers/17
+
+Response: 200 OK
+
+Body:
+    { id: "17"
+    , content_type: "gallery"
+    , title: "Hobbit Gallery"
+    , sheldon_node_id: "33"    # id of the corresponding node in sheldon
+    , content:  { images: [ { url: "http://some.server.de:5552/images/gallery/hobbit/1.png" }
+                          , { url: "http://some.server.de:5552/images/gallery/hobbit/2.png" }
+                          ]
+                }
+
+##
+# If the node could not be found, you will get an error
+
+GET /containers/99999
+
+Response: 404 Not Found
+

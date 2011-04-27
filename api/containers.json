@@ -1,6 +1,5 @@
 {
   "fragments": [ {"prefix": "/_id_"   }
-               , {"prefix": "/_type_" }
                ]
 }
 

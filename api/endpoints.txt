@@ -1,0 +1,11 @@
+##
+# Get Edward API status and version
+
+GET /
+
+Response: 200 OK
+
+Body:
+    { version: "0.0.1"
+    , server_time: "2011-04-21 17:07:13 +0200"
+    }
