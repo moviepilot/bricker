@@ -97,7 +97,15 @@ var Bricker = {
     // only append if it does not exist already
     var existing = $('#endpoint'+Bricker.prefixToId(prefix));
     if (existing.length == 0) {
-      $.each(endpoints, function(i,e){container.append(e)});
+      $.each(endpoints, function(i,e){
+        //prettyformat json bodies
+        $('.body', e).each(function(index, el){
+          var parsed = Endpoint.bodyToHtml($(el).html());
+          $(el).replaceWith(parsed);
+        });
+
+        container.append(e)
+      });
     }
   },
 
@@ -190,11 +198,5 @@ $(document).ready(function(){
   Bricker['apiBase'] = 'http://sheldon.labs.mvp.to:2311';
   $('#navi').bricker('');
   $('ul.fragments li').live('click', Bricker.handleFragmentClick);
-});
-
-$('.example .body').live('mouseover', function(){
-  var el     = $(this);
-  var parsed = Endpoint.bodyToHtml(el.html());
-  el.replaceWith(parsed);
 });
 
