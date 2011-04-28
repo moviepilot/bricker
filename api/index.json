@@ -1,8 +1,6 @@
 {
   "fragments": [ {"prefix": "/containers"   }
-               , {"prefix": "/users"}
-               , {"prefix": "/transitions"}
-               , {"prefix": "/buttons"}
+               , {"prefix": "/users"   }
                ]
 }
 

@@ -1,0 +1,10 @@
+##
+# set access token for user 591234
+
+PUT /users/fb/591234
+
+Body:
+    { access_token: "f92oijasodig94"
+    }
+
+Response: 204 No Content

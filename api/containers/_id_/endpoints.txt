@@ -1,6 +1,5 @@
 ##
-# Just a plain old show on a node. Does not return any edges
-# but just properties.
+# Get display data for container
 
 GET /containers/15
 
@@ -9,10 +8,25 @@ Response: 200 OK
 Body:
     { id: "15"
     , content_type: "trailer" # type of content, one of trailer, news, gallery, trailerpark
-    , title: "Hobbit Trailer" #
     , sheldon_node_id: "33"   # id of the corresponding node in sheldon
+    , published_at: "2011-04-21 17:07:13 +0200"
     , content:  { brightcove_id: "442344232344"
+                , title: "Hobbit Trailer"
                 }
+    , call_to_action: "Is this the shit?"
+    , buttons:  [ { id: "71"
+                  , picture_url: "http://some.server.de/images/love.png"
+                  , title: "I love"
+                  , containers: [33, 26, 34]
+                  , click_count: 22413
+                  }
+                , { id: "72"
+                  , picture_url: "http://some.server.de/images/hate.png"
+                  , title: "I hate"
+                  , containers: [12, 73, 44, 32]
+                  , click_count: 23
+                  }
+                ]
     }
 
 ##
@@ -27,9 +41,11 @@ Body:
     , content_type: "news"
     , title: "Hobbit News"
     , sheldon_node_id: "33" # id of the corresponding node in sheldon
+    , published_at: "2011-04-21 17:07:13 +0200"
     , content:  { image: "http://some.server.de:5552/images/hobbit.png"
                 , text: "Somehow formatted text, not decided yet"
                 }
+    , call_to_action: "Is this bad?"
 
 ##
 # Same thing, but note the different content type
@@ -43,10 +59,12 @@ Body:
     , content_type: "gallery"
     , title: "Hobbit Gallery"
     , sheldon_node_id: "33"    # id of the corresponding node in sheldon
+    , published_at: "2011-04-21 17:07:13 +0200"
     , content:  { images: [ { url: "http://some.server.de:5552/images/gallery/hobbit/1.png" }
                           , { url: "http://some.server.de:5552/images/gallery/hobbit/2.png" }
                           ]
                 }
+    , call_to_action: "Is this good?"
 
 ##
 # If the node could not be found, you will get an error
