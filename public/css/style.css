@@ -303,8 +303,6 @@ body {
 .endpoint h1 {
   margin: 0;
   padding: 10px;
-  border: 1px dotted gray;
-  background-color: white;
 
 }
 
@@ -342,8 +340,6 @@ header {
 .request, .response {
   padding: 10px;
   margin: 10px;
-  width: 300px;
-  float: left;
 }
 
 .body, .parsedBody {
@@ -358,6 +354,25 @@ header {
 
 .annotation {
   display:none;
+}
+
+.example {
+  padding:10px;
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.31, rgb(238,238,238)),
+      color-stop(0.96, rgb(255,255,255))
+  );
+  background-image: -moz-linear-gradient(
+      center bottom,
+      rgb(238,238,238) 31%,
+      rgb(255,255,255) 96%
+  );
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  border: 1px solid #aaaaaa; 
 }
 
 .example h2 {
@@ -396,9 +411,9 @@ header {
   font-size:12em;  
   padding:10px;
   margin:auto;
-  float:left;
   color:#cccccc;
   text-shadow: -1px -1px 0px #dddddd, 1px 1px 0px #ffffff;
+  display:none;
 }
 
 .url a {
