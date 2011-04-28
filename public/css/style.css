@@ -381,6 +381,7 @@ header {
 
 .example th {
   color: grey;
+  text-align: right;
 }
 
 .example th:after {

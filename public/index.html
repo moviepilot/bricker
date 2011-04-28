@@ -52,7 +52,7 @@
   </div> <!--! end of #container -->
 
 
-  <div id="exampleTemplate">
+  <script type="text/x-xx" id="exampleTemplate">
   <div class='example'>
     <h1><span class="highlight">{{method}}</span> {{uri}}</h1>
     <div class="description">
@@ -62,11 +62,11 @@
       {{#request}}
         <h2>Request</h2>
         <h3>Headers</h3>
-        {{#headers}}
         <table class="headers">
+        {{#headers}}
           <tr><th>{{key}}</th><td>{{value}}</td></tr>
-        </table>
         {{/headers}}
+        </table>
         <h3>Body</h3>
         <div class="body json">{{body}}</div>
       {{/request}}
@@ -76,19 +76,19 @@
       <h2>{{response_code}}</h2>
       {{#response}}
         <h3>Headers</h3>
-        {{#headers}}
         <table class="headers">
+        {{#headers}}
           <tr>
             <th>{{key}}</th><td>{{value}}</td>
           </tr>
+        {{/headers}}
         </table>
-       {{/headers}}
         <h3>Body</h3>
         <div class="body json">{{body}}</div>
       {{/response}}
     </div>
   </div>
-  </div>
+  </script>
 
   <!-- JavaScript at the bottom for fast page loading -->
 
