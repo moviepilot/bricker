@@ -11,17 +11,18 @@ Body:
     , sheldon_node_id: "33"   # id of the corresponding node in sheldon
     , published_at: "2011-04-21 17:07:13 +0200"
     , content:  { brightcove_id: "442344232344"
-                , title: "Hobbit Trailer"
+                , title:         "Hobbit Trailer"
+                , teaser:        "Lorem ypsum usw..."
                 }
     , call_to_action: "Is this the shit?"
     , buttons:  [ { id: "71"
-                  , picture_url: "http://some.server.de/images/love.png"
+                  , image: "http://some.server.de/images/love.png"
                   , title: "I love"
                   , containers: [33, 26, 34]
                   , click_count: 22413
                   }
                 , { id: "72"
-                  , picture_url: "http://some.server.de/images/hate.png"
+                  , image: "http://some.server.de/images/hate.png"
                   , title: "I hate"
                   , containers: [12, 73, 44, 32]
                   , click_count: 23
@@ -39,11 +40,13 @@ Response: 200 OK
 Body:
     { id: "16"
     , content_type: "news"
-    , title: "Hobbit News"
     , sheldon_node_id: "33" # id of the corresponding node in sheldon
     , published_at: "2011-04-21 17:07:13 +0200"
-    , content:  { image: "http://some.server.de:5552/images/hobbit.png"
-                , text: "Somehow formatted text, not decided yet"
+    , content:  { image:  "http://some.server.de:5552/images/hobbit.png"
+                , caption:     "(c) 9elements.com"
+                , title:  "Hobbit News"
+                , text:   "Somehow formatted text, not decided yet"
+                , teaser: "Lorem ypsum usw..."
                 }
     , call_to_action: "Is this bad?"
 

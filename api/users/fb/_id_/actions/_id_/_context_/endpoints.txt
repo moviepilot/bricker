@@ -1,7 +1,7 @@
 ##
 # Report that user 22 has selected to view container 872
 
-POST /users/fb/22/actions/container/872
+POST /users/fb/22/actions/containers/872
 
 Response: 202 Accepted
 
@@ -9,6 +9,6 @@ Response: 202 Accepted
 ##
 # Report that user 22 has selected to click button 5236
 
-POST /users/fb/22/actions/button/5236
+POST /users/fb/22/actions/buttons/5236
 
 Response: 202 Accepted

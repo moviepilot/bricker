@@ -8,3 +8,14 @@ Body:
     }
 
 Response: 204 No Content
+
+##
+# Get recommended containers for user 5923
+
+GET /users/fb/591234/recommendations
+
+Response: 200 OK
+
+Body:
+    [23, 566, 1204]
+

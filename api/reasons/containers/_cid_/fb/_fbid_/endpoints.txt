@@ -1,0 +1,10 @@
+##
+# Get reason for being displayed 
+
+GET /reasons/containers/15/fb/57198324734523
+
+Response: 200 OK
+
+Body:
+    { reason: "Because you like <span class='movie'>Grease</span>"
+    }
