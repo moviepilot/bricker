@@ -1,0 +1,67 @@
+##
+# You can fetch some runtime information about sheldon,
+# particularily interesting is probably the api_version 
+# field
+
+GET /status
+
+Response: 200 OK
+
+Body:
+    {
+       "api_version": "0.2",
+       "basic_props":  {
+          "nodes": 190791,
+          "edges": 77313,
+          "edge_types": 6,
+          "properties": 917846
+       },
+       "kernel_props": {
+          "uptime": 4829141.96
+       },
+       "cache_props": {
+          "cache_type": "soft reference cache",
+          "node_cache_size": 70204,
+          "edge_cache_size": 7740
+       },
+       "memory_props": {
+          "/home/sheldon/releases/20110428154004/db/production/neo4j/neostore.nodestore.db": {
+             "available_memory": 26214400,
+             "used_memory": 1729728
+          },
+          "/home/sheldon/releases/20110428154004/db/production/neo4j/neostore.propertystore.db.strings": {
+             "available_memory": 136314880,
+             "used_memory": 16070656
+          },
+          "/home/sheldon/releases/20110428154004/db/production/neo4j/neostore.propertystore.db.arrays": {
+             "available_memory": 136314880,
+             "used_memory": 136192
+          },
+          "/home/sheldon/releases/20110428154004/db/production/neo4j/neostore.propertystore.db": {
+             "available_memory": 94371840,
+             "used_memory": 23021400
+          },
+          "/home/sheldon/releases/20110428154004/db/production/neo4j/neostore.relationshipstore.db": {
+             "available_memory": 52428800,
+             "used_memory": 2567796
+          },
+          "/home/sheldon/releases/20110428154004/db/production/neo4j/neostore.relationshiptypestore.db.names": {
+             "available_memory": 0,
+             "used_memory": 0
+          },
+          "/home/sheldon/releases/20110428154004/db/production/neo4j/neostore.relationshiptypestore.db": {
+             "available_memory": 0,
+             "used_memory": 0
+          }
+       },
+       "store_props": {
+          "array_store_size": 136192,
+          "logical_log_size": 4194381,
+          "node_store_size": 1729728,
+          "property_store_size": 23021400,
+          "relationship_store_size": 2567796,
+          "string_store_size": 16070656,
+          "total_store_size": 79360414
+       }
+    }
+

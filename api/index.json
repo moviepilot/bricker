@@ -2,5 +2,6 @@
   "fragments": [ {"prefix": "/nodes"     } 
                , {"prefix": "/search"        } 
                , {"prefix": "/upload" }
+               , {"prefix": "/status" }
                ]
 }
