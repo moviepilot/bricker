@@ -19,6 +19,18 @@ Body:
     ]
 
 ##
+# If a node does not have any connections, you will
+# get an empty array as body (you can always rely on
+# this resource being represented as an array).
+
+GET /node/22/connections/acting
+
+Response: 200 OK
+
+Body:
+    []
+
+##
 # Node 13 is a person and node 12 is a person, so
 # let's connect these two with an acting relationship. 
 # Notice that all data is contained in the `payload`

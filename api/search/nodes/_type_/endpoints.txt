@@ -29,8 +29,13 @@ Body:
 
 
 ##
-# Empty result list
+# When no results have been found, sheldon replies with a 200
+# and an empty list as response body (you can always rely on 
+# this resource being represented as an array). 
 
 GET /search/nodes/movies?title=the+unknown+movie
 
-Response: 204 No Content
+Response: 200 OK 
+
+Body:
+    []
