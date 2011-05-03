@@ -13,6 +13,8 @@ Body:
     , content:  { brightcove_id: "442344232344"
                 , title:         "Hobbit Trailer"
                 , teaser:        "Lorem ypsum usw..."
+                , teaser_image:  "http://..."
+                , abstract:      "Knurr Knurr Knabe"
                 }
     , call_to_action: "Is this the shit?"
     , buttons:  [ { id: "71"
@@ -47,6 +49,8 @@ Body:
                 , title:  "Hobbit News"
                 , text:   "Somehow formatted text, not decided yet"
                 , teaser: "Lorem ypsum usw..."
+                , teaser_image:  "http://..."
+                , abstract:      "Knurr Knurr Knabe"
                 }
     , call_to_action: "Is this bad?"
 
@@ -60,12 +64,25 @@ Response: 200 OK
 Body:
     { id: "17"
     , content_type: "gallery"
-    , title: "Hobbit Gallery"
     , sheldon_node_id: "33"    # id of the corresponding node in sheldon
     , published_at: "2011-04-21 17:07:13 +0200"
-    , content:  { images: [ { url: "http://some.server.de:5552/images/gallery/hobbit/1.png" }
-                          , { url: "http://some.server.de:5552/images/gallery/hobbit/2.png" }
+    , content:  { items: [  { type: 'image'
+                            , image: "http://some.server.de:5552/images/gallery/hobbit/1.png"
+                            , thumbnail: "http://some.server.de:5552/images/gallery/hobbit/1.png"
+                            , caption: "(c) 1998 moviepilot"
+                            , description: "single image description"
+                            }
+                          , { type: 'video'
+                            , image: "http://some.server.de:5552/images/gallery/hobbit/2.png"
+                            , thumbnail: "http://some.server.de:5552/images/gallery/hobbit/2.png"
+                            , caption: "(c) 1998 moviepilot"
+                            , description: "single image description"
+                            }
                           ]
+                , description: "whole gallery description"
+                , title:  "Hobbit Gallery"
+                , teaser: "Lorem ypsum usw..."
+                , teaser_image:  "http://..."
                 }
     , call_to_action: "Is this good?"
 
