@@ -19,6 +19,7 @@ Body:
     , call_to_action: "Is this the shit?"
     , buttons:  [ { id: "71"
                   , image: "http://some.server.de/images/love.png"
+                  , sticker_image: "http://some.server.de/images/love_sticker.png"
                   , title: "I love"
                   , containers: [33, 26, 34]
                   , click_count: 22413
