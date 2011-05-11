@@ -16,6 +16,7 @@ Body:
                 , teaser_image:  "http://..."
                 , abstract:      "Knurr Knurr Knabe"
                 }
+    , reason: "Because 'The Hobbit' is hot"
     , call_to_action: "Is this the shit?"
     , buttons:  [ { id: "71"
                   , image: "http://some.server.de/images/love.png"
@@ -47,14 +48,17 @@ Body:
     , sheldon_node_id: "33" # id of the corresponding node in sheldon
     , published_at: "2011-04-21 17:07:13 +0200"
     , content:  { image:  "http://some.server.de:5552/images/hobbit.png"
-                , caption:     "(c) 9elements.com"
+                , copyright: "(c) 9elements.com"
+                , caption:     "Look a this cute little hobbit. This text should appear underneath the image."
                 , title:  "Hobbit News"
                 , text:   "Somehow formatted text, not decided yet"
                 , teaser: "Lorem ypsum usw..."
                 , teaser_image:  "http://..."
                 , abstract:      "Knurr Knurr Knabe"
                 }
+    , reason: "Because 'The Hobbit' is really cool"
     , call_to_action: "Is this bad?"
+    }
 
 ##
 # Same thing, but note the different content type
@@ -71,22 +75,27 @@ Body:
     , content:  { items: [  { type: 'image'
                             , image: "http://some.server.de:5552/images/gallery/hobbit/1.png"
                             , thumbnail: "http://some.server.de:5552/images/gallery/hobbit/1.png"
-                            , caption: "(c) 1998 moviepilot"
-                            , description: "single image description"
+                            , copyright: "(c) 1998 moviepilot"
+                            , image_title: "Bilbo sleeps."
+                            , caption: "single image description"
                             }
                           , { type: 'video'
                             , image: "http://some.server.de:5552/images/gallery/hobbit/2.png"
                             , thumbnail: "http://some.server.de:5552/images/gallery/hobbit/2.png"
-                            , caption: "(c) 1998 moviepilot"
-                            , description: "single image description"
+                            , copyright: "(c) 1998 moviepilot"
+                            , image_title: "Bilbo eats."
+                            , caption: "single image description"
                             }
                           ]
-                , description: "whole gallery description"
+                , text: "whole gallery description"
                 , title:  "Hobbit Gallery"
                 , teaser: "Lorem ypsum usw..."
                 , teaser_image:  "http://..."
                 }
     , call_to_action: "Is this good?"
+    , reason: "Because everybody loves 'The Hobbit'"
+    }
+
 
 ##
 # If the node could not be found, you will get an error
