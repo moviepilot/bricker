@@ -26,6 +26,7 @@ Body:
                   }
                 , { id: "72"
                   , image: "http://some.server.de/images/hate.png"
+                  , sticker_image: "http://some.server.de/images/stickers/hate.png"
                   , title: "I hate"
                   , containers: [12, 73, 44, 32]
                   , click_count: 23
