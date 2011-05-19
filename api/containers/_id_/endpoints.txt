@@ -24,13 +24,46 @@ Body:
                   , title: "I love"
                   , containers: [33, 26, 34]
                   , click_count: 22413
-                  }
+                  , score: [
+                    {
+                      title: "Thor 3",
+                      sheldon_id: "0",
+                      delta: 2
+                    },
+                    {
+                      title: "Roland Emmerich",
+                      sheldon_id: "1",
+                      delta: 1
+                    },
+                    {
+                      title: "Till Schweiger",
+                      sheldon_id: "2",
+                      delta: -1
+                    }
+                  ]
                 , { id: "72"
                   , image: "http://some.server.de/images/hate.png"
                   , sticker_image: "http://some.server.de/images/stickers/hate.png"
                   , title: "I hate"
                   , containers: [12, 73, 44, 32]
                   , click_count: 23
+                  , score: [
+                    {
+                      title: "Thor 3",
+                      sheldon_id: "0",
+                      delta: 2
+                    },
+                    {
+                      title: "Roland Emmerich",
+                      sheldon_id: "1",
+                      delta: 1
+                    },
+                    {
+                      title: "Till Schweiger",
+                      sheldon_id: "2",
+                      delta: -1
+                    }
+                  
                   }
                 ]
     }

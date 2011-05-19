@@ -1,0 +1,21 @@
+##
+# Get some recommended subscriptions for user 591234
+
+GET /users/fb/591234/recommended_subscriptions
+
+Response: 200 OK
+
+Body:
+    [
+        {
+            title: "Thor 3",
+            sheldon_id: "0",
+            facebook_id: "123456"
+        },
+        {
+            title: "Til Schweiger",
+            sheldon_id: "1",
+            facebook_id: "654321"
+        }
+    ]
+

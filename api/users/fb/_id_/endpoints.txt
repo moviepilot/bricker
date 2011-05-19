@@ -1,4 +1,28 @@
 ##
+# Get the user data for user 591234
+
+GET /users/fb/591234
+
+Response: 200 OK
+
+Body:
+    {
+        "sticker_count" : 123,
+        "recent_stickers" : [
+            {
+                "call_to_action": "How do you like Thor 3?",
+                "title" : "I hate it",
+                "sticker_image" : "http://moviepilot_com.s3.amazonaws.com/assets/beta%20test%20kermit/depp%20alice%20in.jpg"
+            },
+            {
+                "call_to_action": "Are you ready to ride with The Lone Ranger?",
+                "title" : "Kemo-Sabe! Kill it with fire!",
+                "sticker_image" : "http://moviepilot_com.s3.amazonaws.com/assets/beta%20test%20kermit/JaseStathamhaha.jpg"
+            }
+        ]
+    }
+
+##
 # set access token for user 591234
 
 PUT /users/fb/591234

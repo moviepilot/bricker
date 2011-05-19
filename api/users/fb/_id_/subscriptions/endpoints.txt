@@ -1,0 +1,30 @@
+##
+# Get subscriptions for user 5923
+
+GET /users/fb/591234/subscriptions
+
+Response: 200 OK
+
+Body:
+    [
+        {
+            title: "Thor 3",
+            sheldon_id: "0",
+            score: 2,
+            facebook_id: "123456"
+        },
+        {
+            title: "Til Schweiger",
+            sheldon_id: "1",
+            score: -3,
+            facebook_id: "654321"
+        }
+    ]
+
+##
+# Create a subscription to a sheldon node 852654 for user 591234
+
+PUT /users/fb/591234/subscriptions/852654
+
+Response: 200 OK
+
