@@ -1,6 +1,6 @@
 {
   "fragments": [ {"prefix": "/actions/_id_/_context_"    },
-                 {"prefix": "/subscriptions"             }
+                 {"prefix": "/subscriptions"             },
                  {"prefix": "/recommended_subscriptions" }
                ]
 }
