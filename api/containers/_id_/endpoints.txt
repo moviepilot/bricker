@@ -113,10 +113,9 @@ Body:
                             , caption: "single image description"
                             }
                           , { type: 'video'
-                            , image: "http://some.server.de:5552/images/gallery/hobbit/2.png"
+                            , brightcove_id: "234532452345"
                             , thumbnail: "http://some.server.de:5552/images/gallery/hobbit/2.png"
                             , copyright: "(c) 1998 moviepilot"
-                            , image_title: "Bilbo eats."
                             , caption: "single image description"
                             }
                           ]
