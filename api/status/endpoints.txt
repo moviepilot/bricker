@@ -9,59 +9,165 @@ Response: 200 OK
 
 Body:
     {
-       "api_version": "0.2",
-       "basic_props":  {
-          "nodes": 190791,
-          "edges": 77313,
-          "edge_types": 6,
-          "properties": 917846
-       },
-       "kernel_props": {
-          "uptime": 4829141.96
-       },
-       "cache_props": {
+      "db_system": {
+        "basic_props": {
+          "nodes": 191110,
+          "edges": 429568,
+          "edge_types": 7,
+          "properties": 1768733
+        },
+        "kernel_props": {
+          "uptime": 12198
+        },
+        "cache_props": {
           "cache_type": "soft reference cache",
-          "node_cache_size": 70204,
-          "edge_cache_size": 7740
-       },
-       "memory_props": {
-          "/home/sheldon/releases/20110428154004/db/production/neo4j/neostore.nodestore.db": {
-             "available_memory": 26214400,
-             "used_memory": 1729728
+          "node_cache_size": 42041,
+          "edge_cache_size": 94
+        },
+        "memory_props": {
+          "/home/moviepilot/apps/sheldon-production/releases/20110523084432/db/neostore.nodestore.db": {
+            "available_memory": 26214400,
+            "used_memory": 1677312
           },
-          "/home/sheldon/releases/20110428154004/db/production/neo4j/neostore.propertystore.db.strings": {
-             "available_memory": 136314880,
-             "used_memory": 16070656
+          "/home/moviepilot/apps/sheldon-production/releases/20110523084432/db/neostore.propertystore.db.strings": {
+            "available_memory": 136314880,
+            "used_memory": 8988672
           },
-          "/home/sheldon/releases/20110428154004/db/production/neo4j/neostore.propertystore.db.arrays": {
-             "available_memory": 136314880,
-             "used_memory": 136192
+          "/home/moviepilot/apps/sheldon-production/releases/20110523084432/db/neostore.propertystore.db.arrays": {
+            "available_memory": 136314880,
+            "used_memory": 136192
           },
-          "/home/sheldon/releases/20110428154004/db/production/neo4j/neostore.propertystore.db": {
-             "available_memory": 94371840,
-             "used_memory": 23021400
+          "/home/moviepilot/apps/sheldon-production/releases/20110523084432/db/neostore.propertystore.db": {
+            "available_memory": 94371840,
+            "used_memory": 28021950
           },
-          "/home/sheldon/releases/20110428154004/db/production/neo4j/neostore.relationshipstore.db": {
-             "available_memory": 52428800,
-             "used_memory": 2567796
+          "/home/moviepilot/apps/sheldon-production/releases/20110523084432/db/neostore.relationshipstore.db": {
+            "available_memory": 52428800,
+            "used_memory": 52404
           },
-          "/home/sheldon/releases/20110428154004/db/production/neo4j/neostore.relationshiptypestore.db.names": {
-             "available_memory": 0,
-             "used_memory": 0
+          "/home/moviepilot/apps/sheldon-production/releases/20110523084432/db/neostore.relationshiptypestore.db.names": {
+            "available_memory": 0,
+            "used_memory": 0
           },
-          "/home/sheldon/releases/20110428154004/db/production/neo4j/neostore.relationshiptypestore.db": {
-             "available_memory": 0,
-             "used_memory": 0
+          "/home/moviepilot/apps/sheldon-production/releases/20110523084432/db/neostore.relationshiptypestore.db": {
+            "available_memory": 0,
+            "used_memory": 0
           }
-       },
-       "store_props": {
-          "array_store_size": 136192,
-          "logical_log_size": 4194381,
+        },
+        "store_props": {
+          "array_store_size": 680960,
+          "logical_log_size": 2097168,
           "node_store_size": 1729728,
-          "property_store_size": 23021400,
-          "relationship_store_size": 2567796,
-          "string_store_size": 16070656,
-          "total_store_size": 79360414
-       }
+          "property_store_size": 44250150,
+          "relationship_store_size": 14201484,
+          "string_store_size": 38133760,
+          "total_store_size": 179564902
+        }
+      },
+      "schema": {
+        "Tracking": {
+          "properties": [],
+          "source_class": ["User"],
+          "target_class": ["Movie", "User", "Genre", "Person", "Bucket"]
+        },
+        "GenreTagging": {
+          "properties": [
+            ["id", "case_insensitive_exact"],
+            ["weight", null]
+          ],
+          "source_class": ["Movie"],
+          "target_class": ["Genre"]
+        },
+        "Genre": {
+          "properties": [
+            ["id", "case_insensitive_exact"],
+            ["name", "case_insensitive_exact"],
+            ["moviemaster_id", "case_insensitive_exact"],
+            ["has_container", "case_insensitive_exact"]
+          ],
+          "count": 167
+        },
+        "Person": {
+          "properties": [
+            ["id", "case_insensitive_exact"],
+            ["name", "case_insensitive_exact"],
+            ["birthday", "case_insensitive_exact"],
+            ["moviemaster_id", "case_insensitive_exact"],
+            ["omdb_id", "case_insensitive_exact"],
+            ["imdb_id", "case_insensitive_exact"],
+            ["facebook_ids", "case_insensitive_exact"],
+            ["has_container", "case_insensitive_exact"]
+          ],
+          "count": 143392
+        },
+        "Affinity": {
+          "properties": [
+            ["score", null]
+          ],
+          "source_class": ["User"],
+          "target_class": ["Movie", "User", "Genre", "Person", "Bucket"]
+        },
+        "Bucket": {
+          "properties": [
+            ["name", "case_insensitive_exact"]
+          ],
+          "count": 23
+        },
+        "Directing": {
+          "properties": [
+            ["weight", null]
+          ],
+          "source_class": ["Person", "Movie"],
+          "target_class": ["Movie", "Person"]
+        },
+        "User": {
+          "properties": [
+            ["id", "case_insensitive_exact"],
+            ["username", "case_insensitive_exact"],
+            ["facebook_ids", "case_insensitive_exact"]
+          ],
+          "count": 272
+        },
+        "Movie": {
+          "properties": [
+            ["id", "case_insensitive_exact"],
+            ["title", "case_insensitive_exact"],
+            ["production_year", "case_insensitive_exact"],
+            ["moviemaster_id", "case_insensitive_exact"],
+            ["omdb_id", "case_insensitive_exact"],
+            ["imdb_id", "case_insensitive_exact"],
+            ["facebook_ids", "case_insensitive_exact"],
+            ["has_container", "case_insensitive_exact"]
+          ],
+          "count": 47246
+        },
+        "Acting": {
+          "properties": [
+            ["weight", null]
+          ],
+          "source_class": ["Person", "Movie"],
+          "target_class": ["Movie", "Person"]
+        },
+        "Like": {
+          "properties": [
+            ["weight", null]
+          ],
+          "source_class": ["User"],
+          "target_class": ["Movie"]
+        },
+        "Contains": {
+          "properties": [],
+          "source_class": ["Bucket"],
+          "target_class": ["Movie", "Person", "Genre"]
+        },
+        "RatingSimilarity": {
+          "properties": [
+            ["weight", null]
+          ],
+          "source_class": ["Movie"],
+          "target_class": ["Movie"]
+        }
+      },
+      "api_version": "0.4"
     }
-
+    

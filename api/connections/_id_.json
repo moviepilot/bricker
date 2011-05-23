@@ -1,5 +1,6 @@
 {
-  "fragments": [ {"prefix": "/connections" },
+  "fragments": [ 
                  {"prefix": "/reindex"     }
                ]
 }
+

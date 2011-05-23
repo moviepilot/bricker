@@ -1,0 +1,10 @@
+## 
+# Add this connection to the reindexing queue.
+# It will be reindexed later and you have
+# no way of knowing whether it has been 
+# reindexed or not.
+
+PUT /connections/15/reindex
+
+Response: 200 OK
+

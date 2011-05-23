@@ -1,0 +1,23 @@
+##
+# Find out stuff about the connection 123 
+#
+GET /connections/123
+
+Response: 200 OK
+
+Body:
+    { "id"   :  123
+    , "from" : "8"
+    , "to"   : "58001"
+    , "type" : "Acting"
+    , "payload" : { 
+          "weight" : "0.5"}
+    }
+
+##
+# Remove a certain connection
+
+DELETE /connections/123
+
+Response: 200 OK
+

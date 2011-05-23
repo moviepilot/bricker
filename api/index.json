@@ -1,7 +1,8 @@
 {
-  "fragments": [ {"prefix": "/nodes"     } 
-               , {"prefix": "/search"        } 
-               , {"prefix": "/upload" }
-               , {"prefix": "/status" }
+  "fragments": [ {"prefix": "/connections" }
+               , {"prefix": "/nodes"       }
+               , {"prefix": "/search"      }
+               , {"prefix": "/status"      }
+               , {"prefix": "/upload"      }
                ]
 }

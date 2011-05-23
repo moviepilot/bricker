@@ -1,0 +1,18 @@
+##
+# Searches over all node and connections type that share
+# a same parameter name
+
+GET /search?facebook_ids=501730216
+
+Response: 200 OK
+
+Body:
+    [{
+      "payload": {
+        "facebook_ids": ["501730216"],
+        "access_token": "215662575119216|aa25eb96f9db7d9622f15613.1-501730216|IdZp375EaNdgyU48KSlRQmh0pSo",
+        "username": "Jannis Hermanns"
+      },
+      "type": "User",
+      "id": "190822"
+    }]

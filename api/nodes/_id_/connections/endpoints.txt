@@ -19,6 +19,31 @@ Body:
     ]
 
 ##
+# The acting connection from node 15 to node 22,
+#
+GET /node/15/connections/acting/22
+
+Response: 200 OK
+
+Body:
+    { "id"   :  23
+    , "from" : "15"
+    , "to"   : "12"
+    , "type" : "Acting"
+    , "payload" : { 
+          "weight" : "1.0"}
+    }
+
+##
+# Check if node 15 is connected to node 22 throuh a
+# genre_tagging connection. Answer is no 
+#
+GET /node/15/connections/genre_tagging/22
+
+Response: 404 OK
+
+
+##
 # If a node does not have any connections, you will
 # get an empty array as body (you can always rely on
 # this resource being represented as an array).

@@ -55,3 +55,12 @@ Header:
 
 Body: 
     { "new_and_only_key" : "value" }
+
+##
+# If you get tired of a node, you can go ahead and delete it.
+# All connections to and from this node will be deleted as well
+
+DELETE /nodes/16
+
+Response: 200 OK
+
