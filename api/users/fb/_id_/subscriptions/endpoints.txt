@@ -8,7 +8,42 @@ Response: 200 OK
 Body:
     [
         {
-            title: "Thor 3",
+            title: "Traffic",
+            sheldon_id: "0",
+            score: 2,
+            facebook_id: "123456"
+        },
+        {
+            title: "Catherine Zeta Jones",
+            sheldon_id: "0",
+            score: 2,
+            facebook_id: "123456"
+        },
+        {
+            title: "Til Schweiger",
+            sheldon_id: "1",
+            score: -3,
+            facebook_id: "654321"
+        }
+        {
+            title: "POTC",
+            sheldon_id: "0",
+            score: 2,
+            facebook_id: "12333456"
+        },
+    ]
+
+##
+# Filtered subscriptions: Get only people subscriptions for user 5923
+
+GET /users/fb/591234/subscriptions/people
+
+Response: 200 OK
+
+Body:
+    [
+        {
+            title: "Catherine Zeta Jones",
             sheldon_id: "0",
             score: 2,
             facebook_id: "123456"
@@ -22,9 +57,51 @@ Body:
     ]
 
 ##
-# Create a subscription to a sheldon node 852654 for user 591234
+# Get only movie subscriptions for user 5923
 
-PUT /users/fb/591234/subscriptions/852654
+GET /users/fb/591234/subscriptions/movies
 
 Response: 200 OK
+
+Body:
+    [
+      {
+          title: "Traffic",
+          sheldon_id: "0",
+          score: 2,
+          facebook_id: "123456"
+      }
+    ]
+
+
+##
+# Get only bucket subscriptions for user 5923
+
+GET /users/fb/591234/subscriptions/buckets
+
+Response: 200 OK
+
+Body:
+    [
+      {
+          title: "POTC",
+          sheldon_id: "0",
+          score: 2,
+          facebook_id: "12333456"
+      }
+    ]
+
+##
+# Create a subscription to a sheldon node 852654 for user 591234
+
+PUT /users/fb/591234/subscriptions
+
+Body:
+  {
+    sheldon_id: "852654"
+  }
+
+Response: 200 OK
+
+
 
