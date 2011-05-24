@@ -1,0 +1,75 @@
+##
+# Returns all the affinity edges of a user sorted by score.
+# These are the "high score" nodes for that user, regardless
+# if he is tracking them or not.
+
+GET /high_scores/users/13
+
+Response: 200 OK 
+
+Body: 
+    [
+      { id: 5,
+        from: 13
+        to: 15,
+        payload: {
+          weight: 75
+        }
+      }
+    ]
+
+##
+# Returns all the affinity edges of a user sorted by score.
+# These are the "high score" nodes for that user, but only those 
+# that he is already track 
+
+GET /high_scores/users/13/tracked
+
+Response: 200 OK 
+
+Body: 
+    [
+      { id: 6,
+        from: 13
+        to: 16,
+        payload: {
+          weight: 107
+        }
+      },
+      { id: 7,
+        from: 13
+        to: 17,
+        payload: {
+          weight:80 
+        }
+      }
+    ]
+
+
+##
+# Fetch the nodes the user has the highes score for
+# aka high score, but only those the user is not yet
+# tracking
+
+GET /high_scores/users/13/untracked
+
+Response: 200 OK 
+
+Body: 
+    [
+      { id: 8,
+        from: 13
+        to: 18,
+        payload: {
+          weight: 125
+        }
+      },
+      { id: 9,
+        from: 13
+        to: 19,
+        payload: {
+          weight:150
+        }
+      }
+    ]
+
