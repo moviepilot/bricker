@@ -94,7 +94,7 @@ Body:
 ##
 # Create a subscription to a sheldon node 852654 for user 591234
 
-PUT /users/fb/591234/subscriptions
+POST /users/fb/591234/subscriptions
 
 Body:
   {
