@@ -1,0 +1,22 @@
+##
+# When asking for a user's container recommendation,
+# sheldon starts at the user node and traverses to 
+# those nodes that are marked as having a container.
+
+GET /recommendations/user/13/containers
+
+Response: 200 OK
+
+Body:
+    [
+      { id: "a3efdd48c8329"
+      , type: "Movie"
+      , payload: { title: "Matrix"
+                 , production_year: 1999 }
+      },
+      { id: "49858505"
+      , type: "Person"
+      , payload: { title: "Johnny Depp"
+                 , production_year: 1959 }
+      }
+    ]

@@ -1,9 +1,10 @@
 {
-  "fragments": [ {"prefix": "/connections" }
-               , {"prefix": "/high_scores" }
-               , {"prefix": "/nodes"       }
-               , {"prefix": "/search"      }
-               , {"prefix": "/status"      }
-               , {"prefix": "/upload"      }
+  "fragments": [ {"prefix": "/connections"     }
+               , {"prefix": "/high_scores"     }
+               , {"prefix": "/nodes"           }
+               , {"prefix": "/recommendations" }
+               , {"prefix": "/search"          }
+               , {"prefix": "/status"          }
+               , {"prefix": "/upload"          }
                ]
 }
