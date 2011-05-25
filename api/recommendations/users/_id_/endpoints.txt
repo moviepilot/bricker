@@ -9,14 +9,16 @@ Response: 200 OK
 
 Body:
     [
-      { id: "a3efdd48c8329"
+      { id: "50292929"
       , type: "Movie"
       , payload: { title: "Matrix"
-                 , production_year: 1999 }
+                 , production_year: 1999
+                 , has_container: "true" }
       },
       { id: "49858505"
       , type: "Person"
       , payload: { title: "Johnny Depp"
-                 , production_year: 1959 }
+                 , production_year: 1959 
+                 , has_container: "true" }
       }
     ]
