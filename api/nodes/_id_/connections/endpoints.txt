@@ -3,7 +3,7 @@
 # in this node 15 is a person, and we know in which
 # movies he's acting.
 
-GET /node/15/connections/acting
+GET /nodes/15/connections/acting
 
 Response: 200 OK
 
@@ -21,7 +21,7 @@ Body:
 ##
 # The acting connection from node 15 to node 22,
 #
-GET /node/15/connections/acting/22
+GET /nodes/15/connections/acting/22
 
 Response: 200 OK
 
@@ -38,7 +38,7 @@ Body:
 # Check if node 15 is connected to node 22 throuh a
 # genre_tagging connection. Answer is no 
 #
-GET /node/15/connections/genre_tagging/22
+GET /nodes/15/connections/genre_tagging/22
 
 Response: 404 OK
 
@@ -48,7 +48,7 @@ Response: 404 OK
 # get an empty array as body (you can always rely on
 # this resource being represented as an array).
 
-GET /node/22/connections/acting
+GET /nodes/22/connections/acting
 
 Response: 200 OK
 
@@ -61,7 +61,7 @@ Body:
 # Notice that all data is contained in the `payload`
 # key.
 
-PUT /node/13/connections/acting/12
+PUT /nodes/13/connections/acting/12
 
 Body:
     { "weight": 1.0 }
@@ -75,4 +75,13 @@ Body:
     , "payload" : { 
         "weight" : "1.0"}
     }
+
+
+##
+# When you try to fetch connections of a connection type
+# that does not exist, you'll get an error
+
+GET /nodes/13/connections/silly_stuffs
+
+Response: 400 BAD REQUEST
 
