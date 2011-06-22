@@ -1,0 +1,93 @@
+##
+# Instead of fetching the like edges, you can also directly
+# find out the neighbours of a node, e.g. all stuff the user
+# has liked:
+
+GET /nodes/199337/neighbours/likes
+
+Response: 200 OK
+
+Body:
+
+    [
+    {
+      "payload": {
+        "updated_at": "Fri May 27 14:54:07 +0200 2011",
+          "facebook_ids": [
+            "142951609048900",
+          "116411308431962",
+          "164424463600899",
+          "198624160152641",
+          "171224939558565",
+          "136326409747223",
+          "153123318042252",
+          "214798651869167",
+          "170744236269885",
+          "176523925699385",
+          "154011791308322",
+          "168264889854128",
+          "385437640819",
+          "121498081204232"
+            ],
+          "production_year": "2010",
+          "title": "Biutiful",
+          "moviemaster_id": "27359"
+      },
+        "type": "Movie",
+        "id": "32626"
+    }
+]
+
+##
+# Instead of fetching the like edges, you can also directly
+# find out the neighbours of a node, e.g. all stuff the user
+# has liked, voted, or whatever. Regardless of the connection type:
+
+GET /nodes/199337/neighbours
+
+Response: 200 OK
+
+Body:
+
+    [
+        {
+      "payload": {
+        "updated_at": "Fri May 27 14:54:07 +0200 2011",
+          "facebook_ids": [
+            "142951609048900",
+          "116411308431962",
+          "164424463600899",
+          "198624160152641",
+          "171224939558565",
+          "136326409747223",
+          "153123318042252",
+          "214798651869167",
+          "170744236269885",
+          "176523925699385",
+          "154011791308322",
+          "168264889854128",
+          "385437640819",
+          "121498081204232"
+            ],
+          "production_year": "2010",
+          "title": "Biutiful",
+          "moviemaster_id": "27359"
+      },
+        "type": "Movie",
+        "id": "32626"
+    },
+    {
+      "payload": {
+        "updated_at": "Fri May 27 14:54:07 +0200 2011",
+          "facebook_ids": [
+            "142951609048935",
+            "168264889854130",
+            ],
+          "name": "Nico Belic",
+          "moviemaster_id": "27364"
+      },
+        "type": "Person",
+        "id": "32626"
+    }
+
+
