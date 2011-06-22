@@ -15,7 +15,7 @@ Body:
 ##
 # Find a movie node using a wildcard (aka prefix search)
 
-GET /search/nodes/movies?title=matr*
+GET /search/nodes/movies?title=matr
 
 Response: 200 OK
 
@@ -27,6 +27,18 @@ Body:
     ]
 
 
+##
+# Find a person node by id, and therefore do an exact search.
+# Using an extra parameter `mode`
+
+GET /search/nodes/persons?id=44&mode=exact
+
+Response: 200 OK
+
+Body:
+  [ { "id": 44
+    , "type": "Person"
+    , "payload": { "name": "Adolfo Gonzales" } }]
 
 ##
 # When no results have been found, sheldon replies with a 200
