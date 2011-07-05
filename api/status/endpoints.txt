@@ -53,121 +53,28 @@ Body:
             "available_memory": 0,
             "used_memory": 0
           }
-        },
-        "store_props": {
-          "array_store_size": 680960,
-          "logical_log_size": 2097168,
-          "node_store_size": 1729728,
-          "property_store_size": 44250150,
-          "relationship_store_size": 14201484,
-          "string_store_size": 38133760,
-          "total_store_size": 179564902
         }
       },
-      "schema": {
-        "Tracking": {
-          "properties": [],
-          "source_class": ["User"],
-          "target_class": ["Movie", "User", "Genre", "Person", "Bucket"]
-        },
-        "GenreTagging": {
-          "properties": [
-            ["id", "case_insensitive_exact"],
-            ["weight", null]
-          ],
-          "source_class": ["Movie"],
-          "target_class": ["Genre"]
-        },
-        "Genre": {
-          "properties": [
-            ["id", "case_insensitive_exact"],
-            ["name", "case_insensitive_exact"],
-            ["moviemaster_id", "case_insensitive_exact"],
-            ["has_container", "case_insensitive_exact"]
-          ],
-          "count": 167
-        },
-        "Person": {
-          "properties": [
-            ["id", "case_insensitive_exact"],
-            ["name", "case_insensitive_exact"],
-            ["birthday", "case_insensitive_exact"],
-            ["moviemaster_id", "case_insensitive_exact"],
-            ["omdb_id", "case_insensitive_exact"],
-            ["imdb_id", "case_insensitive_exact"],
-            ["facebook_ids", "case_insensitive_exact"],
-            ["has_container", "case_insensitive_exact"]
-          ],
-          "count": 143392
-        },
-        "Affinity": {
-          "properties": [
-            ["score", null]
-          ],
-          "source_class": ["User"],
-          "target_class": ["Movie", "User", "Genre", "Person", "Bucket"]
-        },
-        "Bucket": {
-          "properties": [
-            ["name", "case_insensitive_exact"]
-          ],
-          "count": 23
-        },
-        "Directing": {
-          "properties": [
-            ["weight", null]
-          ],
-          "source_class": ["Person", "Movie"],
-          "target_class": ["Movie", "Person"]
-        },
-        "User": {
-          "properties": [
-            ["id", "case_insensitive_exact"],
-            ["username", "case_insensitive_exact"],
-            ["facebook_ids", "case_insensitive_exact"]
-          ],
-          "count": 272
-        },
-        "Movie": {
-          "properties": [
-            ["id", "case_insensitive_exact"],
-            ["title", "case_insensitive_exact"],
-            ["production_year", "case_insensitive_exact"],
-            ["moviemaster_id", "case_insensitive_exact"],
-            ["omdb_id", "case_insensitive_exact"],
-            ["imdb_id", "case_insensitive_exact"],
-            ["facebook_ids", "case_insensitive_exact"],
-            ["has_container", "case_insensitive_exact"]
-          ],
-          "count": 47246
-        },
-        "Acting": {
-          "properties": [
-            ["weight", null]
-          ],
-          "source_class": ["Person", "Movie"],
-          "target_class": ["Movie", "Person"]
-        },
-        "Like": {
-          "properties": [
-            ["weight", null]
-          ],
-          "source_class": ["User"],
-          "target_class": ["Movie"]
-        },
-        "Contains": {
-          "properties": [],
-          "source_class": ["Bucket"],
-          "target_class": ["Movie", "Person", "Genre"]
-        },
-        "RatingSimilarity": {
-          "properties": [
-            ["weight", null]
-          ],
-          "source_class": ["Movie"],
-          "target_class": ["Movie"]
-        }
-      },
-      "api_version": "0.4"
+      "api_version": "1.1",
+      "env": {
+        "rvm_scripts_path": "/Users/purbon/.rvm/scripts"
+        "rvm_environments_path": "/Users/purbon/.rvm/environments"
+        "JAVA_ARCH": "x86_64"
+        "GEM_PATH": "/Users/purbon/work/sheldon-purbon/WEB-INF/gems:/Users/purbon/.rvm/gems/jruby-1.6.1@sheldon:/Users/purbon/.rvm/gems/jruby-1.6.1@global"
+        "TERM_PROGRAM": "Apple_Terminal"
+        "com.apple.java.jvmMode": "client"
+        "rvm_sticky_flag": "1"
+        "com.apple.java.jvmTask": "CommandLine.java.java"
+        "rvm_wrappers_path": "/Users/purbon/.rvm/wrappers"
+        "rvm_ruby_string": "jruby-1.6.1"
+        "rvm_user_install_flag": "0"
+        "rvm_create_flag": "1"
+        "JAVA_MAIN_CLASS_7288": "org/jruby/Main"
+        "rvm_verbose_flag": "1"
+        ...
+        "rvm_lib_path": "/Users/purbon/.rvm/lib"
+        "PWD": "/Users/purbon/work/sheldon-purbon"
+        "rvm_archives_path": "/Users/purbon/.rvm/archives"
+        "rvm_man_path": "/Users/purbon/.rvm/man"
+      }
     }
-    

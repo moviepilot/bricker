@@ -1,0 +1,70 @@
+##
+# You can fetch statistics arround data stored inside sheldon, like
+# the number of nodes, several custom statistics as requestes at 
+# the module definition
+
+GET /statistics
+
+Response: 200 OK
+
+Body:
+    {
+      "nodes": {
+        "movies": {
+          "count": 1,
+            "facebook_connected": {
+              "false": 1
+            }
+        },
+        "series": {
+            "count": 1
+        },
+        "users": {
+            "count": 1
+        },
+        "genres": {
+            "count": 1
+        },
+        "people": {
+            "count": 1
+        },
+        "buckets": {
+            "count": 0
+        }
+      },
+      "connections": {
+        "actings": {
+            "count": 0
+        },
+        "directings": {
+            "count": 0
+        },
+        "genre_taggings": {
+            "count": 0
+        },
+        "likes": {
+            "count": 0
+        },
+        "rating_similarities": {
+            "count": 0
+        },
+        "movie_connections": {
+            "count": 0
+        },
+        "suggestions": {
+            "count": 0
+        },
+        "affinities": {
+            "count": 0
+        },
+        "trackings": {
+            "count": 0
+        },
+        "contains": {
+            "count": 0
+        },
+        "friends": {
+            "count": 0
+        }
+      }
+    }

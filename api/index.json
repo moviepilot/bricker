@@ -5,6 +5,8 @@
                , {"prefix": "/recommendations" }
                , {"prefix": "/search"          }
                , {"prefix": "/status"          }
+               , {"prefix": "/statistics"      }
+               , {"prefix": "/schema"          }
                , {"prefix": "/upload"          }
                ]
 }

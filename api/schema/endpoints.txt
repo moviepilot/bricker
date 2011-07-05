@@ -1,0 +1,98 @@
+##
+# You can fetch the current defined sheldon schema, it
+# include all available nodes and connections.
+
+GET /schema
+
+Response: 200 OK
+
+Body:
+    {
+    "nodes": {
+        "movies": {
+            "properties": {
+                "title": [ "case_insensitive_exact", "exact" ],
+                "production_year": [ "case_insensitive_exact" ],
+                "facebook_ids": [ "case_insensitive_exact" ]
+            }
+        },
+        "series": {
+            "properties": {
+                "title": [ "case_insensitive_exact", "exact" ],
+                "production_year": [ "case_insensitive_exact" ],
+                "facebook_ids": [ "case_insensitive_exact" ]
+            }
+        },
+        "users": {
+            "properties": {
+                "username": [ "case_insensitive_exact" ],
+                "facebook_ids": [ "case_insensitive_exact" ]
+            }
+        },
+        "genres": {
+            "properties": {
+                "name": [ "case_insensitive_exact" ]
+            }
+        },
+        "people": {
+            "properties": {
+                "name": [ "case_insensitive_exact" ],
+                "birthday": [ "case_insensitive_exact" ],
+                "facebook_ids": [ "case_insensitive_exact" ]
+            }
+        },
+        "buckets": {
+            "properties": {
+                "name": [ "case_insensitive_exact"]
+            }
+        }
+    },
+    "connections": {
+        "actings": {
+            "sources": [ "people", "movies", "series" ],
+            "targets": [ "movies", "people", "series" ]
+        },
+        "directings": {
+            "sources": [ "people", "movies", "series" ],
+            "targets": [ "movies", "people", "series" ]
+        },
+        "genre_taggings": {
+            "sources": [ "movies", "series" ],
+            "targets": [ "genres" ]
+        },
+        "likes": {
+            "sources": [ "users" ],
+            "targets": [ "buckets", "genres", "movies", "series", "people" ]
+        },
+        "rating_similarities": {
+            "sources": [ "movies", "people", "series" ],
+            "targets": [ "movies", "people", "series" ]
+        },
+        "movie_connections": {
+            "sources": [ "movies", "series" ],
+            "targets": [ "movies", "series" ]
+        },
+        "suggestions": {
+            "sources": [ "users" ],
+            "targets": [ "movies", "users", "genres", "people", "buckets", "series" ]
+        },
+        "affinities": {
+            "sources": [ "users" ],
+            "targets": [ "movies", "users", "genres", "people", "buckets", "series" ]
+        },
+        "trackings": {
+            "sources": [ "users" ],
+            "targets": [ "movies", "users", "genres", "people", "buckets", "series" ]
+        },
+        "contains": {
+            "sources": [ "buckets" ],
+            "targets": [ "movies", "people", "genres", "series" ]
+        },
+        "friends": {
+            "sources": [ "users" ],
+            "targets": [ "users" ]
+        }
+    }
+ }
+}
+
