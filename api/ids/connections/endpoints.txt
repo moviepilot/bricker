@@ -1,0 +1,10 @@
+##
+# Tells you the ids of all existing connections, regardless of their
+# type
+
+GET /ids/connections
+
+Response: 200 OK
+
+Body:
+    [1,2,3,4,5]

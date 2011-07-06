@@ -1,0 +1,5 @@
+{
+  "fragments": [ {"prefix": "/connections"    } 
+               , {"prefix": "/nodes"          }
+               ]
+}

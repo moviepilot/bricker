@@ -1,6 +1,7 @@
 {
   "fragments": [ {"prefix": "/connections"     }
                , {"prefix": "/high_scores"     }
+               , {"prefix": "/ids"     }
                , {"prefix": "/nodes"           }
                , {"prefix": "/recommendations" }
                , {"prefix": "/search"          }
