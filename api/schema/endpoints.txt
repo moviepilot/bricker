@@ -6,93 +6,548 @@ GET /schema
 
 Response: 200 OK
 
-Body:
-    {
+Body: 
+{
     "nodes": {
         "movies": {
             "properties": {
-                "title": [ "case_insensitive_exact", "exact" ],
-                "production_year": [ "case_insensitive_exact" ],
-                "facebook_ids": [ "case_insensitive_exact" ]
+                "id": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "title": {
+                    "index": [
+                        [
+                            "case_insensitive_exact",
+                            "exact"
+                        ]
+                    ],
+                    "relevant": true
+                },
+                "production_year": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": true
+                },
+                "moviemaster_id": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "omdb_id": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "imdb_id": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "facebook_ids": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": true
+                },
+                "has_container": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "created_at": {
+                    "index": [
+                        [
+                            "exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "updated_at": {
+                    "index": [
+                        [
+                            "exact"
+                        ]
+                    ],
+                    "relevant": false
+                }
             }
         },
         "series": {
             "properties": {
-                "title": [ "case_insensitive_exact", "exact" ],
-                "production_year": [ "case_insensitive_exact" ],
-                "facebook_ids": [ "case_insensitive_exact" ]
+                "id": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "title": {
+                    "index": [
+                        [
+                            "case_insensitive_exact",
+                            "exact"
+                        ]
+                    ],
+                    "relevant": true
+                },
+                "production_year": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": true
+                },
+                "moviemaster_id": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "omdb_id": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "imdb_id": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "facebook_ids": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": true
+                },
+                "has_container": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "created_at": {
+                    "index": [
+                        [
+                            "exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "updated_at": {
+                    "index": [
+                        [
+                            "exact"
+                        ]
+                    ],
+                    "relevant": false
+                }
+            }
+        },
+        "containers": {
+            "properties": {
+                "edward_it": {
+                    "index": [],
+                    "relevant": false
+                },
+                "title": {
+                    "index": [],
+                    "relevant": false
+                }
             }
         },
         "users": {
             "properties": {
-                "username": [ "case_insensitive_exact" ],
-                "facebook_ids": [ "case_insensitive_exact" ]
+                "id": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "username": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": true
+                },
+                "facebook_ids": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": true
+                },
+                "created_at": {
+                    "index": [
+                        [
+                            "exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "updated_at": {
+                    "index": [
+                        [
+                            "exact"
+                        ]
+                    ],
+                    "relevant": false
+                }
             }
         },
         "genres": {
             "properties": {
-                "name": [ "case_insensitive_exact" ]
+                "id": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "name": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": true
+                },
+                "moviemaster_id": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "has_container": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "created_at": {
+                    "index": [
+                        [
+                            "exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "updated_at": {
+                    "index": [
+                        [
+                            "exact"
+                        ]
+                    ],
+                    "relevant": false
+                }
             }
         },
         "people": {
             "properties": {
-                "name": [ "case_insensitive_exact" ],
-                "birthday": [ "case_insensitive_exact" ],
-                "facebook_ids": [ "case_insensitive_exact" ]
+                "id": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "name": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": true
+                },
+                "birthday": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": true
+                },
+                "moviemaster_id": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "omdb_id": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "imdb_id": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "facebook_ids": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": true
+                },
+                "has_container": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "created_at": {
+                    "index": [
+                        [
+                            "exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "updated_at": {
+                    "index": [
+                        [
+                            "exact"
+                        ]
+                    ],
+                    "relevant": false
+                }
             }
         },
         "buckets": {
             "properties": {
-                "name": [ "case_insensitive_exact"]
+                "name": {
+                    "index": [
+                        [
+                            "case_insensitive_exact"
+                        ]
+                    ],
+                    "relevant": true
+                },
+                "created_at": {
+                    "index": [
+                        [
+                            "exact"
+                        ]
+                    ],
+                    "relevant": false
+                },
+                "updated_at": {
+                    "index": [
+                        [
+                            "exact"
+                        ]
+                    ],
+                    "relevant": false
+                }
             }
         }
     },
     "connections": {
         "actings": {
-            "sources": [ "people", "movies", "series" ],
-            "targets": [ "movies", "people", "series" ]
+            "sources": [
+                "people",
+                "movies",
+                "series"
+            ],
+            "targets": [
+                "movies",
+                "people",
+                "series"
+            ]
         },
         "directings": {
-            "sources": [ "people", "movies", "series" ],
-            "targets": [ "movies", "people", "series" ]
+            "sources": [
+                "people",
+                "movies",
+                "series"
+            ],
+            "targets": [
+                "movies",
+                "people",
+                "series"
+            ]
         },
         "genre_taggings": {
-            "sources": [ "movies", "series" ],
-            "targets": [ "genres" ]
+            "sources": [
+                "movies",
+                "series"
+            ],
+            "targets": [
+                "genres"
+            ]
         },
         "likes": {
-            "sources": [ "users" ],
-            "targets": [ "buckets", "genres", "movies", "series", "people" ]
+            "sources": [
+                "users"
+            ],
+            "targets": [
+                "buckets",
+                "genres",
+                "movies",
+                "series",
+                "people"
+            ]
         },
         "rating_similarities": {
-            "sources": [ "movies", "people", "series" ],
-            "targets": [ "movies", "people", "series" ]
+            "sources": [
+                "movies",
+                "people",
+                "series"
+            ],
+            "targets": [
+                "movies",
+                "people",
+                "series"
+            ]
         },
         "movie_connections": {
-            "sources": [ "movies", "series" ],
-            "targets": [ "movies", "series" ]
+            "sources": [
+                "movies",
+                "series"
+            ],
+            "targets": [
+                "movies",
+                "series"
+            ]
         },
         "suggestions": {
-            "sources": [ "users" ],
-            "targets": [ "movies", "users", "genres", "people", "buckets", "series" ]
+            "sources": [
+                "users"
+            ],
+            "targets": [
+                "movies",
+                "genres",
+                "people",
+                "buckets",
+                "series"
+            ]
+        },
+        "consumed_suggestions": {
+            "sources": [
+                "users"
+            ],
+            "targets": [
+                "movies",
+                "genres",
+                "people",
+                "buckets",
+                "series"
+            ]
         },
         "affinities": {
-            "sources": [ "users" ],
-            "targets": [ "movies", "users", "genres", "people", "buckets", "series" ]
+            "sources": [
+                "users"
+            ],
+            "targets": [
+                "movies",
+                "users",
+                "genres",
+                "people",
+                "buckets",
+                "series"
+            ]
         },
         "trackings": {
-            "sources": [ "users" ],
-            "targets": [ "movies", "users", "genres", "people", "buckets", "series" ]
+            "sources": [
+                "users"
+            ],
+            "targets": [
+                "movies",
+                "users",
+                "genres",
+                "people",
+                "buckets",
+                "series"
+            ]
         },
         "contains": {
-            "sources": [ "buckets" ],
-            "targets": [ "movies", "people", "genres", "series" ]
+            "sources": [
+                "buckets"
+            ],
+            "targets": [
+                "movies",
+                "people",
+                "genres",
+                "series"
+            ]
         },
         "friends": {
-            "sources": [ "users" ],
-            "targets": [ "users" ]
+            "sources": [
+                "users"
+            ],
+            "targets": [
+                "users"
+            ]
+        },
+        "related_tos": {
+            "sources": [
+                "containers"
+            ],
+            "targets": [
+                "movies",
+                "people",
+                "genres",
+                "series"
+            ]
         }
     }
- }
 }
 
