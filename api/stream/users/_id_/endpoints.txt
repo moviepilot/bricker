@@ -1,0 +1,59 @@
+##
+# When asking for a user's stream, sheldon give you a list of
+# containers related to that users, throw his likes, with the newest
+# at the begining of the list.
+# You also can paginate the request using the per_page and page
+# parameters.
+
+GET /stream/users/13
+
+Response: 200 OK
+
+Body:
+  [
+      {
+          "payload": {
+              "published_at": "2011-07-06T12:44:03+02:00",
+              "updated_at": "Mon Jul 18 11:16:08 +0200 2011",
+              "created_at": "Fri Jul 08 20:23:13 +0200 2011",
+              "edward_id": 820,
+              "title": "'Dexter's Lab', 'Samurai Jack', 'Clone Wars'...'Hotel Transylvania'"
+          },
+          "type": "Container",
+          "id": "205219"
+      },
+      {
+          "payload": {
+              "published_at": "2011-07-05T13:57:22+02:00",
+              "updated_at": "Mon Jul 18 11:16:00 +0200 2011",
+              "created_at": "Fri Jul 08 20:23:05 +0200 2011",
+              "edward_id": 791,
+              "title": "'The Office' Season 7 Scrimps On Bonus Features, Saves You Ten Bucks"
+          },
+          "type": "Container",
+          "id": "205193"
+      },
+      {
+          "payload": {
+               "published_at": "2011-07-05T13:21:20+02:00",
+               "updated_at": "Mon Jul 18 11:15:59 +0200 2011",
+               "created_at": "Fri Jul 08 20:23:04 +0200 2011",
+               "edward_id": 783,
+               "title": "30 Funny Comedians Turned Actors"
+          },
+          "type": "Container",
+          "id": "205185"
+      },
+      {
+          "payload": {
+              "published_at": "2011-07-04T18:16:13+02:00",
+              "updated_at": "Mon Jul 18 11:15:55 +0200 2011",
+              "created_at": "Fri Jul 08 20:22:53 +0200 2011",
+              "edward_id": 743,
+              "title": "Heckling Hitler: 15-plus attempts to make the Führer funny "
+          },
+          "type": "Container",
+          "id": "205145"
+      }
+  ]
+

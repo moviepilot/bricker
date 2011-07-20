@@ -4,6 +4,7 @@
                , {"prefix": "/ids"     }
                , {"prefix": "/nodes"           }
                , {"prefix": "/recommendations" }
+               , {"prefix": "/stream" }
                , {"prefix": "/search"          }
                , {"prefix": "/status"          }
                , {"prefix": "/statistics"      }
