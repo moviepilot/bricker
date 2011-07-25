@@ -54,9 +54,6 @@ Body:
         "suggestions": {
             "count": 0
         },
-        "affinities": {
-            "count": 0
-        },
         "trackings": {
             "count": 0
         },

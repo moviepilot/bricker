@@ -492,19 +492,6 @@ Body:
                 "series"
             ]
         },
-        "affinities": {
-            "sources": [
-                "users"
-            ],
-            "targets": [
-                "movies",
-                "users",
-                "genres",
-                "people",
-                "buckets",
-                "series"
-            ]
-        },
         "trackings": {
             "sources": [
                 "users"
