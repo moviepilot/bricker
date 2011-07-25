@@ -1,0 +1,28 @@
+##
+# Fetch the recently published containers about this node
+
+GET /nodes/47302/containers?per_page=2&page=1
+
+Response: 200 OK
+
+Body:
+    [{
+        "payload": {
+          "updated_at": "Fri Jul 08 20:23:39 +0200 2011",
+            "created_at": "Fri Jul 08 20:23:39 +0200 2011",
+            "edward_id": 963,
+            "title": "Who Are 2011â€™s Oscar Contenders to Date?"
+        },
+          "type": "Container",
+          "id": "205352"
+      },
+      {
+        "payload": {
+          "updated_at": "Mon Jul 18 21:16:18 +0200 2011",
+          "created_at": "Fri Jul 08 20:23:24 +0200 2011",
+          "edward_id": 879,
+          "title": " Is Brad Pitt Inching Closer to Marriage With Angelina?"
+        },
+        "type": "Container",
+        "id": "205276"
+      }]

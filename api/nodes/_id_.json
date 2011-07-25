@@ -1,5 +1,6 @@
 {
   "fragments": [ {"prefix": "/connections" },
+                 {"prefix": "/containers"  },
                  {"prefix": "/neighbours"  },
                  {"prefix": "/reindex"     }
                ]
