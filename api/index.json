@@ -3,10 +3,8 @@
                , {"prefix": "/ids"     }
                , {"prefix": "/nodes"           }
                , {"prefix": "/stream" }
-               , {"prefix": "/search"          }
                , {"prefix": "/status"          }
                , {"prefix": "/statistics"      }
                , {"prefix": "/schema"          }
-               , {"prefix": "/upload"          }
                ]
 }

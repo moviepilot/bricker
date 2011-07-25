@@ -85,3 +85,10 @@ GET /nodes/13/connections/silly_stuffs
 
 Response: 400 BAD REQUEST
 
+##
+# Deleted all connection of a certaing type 
+# who belongs to a certaing node.
+
+DELETE /nodes/15/connections/acting
+
+Response: 200 OK

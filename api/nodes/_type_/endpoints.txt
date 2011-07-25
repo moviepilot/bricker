@@ -62,3 +62,28 @@ Body:
                , production_year: 1999 }
     }
 
+
+##
+# Creating a new movie node, enforcing a certaing id for the 
+# new graph object created.
+#
+# The enforced Id will be the main node reference system.
+#
+
+PUT /nodes/movies/123
+
+Params:
+  unsafe:   true
+  some_tag: 15
+
+Headers:
+  Content-type: application/json
+
+Body:
+
+    { title: "Matrix"               # We only store original ones
+    , production_year: 1999         # Contains a NUMBA 
+    }
+
+Response: 201 Created
+
