@@ -1,0 +1,15 @@
+##
+# Tells sheldon to start or stop the graph database server.
+#
+
+PUT /server/start
+
+Response: 200 OK
+
+PUT /server/stop
+
+Response: 200 OK
+
+PUT /server/starting
+
+Response: 404 BAD REQUEST
