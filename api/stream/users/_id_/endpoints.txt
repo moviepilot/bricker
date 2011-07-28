@@ -19,6 +19,10 @@ Body:
               "edward_id": 820,
               "title": "'Dexter's Lab', 'Samurai Jack', 'Clone Wars'...'Hotel Transylvania'"
           },
+          "reason": {
+              "type": "direct",
+              "path": [12]
+          },
           "type": "Container",
           "id": "205219"
       },
@@ -30,6 +34,10 @@ Body:
               "edward_id": 791,
               "title": "'The Office' Season 7 Scrimps On Bonus Features, Saves You Ten Bucks"
           },
+          "reason": {
+              "type": "bucket_hop",
+              "path": [12,15]
+          },
           "type": "Container",
           "id": "205193"
       },
@@ -40,6 +48,10 @@ Body:
                "created_at": "Fri Jul 08 20:23:04 +0200 2011",
                "edward_id": 783,
                "title": "30 Funny Comedians Turned Actors"
+          },
+          "reason": {
+              "type": "bucket_item",
+              "path": [15]
           },
           "type": "Container",
           "id": "205185"
