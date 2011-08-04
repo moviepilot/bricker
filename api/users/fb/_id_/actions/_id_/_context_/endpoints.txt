@@ -7,8 +7,8 @@ Response: 202 Accepted
 
 
 ##
-# Report that user 22 has selected to click button 5236
+# Report that user 22 has selected to click answer 5236
 
-POST /users/fb/22/actions/buttons/5236
+POST /users/fb/22/actions/answers/5236
 
 Response: 202 Accepted
