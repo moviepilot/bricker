@@ -1,8 +1,9 @@
 {
   "fragments": [ {"prefix": "/connections"     }
-               , {"prefix": "/ids"     }
+               , {"prefix": "/ids"             }
                , {"prefix": "/nodes"           }
-               , {"prefix": "/stream" }
+               , {"prefix": "/stream"          }
+               , {"prefix": "/suggestions"     }
                , {"prefix": "/status"          }
                , {"prefix": "/statistics"      }
                , {"prefix": "/schema"          }
