@@ -1,0 +1,34 @@
+##
+# Create a set of new connections using the batch 
+# operation facilities.
+#
+# It is expected to send a collection of the different entities
+# to be created, it is mandatory to send data as it's specified
+# here.
+#
+# Its is going to be informed how many connections was really created.
+
+PUT /connections/batch
+
+Body:
+ [
+    {
+      "type"    : "genre_taggings",
+      "from"    : 10,
+      "to"      : 11,
+      "payload" : { "weight" : 0.5 }
+    },
+    {
+      "type"    : "likes",
+      "from"    : 13,
+      "to"      : 10,
+      "payload" : { "weight" : 0.5, "facebook_ids" : ["123"] }
+    }
+]
+
+Response: 200 OK
+
+Body:
+{
+  "created" : 2
+}
