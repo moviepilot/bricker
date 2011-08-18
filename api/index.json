@@ -1,5 +1,6 @@
 {
   "fragments": [ {"prefix": "/connections"     }
+               , {"prefix": "/config"          }
                , {"prefix": "/ids"             }
                , {"prefix": "/nodes"           }
                , {"prefix": "/stream"          }
@@ -8,5 +9,6 @@
                , {"prefix": "/statistics"      }
                , {"prefix": "/schema"          }
                , {"prefix": "/server"          }
+               , {"prefix": "/traversals"      }
                ]
 }

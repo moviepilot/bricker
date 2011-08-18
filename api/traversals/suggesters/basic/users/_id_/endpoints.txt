@@ -1,0 +1,24 @@
+##
+# Makes a simple traversal that is used by the basic suggester.
+# It starts at a user node and visits all liked nodes. From there
+# it continues to traverse through "actings" and "directings" 
+# connections to find movies and people that are related to the 
+# movies and people the user already likes.
+# 
+# It returns a hash with the ids of the related nodes as keys. 
+# The values contain the amount of paths this node can be reached
+# through this traversal from the user (i.e. how important is this
+# related node).
+
+GET /traversals/suggesters/basic/users/123
+
+Response: 200 OK
+
+Body:
+    { "7626":3,
+      "6869":1,
+      "1986":2,
+      "1541":1,
+      "480":5,
+      "11620":1
+    }

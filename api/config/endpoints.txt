@@ -1,0 +1,39 @@
+##
+# Gives readonly access to sheldon's application config (that is
+# the part of application.yml that matches the current stage
+
+GET /config
+
+Response: 200 OK
+
+Body:
+    {
+      "redis": {
+      "host": "redis-staging",
+      "port": 6379,
+      "namespace": "staging",
+      "user": "moviepilot",
+      "password": "GoodMovies"
+    },
+    "sheldon": {
+      "data_dir": "~/data/sheldon-staging/neo4j",
+      "buzz_bucket_node_id": 206034,
+      "everything_bucket_node_id": 216750,
+      "user_state": {
+        "current_buzz_likes": 6,
+        "everything_buzz_likes": 11
+      },
+      "name": "staging",
+      "stream": {
+        "days_ago": 1
+      },
+      "features": {
+        "social_stream": true
+      }
+    },
+    "red_snapper": {
+      "host": "red-snapper.staging.moviepilot.com",
+      "user": "moviepilot",
+      "password": "GoodMovies"
+    }
+    }
