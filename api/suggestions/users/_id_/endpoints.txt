@@ -15,6 +15,7 @@ Body:
             "production_year": 2009,
             "title": "The Simpsons"
         },
+        "reason" : "first_timer",
         "type": "Movie",
         "id": 23
     },
@@ -25,6 +26,7 @@ Body:
             "production_year": 2009,
             "title": "Futurama"
         },
+        "reason" : "first_timer",
         "type": "Movie",
         "id": 24
     }
