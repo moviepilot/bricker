@@ -19,6 +19,29 @@ Body:
     ]
 
 ##
+# Lists all connections a node has to other nodes,
+# in this node 15 is a person, and we know in which
+# movies he's acting. We restrict it to outoing edges
+# (you can also ask for incoming edges)
+
+GET /nodes/15/connections/outgoing
+
+Response: 200 OK
+
+Body:
+    [
+      { "id"   :  23
+      , "from" : "15"
+      , "to"   : "12"
+      , "type" : "Acting"
+      , "payload" : { 
+            "weight" : "1.0"}
+      }
+    ]
+
+
+
+##
 # The acting connection from node 15 to node 22,
 #
 GET /nodes/15/connections/acting/22

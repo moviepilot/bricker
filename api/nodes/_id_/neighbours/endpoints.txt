@@ -91,3 +91,14 @@ Body:
     }
 
 
+##
+#  Ask for incoming edges only. Nobody likes this user. :(
+#  (you can also ask for outgoing connections)
+#
+
+GET /nodes/199337/neighbours/likes/incoming
+
+Response: 200 OK
+
+Body:
+    []
