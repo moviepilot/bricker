@@ -1,6 +1,11 @@
 ##
+# Retrieve suggestion for a given user, acording to the user state.
+# Users can be new commers, middlevel or advanced ones, so suggestions
+# will be fetched accorind go that.
 #
-#
+# You can also use the pagination parameters, page and per_page, in
+# order to get paginated results. In that case, you will get as much
+# suggestions as you ordered.
 
 GET /suggestions/users/13
 
