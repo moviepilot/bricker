@@ -1,0 +1,77 @@
+##
+# For a given user, find out which are the movies with
+# the highes pagerank. It's a traversal that begins at
+# a user node and first traverses through his like edges.
+# From there it countinues through actings and directings.
+#
+# Imagine a user likes Fear and Loathing in Las Vegas and
+# The Dark Knight. Also, he likes two actors from Fear and
+# Loathing in Las Vegas. The Dark Knight would have a lower
+# rank than F&L, because it only has one inbound connection
+# in the user's personal like graph. 
+#
+# To spice things up, we have added a minimum weight of 0.5.
+# Only those actings and directings edges with a weight of 0.5
+# or larger are traversed. This parameter is optional.
+#
+# This resource is paginated, feel free to use the per_page
+# and page parameters (both optional)
+
+GET /traversals/pagerank/users/15/movies?min_weight=0.5&per_page=2&page=1
+
+Response: 200 OK
+
+Body:
+    [
+      {
+        "node": {
+          "payload": {
+            "title": "The Royal Tenenbaums",
+            "production_year": "2001" },
+          "type": "Movie",
+          "id": "3288"
+        },
+        "rank": 5
+      },
+      { ... }
+    ]
+
+##
+# Same thing as above but for people in the user's like graph
+#
+GET /traversals/pagerank/users/15/people
+
+Response: 200 OK
+
+Body:
+    [
+      { ... }
+    ]
+
+
+##
+# Same thing as above but for buckets in the user's like graph
+#
+GET /traversals/pagerank/users/15/buckets
+
+Response: 200 OK
+
+Body:
+    [
+      { ... }
+    ]
+
+
+##
+# Same thing as above but for containers in the user's like graph
+#
+GET /traversals/pagerank/users/15/containers
+
+Response: 200 OK
+
+Body:
+    [
+      { ... }
+    ]
+
+
