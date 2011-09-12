@@ -37,7 +37,33 @@ Body:
     ]
 
 ##
-# Same thing as above but for people in the user's like graph
+# Wait a minute. What if we want to use this to suggest stuff
+# to the user? Simple, just exclude like edges using the
+# `exclude=likes` parameter (you can exclude every edge type,
+# if the type does not exist, nothing will be excluded).
+#
+GET /traversals/pagerank/users/15/movies?min_weight=0.5&per_page=2&page=1&except=likes
+
+Response: 200 OK
+
+Body:
+    [
+      {
+        "node": {
+          "payload": {
+            "title": "Jackass 3D",
+            "production_year": "2010" },
+          "type": "Movie",
+          "id": "3282"
+        },
+        "rank": 3
+      },
+      { ... }
+    ]
+
+
+##
+# Same thing as the first, but for people in the user's like graph
 #
 GET /traversals/pagerank/users/15/people
 
