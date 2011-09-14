@@ -12,28 +12,49 @@ GET /suggestions/users/13
 Response: 200 OK
 
 Body:
-[
-    {
-        "payload": {
-            "updated_at": "2011-08-05T17:03:49+02:00",
-            "created_at": "2011-08-05T17:03:49+02:00",
-            "production_year": 2009,
-            "title": "The Simpsons"
+    [
+        {
+            "payload": {
+                "updated_at": "2011-08-05T17:03:49+02:00",
+                "created_at": "2011-08-05T17:03:49+02:00",
+                "production_year": 2009,
+                "title": "The Simpsons"
+            },
+            "reason" : "first_timer",
+            "type": "Movie",
+            "id": 23
         },
-        "reason" : "first_timer",
-        "type": "Movie",
-        "id": 23
-    },
-    {
-        "payload": {
-            "updated_at": "2011-08-05T17:03:49+02:00",
-            "created_at": "2011-08-05T17:03:49+02:00",
-            "production_year": 2009,
-            "title": "Futurama"
-        },
-        "reason" : "first_timer",
-        "type": "Movie",
-        "id": 24
-    }
-]
+        {
+            "payload": {
+                "updated_at": "2011-08-05T17:03:49+02:00",
+                "created_at": "2011-08-05T17:03:49+02:00",
+                "title": "Scarlett Johansson"
+            },
+            "reason" : "first_timer",
+            "type": "Person",
+            "id": 24
+        }
+    ]
 
+
+##
+# Also, you can just retrieve a certain type of suggestions, for
+# example just people. 
+
+GET /suggestions/users/13/people
+
+Response: 200 OK
+
+Body:
+    [
+        {
+            "payload": {
+                "updated_at": "2011-08-05T17:03:49+02:00",
+                "created_at": "2011-08-05T17:03:49+02:00",
+                "title": "Scarlett Johansson"
+            },
+            "reason" : "first_timer",
+            "type": "Person",
+            "id": 24
+        }
+    ]
