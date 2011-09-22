@@ -3,6 +3,7 @@
                , {"prefix": "/config"          }
                , {"prefix": "/ids"             }
                , {"prefix": "/nodes"           }
+               , {"prefix": "/questionnaires"  }
                , {"prefix": "/stream"          }
                , {"prefix": "/suggestions"     }
                , {"prefix": "/status"          }
