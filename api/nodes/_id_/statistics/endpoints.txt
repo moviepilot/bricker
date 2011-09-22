@@ -1,0 +1,30 @@
+##
+# This resource give you some insides about a given node
+
+GET /nodes/6248/statistics
+
+Response: 200 OK
+
+Body:
+
+{
+    likes: {
+        total: 59,
+        new_last_week: 0,
+        stats: {
+            genres: {
+                male: 67.79,
+                female: 23.72,
+                unknown: 8.47
+            },
+            ages: {
+                "10-19": 6,
+                "30-39": 11,
+                "50-59": 1,
+                "20-29": 28,
+                "100-109": 1,
+                "40-49": 2
+            }
+        }
+    }
+}
