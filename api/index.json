@@ -5,6 +5,7 @@
                , {"prefix": "/nodes"           }
                , {"prefix": "/questionnaires"  }
                , {"prefix": "/stream"          }
+               , {"prefix": "/reasons"         }
                , {"prefix": "/suggestions"     }
                , {"prefix": "/status"          }
                , {"prefix": "/statistics"      }
