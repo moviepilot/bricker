@@ -9,57 +9,5 @@ GET /questionnaires/255144
 Response: 200 OK
 
 Body:
-    {
-      "payload": {
-        "updated_at": "2011-09-21T18:13:58+02:00",
-          "created_at": "2011-09-21T18:13:58+02:00",
-          "question": "does it work?"
-      },
-        "type": "Questionnaire",
-        "id": 255144,
-        "replies": {
-          {
-            "payload": {
-              "updated_at": "2011-09-21T18:15:24+02:00",
-              "created_at": "2011-09-21T18:15:24+02:00",
-              "text": "yes"
-            },
-            "type": "Reply",
-            "id": 255145
-          },
-          {
-            "payload": {
-              "updated_at": "2011-09-21T18:15:31+02:00",
-              "created_at": "2011-09-21T18:15:31+02:00",
-              "text": "no"
-            },
-            "type": "Reply",
-            "id": 255146
-          },
-          {
-            "payload": {
-              "updated_at": "2011-09-21T18:15:36+02:00",
-              "created_at": "2011-09-21T18:15:36+02:00",
-              "text": "maybe"
-            },
-            "type": "Reply",
-            "id": 255147
-          }
-        },
-        "answerers": {
-          [
-          {
-            "id": "193377",
-            "facebook_id": "1005769470"
-          }
-          ],
-            [
-            {
-              "id": "193378",
-              "facebook_id": "1235396419"
-            }
-          ],
-            [
-              ]
-        }
-    }
+
+{"payload":{"updated_at":"2011-09-21T18:13:58+02:00","created_at":"2011-09-21T18:13:58+02:00","question":"does it work?"},"type":"Questionnaire","id":255144,"replies":{"255147":{"payload":{"updated_at":"2011-09-21T18:15:36+02:00","created_at":"2011-09-21T18:15:36+02:00","text":"maybe"},"type":"Reply","id":255147},"255146":{"payload":{"updated_at":"2011-09-21T18:15:31+02:00","created_at":"2011-09-21T18:15:31+02:00","text":"no"},"type":"Reply","id":255146},"255145":{"payload":{"updated_at":"2011-09-21T18:15:24+02:00","created_at":"2011-09-21T18:15:24+02:00","text":"yes"},"type":"Reply","id":255145}},"answerers":{"255147":[],"255146":[{"id":"193378","facebook_id":"1235396419"}],"255145":[{"id":"193377","facebook_id":"1005769470"}]}}
