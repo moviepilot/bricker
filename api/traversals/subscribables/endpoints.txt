@@ -1,0 +1,28 @@
+##
+# Check if the endpoint that fetches all subscribables for Ben Stiller
+# (movies/series)
+GET /traversals/subscribables/264758
+Response: 200 OK
+Body:
+    [
+      {
+        "payload": {
+          "updated_at": "2011-11-06T01:58:45+01:00",
+            "title": "Zoolander 2",
+            "production_year": "2012",
+            "last_synced_at": "Mon, 18 Jul 2011 03:06:11 +0200",
+            "imdb_id": "1608290",
+            "moviemaster_id": "41261",
+            "production_stage": "planned",
+            "facebook_ids": [ "177804665573192" ],
+            "omdb_id": "43895",
+            "unsuggestable": true,
+            "suggestable_overridden": false,
+            "created_at": "2011-05-01",
+            "id": "45114",
+            "questionnaire_id": "264998"
+        },
+          "type": "Movie",
+          "id": "45114"
+      }
+    ]
