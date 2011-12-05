@@ -4,7 +4,7 @@
 # resource.
 #
 # You will get this information ranked by the number of times this item
-# appears, so first you will get the most relevant ones. 
+# appears, so first you will get the most relevant ones.
 #
 # To spice things up, we have added a minimum weight of 0.5.
 # Only those similarities connection with a weight bigger or equal to
