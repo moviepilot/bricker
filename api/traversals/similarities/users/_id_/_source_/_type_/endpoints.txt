@@ -1,0 +1,95 @@
+## 
+# For a given user, you want to find out with movies are similar to the
+# ones he, or she, like or being subscribed to, you can do it using this
+# resource.
+#
+# You will get this information ranked by the number of times this item
+# appears, so first you will get the most relevant ones. 
+#
+# To spice things up, we have added a minimum weight of 0.5.
+# Only those similarities connection with a weight bigger or equal to
+# 0.5 are traversed. This parameter is optional.
+#
+# This resource is paginated, feel free to use the per_page
+# and page parameters (both optional)
+#
+# (Side note) As you could see it has exact the same functionality as the pagerank
+# resource, but now talking about project similarities.
+#
+
+##
+# So you want to get the similar mobies based on the user likes, you
+# whould do it like this.
+#
+
+GET /traversals/similarities/users/15/likes/movies?min_weight=0.5&per_page=2&page=1
+
+Response: 200 OK
+
+Body:
+    [
+      {
+        "node": {
+          "payload": {
+            "title": "The Royal Tenenbaums",
+            "production_year": "2001" },
+          "type": "Movie",
+          "id": "3288"
+        },
+        "rank": 5,
+        "based_on": [123, 15, 33, 39, 12]
+      },
+      { ... }
+    ]
+
+##
+# Wait, if you want to know the ones based on the user subscriptions?.
+# You should do it like this.
+#
+
+GET /traversals/similarities/users/15/subscribes/movies?min_weight=0.5&per_page=2&page=1
+
+Response: 200 OK
+
+Body:
+    [
+      {
+        "node": {
+          "payload": {
+            "title": "The Royal Tenenbaums",
+            "production_year": "2001" },
+          "type": "Movie",
+          "id": "3288"
+        },
+        "rank": 5,
+        "based_on": [123, 15, 33, 39, 12]
+      },
+      { ... }
+    ]
+
+
+##
+# Wait a minute. What if we want to use this to suggest stuff
+# to the user? Simple, just exclude like edges using the
+# `exclude=likes` parameter (you can exclude every edge type,
+# if the type does not exist, nothing will be excluded).
+#
+GET /traversals/similarities/users/15/likes/movies?min_weight=0.5&per_page=2&page=1&except=likes
+
+Response: 200 OK
+
+Body:
+    [
+      {
+        "node": {
+          "payload": {
+            "title": "Jackass 3D",
+            "production_year": "2010" },
+          "type": "Movie",
+          "id": "3282"
+        },
+        "rank": 3,
+        "based_on": [133, 99, 2]
+      },
+      { ... }
+    ]
