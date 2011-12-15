@@ -108,6 +108,55 @@ GET /nodes/13/connections/silly_stuffs
 
 Response: 400 BAD REQUEST
 
+
+##
+# Gets the outgoing degree of the node with id 1, throw 
+# the connection type likes
+
+GET /nodes/1/connections/likes/outgoing/degree
+
+Response: 200 OK
+
+Body:
+    { "degree" : "1" }
+
+
+##
+# Gets the incoming degree of the node with id 1, throw 
+# the connection type likes
+
+GET /nodes/1/connections/likes/incoming/degree
+
+Response: 200 OK
+
+Body:
+    { "degree" : "2" }
+
+
+##
+# Gets the outgoing degree of the node with id 1, without 
+# filtering the node connection types.
+
+GET /nodes/1/connections/all/outgoing/degree
+
+Response: 200 OK
+
+Body:
+    { "degree" : "3" }
+
+
+##
+# Gets the outgoing degree of the node with id 1, without 
+# filtering the node connection types. The default degree 
+# direction. Keeps usage by user api easier.
+
+GET /nodes/1/connections/likes/degree
+
+Response: 200 OK
+
+Body:
+    { "degree" : "3" }
+
 ##
 # Deleted all connection of a certaing type 
 # who belongs to a certaing node.
