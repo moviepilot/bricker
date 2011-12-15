@@ -148,7 +148,7 @@ Body:
 ##
 # Gets the outgoing degree of the node with id 1, without 
 # filtering the node connection types. The default degree 
-# direction. Keeps usage by user api easier.
+  # direction. Keeps usage by user api easier.
 
 GET /nodes/1/connections/likes/degree
 
