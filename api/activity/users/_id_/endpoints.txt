@@ -1,0 +1,33 @@
+##
+# For a given user, find out wich is the activity of their friends. This
+# like subscribing to a movie, series or bucket, answering a poll, etc.
+# This resource aim to provide you information about each action the
+# user friends made in our system.
+#
+#
+# This resource is paginated, feel free to use the per_page
+# and page parameters (both optional)
+
+GET /activity/users/15&per_page=2&page=1
+
+Response: 200 OK
+
+Body:
+  [
+    {
+        "content": {
+            "payload": {
+                "updated_at": "2011-12-01T18:29:17+01:00",
+                "created_at": "2011-12-01T18:29:17+01:00",
+                "facebook_ids": [],
+                "index": 2,
+                "text": "No Spoilers!"
+            },
+            "type": "Reply",
+            "id": 312723
+        },
+        "date": 1322760557,
+        "reason": "answers",
+        "friend": 199378
+    }
+ ]
