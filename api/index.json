@@ -12,6 +12,6 @@
                , {"prefix": "/schema"          }
                , {"prefix": "/server"          }
                , {"prefix": "/traversals"      }
-               , {"prefix": "/activity"        }
+               , {"prefix": "/activities"      }
                ]
 }

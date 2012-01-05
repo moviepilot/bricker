@@ -8,7 +8,7 @@
 # This resource is paginated, feel free to use the per_page
 # and page parameters (both optional)
 
-GET /activity/users/15&per_page=2&page=1
+GET /activities/users/15&per_page=2&page=1
 
 Response: 200 OK
 
