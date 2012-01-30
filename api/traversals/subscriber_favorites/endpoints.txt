@@ -3,7 +3,7 @@
 # and is cached for one hour, as it takes about a minute to calculate
 # initially. Array of hashes with "node" and "rank" keys.
 
-GET /traversals/pagerank/subscriber_favorites
+GET /traversals/subscriber_favorites
 
 Response: 200 OK
 

@@ -5,7 +5,7 @@
 # featured_stories_subscription). You can use pagination for this
 # resource.
 
-GET /traversals/pagerank/subscriber_favorites/for/15?per_page=2
+GET /traversals/subscriber_favorites/for/15?per_page=2
 
 Response: 200 OK
 

@@ -1,7 +1,7 @@
 {
   "fragments": [ {"prefix": "/suggesters/basic/users/_id_"},
                  {"prefix": "/pagerank/users/_id_/_type_"},
-                 {"prefix": "/pagerank/subscriber_favorites"},
+                 {"prefix": "/subscriber_favorites"},
                  {"prefix": "/similarities/users/_id_/_source_/_type_"},
                  {"prefix": "/subscribables/_id_"}
                ]
