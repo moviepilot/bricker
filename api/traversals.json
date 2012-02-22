@@ -3,7 +3,8 @@
                  {"prefix": "/pagerank/users/_id_/_type_"},
                  {"prefix": "/subscriber_favorites"},
                  {"prefix": "/similarities/users/_id_/_source_/_type_"},
-                 {"prefix": "/subscribables/_id_"}
+                 {"prefix": "/subscribables/_id_"},
+                 {"prefix": "/users/_id_/favorite_genres"}
                ]
 }
 

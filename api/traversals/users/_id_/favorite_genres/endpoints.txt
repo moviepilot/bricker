@@ -1,0 +1,50 @@
+##
+# Does a traversal to the user's favorite genres.
+# Uses the movies a user likes and their respective
+# genre_taggings. You can pass an optional genres
+# parameter with a comma delimited list of genres you
+# want to limit the result set to.
+# 
+# You get popular genres first together with their
+# rank value
+
+GET /traversals/users/199337/favorite_genres?genres=190665,190707
+
+Response: 200 OK
+
+Body:
+    [
+    {
+      "node": {
+        "type": "Genre",
+          "id": "190665",
+          "payload": {
+            "updated_at": "2011-10-04T21:48:58+02:00",
+            "moviemaster_id": 67,
+            "omdb_id": 35,
+            "facebook_ids": [
+              "109469405746262"
+              ],
+            "name": "Comedy"
+          }
+      },
+        "rank": 57
+    },
+    {
+      "node": {
+        "type": "Genre",
+        "id": "190707",
+        "payload": {
+          "updated_at": "2011-10-04T21:49:01+02:00",
+          "moviemaster_id": 20,
+          "omdb_id": 18,
+          "facebook_ids": [
+            "109563255730113"
+            ],
+          "name": "Drama"
+        }
+      },
+      "rank": 25
+    }
+    ]
+    
