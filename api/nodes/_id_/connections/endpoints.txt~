@@ -2,8 +2,6 @@
 # Lists all connections a node has to other nodes,
 # in this node 15 is a person, and we know in which
 # movies he's acting.
-#
-#Connection names should be plural.
 
 GET /nodes/15/connections/actings
 
