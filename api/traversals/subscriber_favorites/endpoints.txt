@@ -4,7 +4,7 @@
 # initially. Array of hashes with "node" and "rank" keys. You can also
 # define a filter that matches arbitrary properties of the subscribers.
 
-GET /traversals/subscriber_favorites?filter=gender:female:name:john
+GET /traversals/subscriber_favorites?filter=gender:female,name:john
 
 Response: 200 OK
 

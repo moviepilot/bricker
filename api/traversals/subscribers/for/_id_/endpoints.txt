@@ -1,0 +1,13 @@
+##
+# Gets the IDs of all the users subscribed to a movie.
+# Supports filters.
+
+GET /traversals/subscribers/for/15?filter=gender:male
+
+Response: 200 OK
+
+Body:
+    [
+      1234
+    ]
+
