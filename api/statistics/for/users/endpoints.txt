@@ -1,0 +1,29 @@
+##
+# Given an arbitrary set of sheldon user IDs, you can receive
+# aggregate statistical information about those users
+#
+
+GET /statistics/for/users?ids=123,456,789
+
+Response: 200 OK
+
+Body:
+    {
+        :age=>
+            {:young=>0, :old=>1}, 
+        :gender=>
+            {:m=>0, :f=>1}, 
+        :subscriptions=>
+        {
+            :total=>0, 
+            :average=>0, 
+            :distribution=>{0=>1}
+        }, 
+        :likes=>
+        {
+            :total=>0, 
+            :average=>0, 
+            :distribution=>{0=>1}
+        }
+
+    }
