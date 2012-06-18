@@ -1,0 +1,9 @@
+##
+# Empty resource that may be used to measure the webstack overhead
+
+GET /internal/empty
+
+Response: 200 OK
+
+Body:
+    {}

@@ -1,0 +1,9 @@
+# If you get tired of a node, you can go ahead and delete it.
+# All connections to and from this node will be deleted as well
+#
+# Please notice that this API deletes using internal neo4j ids!
+
+DELETE /internal/nodes/16
+
+Response: 200 OK
+

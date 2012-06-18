@@ -1,0 +1,14 @@
+##
+# Retrieve current neoscout data.json (only available if configured)
+#
+# The neoscout data.json format is complex, subject to change and
+# not documented here
+
+GET /internal/neoscout/data
+
+Response: 200 OK
+
+Body: 
+    { "nodes": { }
+    , "connections": { }
+    }

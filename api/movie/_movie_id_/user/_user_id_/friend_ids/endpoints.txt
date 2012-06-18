@@ -1,0 +1,12 @@
+##
+# Fetch all ids of friends of a user that are subscribed to the given movie
+#
+# You also can paginate the request using the per_page and page
+# parameters.
+
+GET /movie/_movie_id_/user/_user_id_/friend_ids
+
+Response: 200 OK
+
+Body:
+    [ 30, 40, 50, 60 ]

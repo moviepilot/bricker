@@ -1,0 +1,14 @@
+##
+# When asking for a user's stream, sheldon give you a list of ids of
+# containers related to that users, throw his likes, with the newest
+# at the begining of the list.
+# You also can paginate the request using the per_page and page
+# parameters.
+
+GET /stream/users/13/subscription_ids
+
+Response: 200 OK
+
+Body:
+    [ 10, 20, 42 ]
+

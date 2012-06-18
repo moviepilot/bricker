@@ -1,0 +1,19 @@
+{
+  "fragments": [ 
+                 {"prefix": "/connections/_id_" },
+                 {"prefix": "/empty"  },
+                 {"prefix": "/fast_graph_warm_up/nodes"  },
+                 {"prefix": "/fast_graph_warm_up/connections"  },
+                 {"prefix": "/graph_warm_up/nodes"  },
+                 {"prefix": "/graph_warm_up/connections"  },
+                 {"prefix": "/neoscout/status"  },
+                 {"prefix": "/neoscout/data"  },
+                 {"prefix": "/neoscout/run"  },
+                 {"prefix": "/neoscout/abort"  },
+                 {"prefix": "/nodes/_id_" },
+                 {"prefix": "/webadmin"  },                 
+                 {"prefix": "/write_speed"  }                 
+               ]
+}
+
+

@@ -1,0 +1,9 @@
+##
+# Sequentially load all connections and their properties
+
+GET /internal/graph_warm_up/connections
+
+Response: 200 OK
+
+Body:
+    { "num_connections": 43841545 }

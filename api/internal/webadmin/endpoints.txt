@@ -1,0 +1,6 @@
+##
+# Redirects to neo4j webadmin console (starts webadmin if it is not running)
+
+GET /internal/webadmin
+
+Response: 302 Moved Temporarily

@@ -1,0 +1,10 @@
+##
+# Trigger abortion of any ongoing neoscout run
+#
+
+POST /internal/neoscout/abort
+
+Response: 200 OK
+
+Headers:
+  Content-type: application/json

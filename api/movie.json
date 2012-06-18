@@ -1,0 +1,8 @@
+{
+  "fragments": [ 
+                 {"prefix": "/_movie_id_/user/_user_id_/friends"  },
+                 {"prefix": "/_movie_id_/user/_user_id_/friend_ids"  }
+               ]
+}
+
+

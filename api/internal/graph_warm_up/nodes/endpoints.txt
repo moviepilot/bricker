@@ -1,0 +1,9 @@
+##
+# Sequentially load all nodes and their properties
+
+GET /internal/graph_warm_up/nodes
+
+Response: 200 OK
+
+Body:
+    { "num_nodes": 390457 }

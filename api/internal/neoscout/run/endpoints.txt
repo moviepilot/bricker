@@ -1,0 +1,9 @@
+##
+# Trigger running neoscout to update data.json
+#
+
+POST /internal/neoscout/run
+
+Response: 200 OK
+
+Body:

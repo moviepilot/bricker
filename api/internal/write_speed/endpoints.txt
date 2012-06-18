@@ -1,0 +1,14 @@
+##
+# Resource that may be used to measure neo4j write performance
+#
+# Creates a node in a first, and deletes it in a second transaction
+#
+
+GET /internal/write_speed
+
+Response: 200 OK
+
+Body:
+    { "duration": 0.005
+    , "node_id": 39261
+    }

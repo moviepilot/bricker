@@ -1,0 +1,9 @@
+##
+# Sequentially load all nodes but not their properties
+
+GET /internal/fast_graph_warm_up/nodes
+
+Response: 200 OK
+
+Body:
+    { "num_nodes": 390457 }

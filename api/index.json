@@ -13,5 +13,7 @@
                , {"prefix": "/server"          }
                , {"prefix": "/traversals"      }
                , {"prefix": "/activities"      }
+               , {"prefix": "/movie"           }
+               , {"prefix": "/internal"        }
                ]
 }
