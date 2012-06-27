@@ -2,7 +2,7 @@
 # Demographic information on all users who have subscribed
 # to project #15 (which has to be a movie)
 
-GET /traversals/demographics/for/15
+GET /traversals/demographics/15
 
 Response: 200 OK
 
@@ -22,7 +22,7 @@ Body:
 # Demographic information on all users who have subscribed
 # to at least one movie
 
-GET /traversals/demographics/for/subscribers
+GET /traversals/demographics/subscribers
 
 Response: 200 OK
 
@@ -41,7 +41,7 @@ Body:
 ##
 # Demographic information on all users
 
-GET /traversals/demographics/for/all
+GET /traversals/demographics/all
 
 Response: 200 OK
 
