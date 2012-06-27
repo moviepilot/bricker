@@ -1,10 +1,11 @@
 {
-  "fragments": [ {"prefix": "/suggesters/basic/users/_id_"},
+  "fragments": [ {"prefix": "/demographics/for/_target_"},
                  {"prefix": "/pagerank/users/_id_/_type_"},
-                 {"prefix": "/subscriber_favorites"},
-                 {"prefix": "/subscribers/for/_id_"},
                  {"prefix": "/similarities/users/_id_/_source_/_type_"},
                  {"prefix": "/subscribables/_id_"},
+                 {"prefix": "/subscriber_favorites"},
+                 {"prefix": "/subscribers/for/_id_"},
+                 {"prefix": "/suggesters/basic/users/_id_"},
                  {"prefix": "/users/_id_/favorite_genres"}
                ]
 }

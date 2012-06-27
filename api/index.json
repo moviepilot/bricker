@@ -1,19 +1,19 @@
 {
   "fragments": [ {"prefix": "/connections"     }
+               , {"prefix": "/activities"      }
                , {"prefix": "/config"          }
                , {"prefix": "/ids"             }
+               , {"prefix": "/internal"        }
+               , {"prefix": "/movie"           }
                , {"prefix": "/nodes"           }
                , {"prefix": "/questionnaires"  }
-               , {"prefix": "/stream"          }
                , {"prefix": "/reasons"         }
-               , {"prefix": "/suggestions"     }
-               , {"prefix": "/status"          }
-               , {"prefix": "/statistics"      }
                , {"prefix": "/schema"          }
                , {"prefix": "/server"          }
+               , {"prefix": "/statistics"      }
+               , {"prefix": "/status"          }
+               , {"prefix": "/stream"          }
+               , {"prefix": "/suggestions"     }
                , {"prefix": "/traversals"      }
-               , {"prefix": "/activities"      }
-               , {"prefix": "/movie"           }
-               , {"prefix": "/internal"        }
                ]
 }

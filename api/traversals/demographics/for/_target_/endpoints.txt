@@ -1,0 +1,59 @@
+##
+# Demographic information on all users who have subscribed
+# to project #15 (which has to be a movie)
+
+GET /traversals/demographics/for/15
+
+Response: 200 OK
+
+Body:
+    {
+      "male-old":1,
+      "total":1,
+      "male":1,
+      "female":0,
+      "young":0,
+      "old":1,
+      "gender-missing":0,
+      "age-missing":0
+    }
+
+##
+# Demographic information on all users who have subscribed
+# to at least one movie
+
+GET /traversals/demographics/for/subscribers
+
+Response: 200 OK
+
+Body:
+    {
+      "male-old":1,
+      "total":1,
+      "male":1,
+      "female":0,
+      "young":0,
+      "old":1,
+      "gender-missing":0,
+      "age-missing":0
+    }
+
+##
+# Demographic information on all users
+
+GET /traversals/demographics/for/all
+
+Response: 200 OK
+
+Body:
+    {
+      "male-old":1,
+      "total":1,
+      "male":1,
+      "female":0,
+      "young":0,
+      "old":1,
+      "gender-missing":0,
+      "age-missing":0
+    }
+
