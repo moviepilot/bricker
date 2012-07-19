@@ -1,0 +1,18 @@
+##
+# Examine node by loading it via its *internal* id
+
+GET /internal/index/nodes/1
+
+Response: 200 OK
+
+Body: 
+    {
+      id: 2,
+      kind: "node",
+      neo_id: 1,
+      props: {
+				updated_at: "2011-08-16T16:35:38+02:00",
+        _neo_id: 1,
+        |external_id: 2
+      }
+    }

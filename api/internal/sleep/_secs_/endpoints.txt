@@ -1,0 +1,12 @@
+# Creates a sleep-_secs_ job in the job manager. Here for testing purposes.
+
+POST /internal/sleep/_secs_
+
+Body:
+    {}
+
+Response: 302 Moved Temporarily
+
+Headers: 
+  Location: http://<host>:<port>/jobs/sleep-_secs_
+

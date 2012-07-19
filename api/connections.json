@@ -1,6 +1,7 @@
 {
   "fragments": [ {"prefix": "/_id_"   },
                  {"prefix": "/_type_" },
+                 {"prefix": "/_type_/all" },
                  {"prefix": "/batch"  }
                ]
 }

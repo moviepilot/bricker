@@ -1,0 +1,12 @@
+##
+# Determine last id delivered by the connection id generator
+
+GET /internal/id_gen/connections/last_id_used
+
+Response: 200 OK
+
+Body: 
+    {
+      kind: "connection",
+      last_id_used: 4648606
+    }

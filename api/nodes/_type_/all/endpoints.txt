@@ -1,0 +1,12 @@
+##
+# Create a background deletion job for *all* nodes of type _type_
+
+DELETE /nodes/_type_/all
+
+Body:
+    {}
+
+Response: 302 Moved Temporarily
+
+Headers: 
+  Location: http://<host>:<port>/jobs/delete-nodes-_type_

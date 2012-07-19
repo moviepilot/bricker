@@ -4,6 +4,7 @@
                , {"prefix": "/config"          }
                , {"prefix": "/ids"             }
                , {"prefix": "/internal"        }
+               , {"prefix": "/jobs"            }
                , {"prefix": "/movie"           }
                , {"prefix": "/nodes"           }
                , {"prefix": "/questionnaires"  }

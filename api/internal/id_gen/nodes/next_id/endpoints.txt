@@ -1,0 +1,12 @@
+##
+# Fetch a fresh id from the node id generator
+
+GET /internal/id_gen/nodes/next_id
+
+Response: 200 OK
+
+Body: 
+    {
+      kind: "node",
+      next_id: 464867
+    }

@@ -1,0 +1,12 @@
+##
+# Create a background deletion job for *all* connections of type _type_
+
+DELETE /connections/_type_/all
+
+Body:
+    {}
+
+Response: 200 OK
+
+Headers: 
+  Location: http://<host>:<port>/jobs/delete-connections-_type_

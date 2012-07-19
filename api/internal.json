@@ -2,6 +2,12 @@
   "fragments": [ 
                  {"prefix": "/connections/_id_" },
                  {"prefix": "/empty"  },
+                 {"prefix": "/index/nodes/_id_"  },
+                 {"prefix": "/index/connections/_id_"  },
+                 {"prefix": "/id_gen/nodes/last_id_used"  },
+                 {"prefix": "/id_gen/nodes/next_id"  },
+                 {"prefix": "/id_gen/connections/last_id_used"  },
+                 {"prefix": "/id_gen/connections/next_id"  },
                  {"prefix": "/fast_graph_warm_up/nodes"  },
                  {"prefix": "/fast_graph_warm_up/connections"  },
                  {"prefix": "/graph_warm_up/nodes"  },
@@ -12,6 +18,7 @@
                  {"prefix": "/neoscout/abort"  },
                  {"prefix": "/nodes/_id_" },
                  {"prefix": "/webadmin"  },                 
+		 {"prefix": "/sleep/_secs_" },
                  {"prefix": "/write_speed"  }                 
                ]
 }

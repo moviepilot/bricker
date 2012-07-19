@@ -1,0 +1,44 @@
+##
+# Fetch state of background job _job_
+
+GET /jobs/_job_
+
+Response: 200 OK
+
+Body:
+    {
+      duration: 406,
+      info: {
+        deleted: 0,
+        errors: 29,
+        visited: 23389598
+      },
+      key: "delete-connections-Answer",
+      started: "2012-07-19T15:23:11+02:00",
+      state: "done",
+      stopped: "2012-07-19T15:29:57+02:00",
+      value: 0
+    }
+
+##
+# Delete (and potentially abort) background job _job_ from job manager
+#
+
+DELETE /jobs/_job_
+
+Response: 200 OK
+
+Body:
+    {
+      duration: 406,
+      info: {
+        deleted: 0,
+        errors: 29,
+        visited: 23389598
+      },
+      key: "delete-connections-Answer",
+      started: "2012-07-19T15:23:11+02:00",
+      state: "done",
+      stopped: "2012-07-19T15:29:57+02:00",
+      value: 0
+    }
