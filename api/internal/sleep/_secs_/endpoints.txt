@@ -1,12 +1,20 @@
 # Creates a sleep-_secs_ job in the job manager. Here for testing purposes.
 
-POST /internal/sleep/_secs_
+PUT /internal/sleep/_secs_
 
 Body:
     {}
 
 Response: 302 Moved Temporarily
 
-Headers: 
-  Location: http://<host>:<port>/jobs/sleep-_secs_
-
+Body: 
+    {
+      state: "done",
+      value: 10,
+      started: "2012-07-24T17:55:14+02:00",
+      stopped: "2012-07-24T18:05:14+02:00",
+      duration: 10,
+      key: "sleep-10",
+      info: null
+    }    
+ 

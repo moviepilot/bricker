@@ -1,0 +1,19 @@
+##
+# Trigger repair of the connections id generator
+#
+
+PUT /internal/id_gen/connections/repair
+
+Response: 302 Temporarily Moved
+
+Body: 
+    {
+      state: "done",
+      value: 62412375,
+      started: "2012-07-24T17:55:14+02:00",
+      stopped: "2012-07-24T18:55:14+02:00",
+      duration: 3600,
+      key: "id-gen-connection-repair",
+      info: null
+    }    
+ 

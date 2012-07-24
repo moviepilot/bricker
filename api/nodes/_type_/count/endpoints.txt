@@ -1,0 +1,13 @@
+##
+# Count the number of nodes of type _type_
+#
+
+GET /nodes/_type_count
+
+Response: 200
+
+Body:
+    {
+      clazz: "_type_",
+      count: 50
+    }

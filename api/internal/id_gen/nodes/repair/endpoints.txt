@@ -1,0 +1,18 @@
+##
+# Trigger repair of the nodes id generator
+#
+
+PUT /internal/id_gen/nodes/repair
+
+Response: 302 Temporarily Moved
+
+Body: 
+    {
+      state: "done",
+      value: 412375,
+      started: "2012-07-24T17:55:14+02:00",
+      stopped: "2012-07-24T18:55:14+02:00",
+      duration: 3600,
+      key: "id-gen-node-repair",
+      info: null
+    }    
