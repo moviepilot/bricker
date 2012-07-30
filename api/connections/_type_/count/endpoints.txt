@@ -2,12 +2,12 @@
 # Count the number of connections of type _type_
 #
 
-GET /connections/_type_count
+GET /connections/_type_/count
 
 Response: 200
 
 Body:
     {
-      clazz: "_type_",
+      type: "_type_",
       count: 50
     }

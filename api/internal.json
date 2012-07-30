@@ -20,6 +20,7 @@
                  {"prefix": "/neoscout/abort"  },
                  {"prefix": "/nodes/_id_" },
                  {"prefix": "/webadmin"  },                 
+                 {"prefix": "/cached_counts"  },                 
 		 {"prefix": "/sleep/_secs_" },
                  {"prefix": "/write_speed"  }                 
                ]
