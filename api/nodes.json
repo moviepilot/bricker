@@ -3,6 +3,7 @@
                , {"prefix": "/_type_" }
                , {"prefix": "/_type_/count" }
                , {"prefix": "/_type_/all" }
+               , {"prefix": "/_type_/props" }
                ]
 }
 

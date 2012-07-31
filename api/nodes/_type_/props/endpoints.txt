@@ -1,0 +1,12 @@
+##
+# Create a background deletion job for certain properties of *all* nodes of type _type_
+
+DELETE /nodes/_type_/props
+
+Body:
+    [ "property_key1", "property_key2" ]
+
+Response: 302 Moved Temporarily
+
+Headers: 
+  Location: http://<host>:<port>/jobs/delete-nodes-_type_-props

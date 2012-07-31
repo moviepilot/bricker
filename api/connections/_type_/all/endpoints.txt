@@ -9,4 +9,4 @@ Body:
 Response: 200 OK
 
 Headers: 
-  Location: http://<host>:<port>/jobs/delete-connections-_type_
+  Location: http://<host>:<port>/jobs/delete-connections-_type_-all
