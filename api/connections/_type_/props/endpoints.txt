@@ -1,0 +1,12 @@
+##
+# Create a background deletion job for certain properties of *all* connections of type _type_
+
+DELETE /connections/_type_/props
+
+Body:
+    ["property_key1", "property_key2"]
+
+Response: 200 OK
+
+Headers: 
+  Location: http://<host>:<port>/jobs/delete-connections-_type_-props

@@ -1,0 +1,59 @@
+##
+# Fetch list of currently running, completed, and aborted background jobs
+
+GET /jobs
+
+Response: 200 OK
+
+Body:
+    {
+      delete-connections-Answer: {
+        duration: 406,
+        info: {
+          deleted: 0,
+          errors: 29,
+          visited: 23389598
+        },
+        key: "delete-connections-Answer",
+        started: "2012-07-19T15:23:11+02:00",
+        state: "done",
+        stopped: "2012-07-19T15:29:57+02:00",
+        value: 0
+      },
+      delete-nodes-Reply: {
+        duration: 147,
+        info: {
+          deleted: 9018,
+          errors: 0,
+          visited: 415000
+        },
+        key: "delete-nodes-Reply",
+        started: "2012-07-19T15:58:09+02:00",
+        state: "failed",
+        stopped: "2012-07-19T16:00:36+02:00",
+        value: {
+          "backtrace": [
+            "/home/moviepilot/daemons/tomcat/webapps/ROOT/WEB-  INF/lib/sheldon/app/node.rb:115:in `delete_all!'",
+            "/home/moviepilot/daemons/tomcat/webapps/ROOT/WEB-INF/lib/sinatra/app/nodes.rb:41:in `DELETE /nodes/:clazz/all'",
+            "org/jruby/RubyProc.java:258:in `call'",
+            "/home/moviepilot/daemons/tomcat/webapps/ROOT/WEB-INF/lib/sheldon/modules/jobs.rb:14:in `initialize'",
+            "org/jruby/RubyProc.java:258:in `call'",
+            "/home/moviepilot/daemons/tomcat/webapps/ROOT/WEB-INF/lib/sheldon/util/future.rb:106:in `start'"
+          ],
+          reason: "undefined method `[]=' for #<Atomic:0x77c7f884 @ref=#<Atomic::InternalReference:0x698cdf8b>>"
+        }
+      }
+    }
+
+##
+# Delete (and potentially abort) all currently known background tasks
+
+DELETE /jobs
+
+Response: 200 OK
+
+Body:
+    [ 
+       "job-a", 
+       "job-b"
+    ]

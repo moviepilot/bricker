@@ -1,0 +1,14 @@
+##
+# Returns a list of ids of all active users
+#
+# A user is 'active' if he logged into the site in the past 30 days
+
+GET /traversals/active_user_ids
+
+Response: 200 OK
+
+Body:
+    [
+      199337
+    ]
+    

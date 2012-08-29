@@ -1,0 +1,12 @@
+##
+# Sequentially load all connections and their properties
+
+GET /internal/cached_counts
+
+Response: 200 OK
+
+Body:
+    { 
+			"num_nodes": 4259311,
+			"num_connections": 43841545 
+    }

@@ -1,0 +1,17 @@
+##
+# Examine connection by loading it via its *internal* id
+
+GET /internal/index/connections/1
+
+Response: 200 OK
+
+Body: 
+    {
+      id: 40379777,
+      kind: "connection",
+      neo_id: 1,
+      props: {
+        _neo_id: 1,
+        |external_id: 40379777
+      }
+    }

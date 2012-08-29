@@ -1,0 +1,12 @@
+##
+# Determine last id delivered by the node id generator
+
+GET /internal/id_gen/nodes/last_id_used
+
+Response: 200 OK
+
+Body: 
+    {
+      kind: "node",
+      last_id_used: 464866
+    }

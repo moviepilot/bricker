@@ -1,0 +1,12 @@
+##
+# Fetch a fresh id from the connection id generator
+
+GET /internal/id_gen/connections/next_id
+
+Response: 200 OK
+
+Body: 
+    {
+      kind: "connection",
+      next_id: 4648607
+    }
