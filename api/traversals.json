@@ -1,12 +1,18 @@
 {
-  "fragments": [ {"prefix": "/demographics/_target_"},
-                 {"prefix": "/pagerank/users/_id_/_type_"},
-                 {"prefix": "/similarities/users/_id_/_source_/_type_"},
-                 {"prefix": "/subscribables/_id_"},
-                 {"prefix": "/subscriber_favorites"},
-                 {"prefix": "/subscribers/for/_id_"},
-                 {"prefix": "/suggesters/basic/users/_id_"},
-                 {"prefix": "/users/_id_/favorite_genres"}
-               ]
+  "fragments": [
+    {"prefix": "/active_user_ids"},
+    {"prefix": "/active_user_ids/_num_days_"},
+    {"prefix": "/active_user_stats"},
+    {"prefix": "/active_user_stats/_num_days_"},
+    {"prefix": "/demographics/_target_"},
+    {"prefix": "/lottery"},
+    {"prefix": "/pagerank/users/_id_/_type_"},
+    {"prefix": "/similarities/users/_id_/_source_/_type_"},
+    {"prefix": "/subscribables/_id_"},
+    {"prefix": "/subscriber_favorites"},
+    {"prefix": "/subscribers/for/_id_"},
+    {"prefix": "/suggesters/basic/users/_id_"},
+    {"prefix": "/users/_id_/favorite_genres"}
+  ]
 }
 
