@@ -1,0 +1,47 @@
+# Does pretty much the same as a COUNT(property) ... GROUP BY property.
+# This, for example, is how you can find all facebook_object nodes
+# grouped by their keyword property. 
+#
+# The parameter `count_nulls` can be used to include or omit those
+# nodes that do not have the propertie keyword set.
+#
+# The parameter `min` can be used to show only keywords that occur at
+# least a certain amount of times.
+GET /traversals/group_count/facebook_objects/keyword?min=5&count_nulls=true
+
+Resonse: 200 OK
+
+Body:
+    {
+      "count": 1511,
+      "name": null,
+      "nodes": [...] // 1511 items
+    },
+    {
+      "count": 8,
+        "name": "Music",
+        "nodes": [
+          552623,
+        550051,
+        546053,
+        539276,
+        533406,
+        526743,
+        521590,
+        517419
+          ]
+    },
+    {
+      "count": 8,
+      "name": "Anime",
+      "nodes": [
+        551136,
+      536726,
+      536618,
+      533919,
+      531136,
+      530984,
+      526418,
+      524410
+        ]
+    },

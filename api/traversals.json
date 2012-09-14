@@ -5,6 +5,7 @@
     {"prefix": "/active_user_stats"},
     {"prefix": "/active_user_stats/_num_days_"},
     {"prefix": "/demographics/_target_"},
+    {"prefix": "/group_count/_node_type_/_property_"},
     {"prefix": "/lottery"},
     {"prefix": "/pagerank/users/_id_/_type_"},
     {"prefix": "/similarities/users/_id_/_source_/_type_"},
